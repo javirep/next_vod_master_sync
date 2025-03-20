@@ -1,4 +1,4 @@
-import "server-only";
+/* import "server-only";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
@@ -45,4 +45,4 @@ export async function decrypt(session: string | undefined = "") {
     console.log({error})
     console.log("Failed to verify session");
   }
-}
+} */

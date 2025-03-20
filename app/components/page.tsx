@@ -69,7 +69,6 @@ const Components = () => {
             </div>
 
             <div className="mt-8"  style={{width: '800px'}}>
-                <Table header={tableHeader} rows={tableRows} addButton={{text: 'show', onClick: alertRow }}/>
             </div>
 
         </div>

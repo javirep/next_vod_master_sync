@@ -1,4 +1,4 @@
-"use server";
+/* "use server";
 
 import { createSession, deleteSession } from "./session";
 import { redirect } from "next/navigation";
@@ -22,14 +22,14 @@ export async function login (data: LoginData) {
     };
   }
 
-  /* const isCorrectPassword = await compareHashes(password, dbUser.password);
+  const isCorrectPassword = await compareHashes(password, dbUser.password);
 
   if (!isCorrectPassword) {
     return {
       success: false,
       error: "Invalid email or password",
     }
-  } */
+  }
 
   await createSession(dbUser.id);
 
@@ -42,4 +42,4 @@ export async function login (data: LoginData) {
 export async function logout() {
   await deleteSession();
   redirect("/login");
-}
+} */

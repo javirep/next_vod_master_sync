@@ -225,4 +225,6 @@ const Page = ( props: propsType ) => {
     )
 }
 
-export default (props) => <RootLayout><Page {... props} /></RootLayout>;
+const PageWrapper = (props: propsType) => <RootLayout><Page {... props} /></RootLayout>
+
+export default PageWrapper;

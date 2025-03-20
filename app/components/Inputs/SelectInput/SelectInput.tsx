@@ -41,7 +41,7 @@ export const SelectInput = (props: SelectInputProps) => {
 
     const drawerArrow = <svg width="12" height="12" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M7 11L0.937822 0.5L13.0622 0.5L7 11Z" fill={showGrey ? '#595959' : '#D3D1D1' } 
-        transformOrigin="center" transform={isOpen ? "rotate(180)" : ''} />
+        transform={isOpen ? "rotate(180)" : ''} />
     </svg>
     
     

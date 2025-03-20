@@ -1,8 +1,8 @@
-
+/* 
 import React, { useCallback } from 'react';
 import Papa from 'papaparse';
 import { useDropzone } from 'react-dropzone';
-//import uploadSvg from '../../assets/icons/upload.svg';
+import uploadSvg from '../../assets/icons/upload.svg';
 import * as XLSX from 'xlsx';
 import Typography from '../Typography/Typography';
 import { MasterTrackerMaster } from '../../utils/masters/MasterTracker';
@@ -66,7 +66,7 @@ const CSVUpload = (props) => {
     const falsyValues = ['false', 'no', 'n', 'FALSE', 'NO', 'N'];
 
 
-    const recipients = data.map((data, index) => {
+    const recipients = data.map((data) => {
 
       const video = {};
 
@@ -126,3 +126,4 @@ const CSVUpload = (props) => {
 };
 
 export default CSVUpload;
+ */

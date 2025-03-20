@@ -1,4 +1,4 @@
-'use client'
+/* 'use client'
 
 import React, { useState, useActionState } from "react";
 import { Typography } from "../components/Typography/Typography";
@@ -55,4 +55,4 @@ const SignInPage = () => {
     );
 };
 
-export default SignInPage;
+export default SignInPage; */

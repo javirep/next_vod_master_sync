@@ -11,7 +11,7 @@ type RowProps = {
   className?: string;
 };
 
-export const TableRow: React.FC<RowProps> = React.memo(({ rowData, className, colsToShow, forceSelected=false, onSelectRow}) => {
+export const TableRow = ( {rowData, className, colsToShow, forceSelected=false, onSelectRow}: RowProps ) => {
   const [ selected, setSelected ] = useState<boolean>(false);
 
     useEffect(() => {
@@ -38,5 +38,5 @@ export const TableRow: React.FC<RowProps> = React.memo(({ rowData, className, co
         }
     </tr>
   );
-});
+}
 
