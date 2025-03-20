@@ -1,0 +1,31 @@
+@use '../../constants' as *;
+
+.title {
+    font-size: 32px;
+    color: $blue-primary;
+}
+
+.subtitle {
+    
+}
+
+.body {
+    font-size: 16px;
+    font-weight: 100;
+    color: $white;
+}
+
+.error {
+    font-size: 14px;
+    color: $error;
+}
+
+.input-label {
+    font-size: 16px;
+    color: $white;
+}
+
+.navLink {
+    font-size: 20px;
+    color: $white;
+}

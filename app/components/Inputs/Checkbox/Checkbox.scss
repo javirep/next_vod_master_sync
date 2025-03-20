@@ -1,0 +1,13 @@
+@use '../../../constants' as *;
+
+
+.checkbox-wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-label.grey {
+    color: $grey-100;
+}

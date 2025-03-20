@@ -1,0 +1,82 @@
+@use '../../constants' as *;
+
+.table-container {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+}
+
+table.table {
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    thead {
+        max-width: 100%;
+    }
+    
+    th {
+        position:sticky;
+        top: 0;
+        padding-left: 16px;
+        
+        p{
+            color: $grey-100;
+            font-weight: 100;
+            text-align: start;
+        }
+    } 
+    
+    tr { 
+
+        border-radius: 4px;
+        
+        &.grey {
+            background-color: $grey-50;
+        }
+        
+        td {
+            overflow: scroll;
+            white-space: nowrap;
+            padding-left: 16px;
+        }
+    }
+
+}
+
+.table-footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p{ 
+        color: $grey-100;
+    }
+
+    .table-indexator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        .table-indexator-button {
+            border-radius: 4px;
+            border: 1px solid $grey-100;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            
+            &:hover {
+                background-color: $grey-50;
+            }
+            
+            &.active {
+                border-color: $white;
+                p {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+}

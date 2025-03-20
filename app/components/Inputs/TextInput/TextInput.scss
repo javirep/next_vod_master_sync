@@ -1,0 +1,49 @@
+@use '../../../constants' as *;
+
+.text-input-wrapper{
+    display: flex;
+    gap: 12px;
+
+    .text-input{
+        &-container{
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border: 1px solid $white;
+            border-radius: 4px;
+            gap: 4px;
+            
+            & svg {
+                stroke: $white;
+            }
+        }
+        
+        background-color: transparent;  
+        outline: none;
+        border: 0;
+        color: $white;
+    
+        &::placeholder{
+            color: $white;
+        }
+    
+        &-label{
+            margin-top: 9px;
+            color:$white;
+        }
+    }
+
+    &.grey{
+        .text-input-container{
+            border: 1px solid $grey-100;
+        }
+        .text-input{
+            &-label{
+                color:$grey-100;
+            }
+            &::placeholder{
+                color: $grey-100;
+            }
+        }
+    }
+}

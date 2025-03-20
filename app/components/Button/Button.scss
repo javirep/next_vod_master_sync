@@ -1,0 +1,41 @@
+@import '../../constants';
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 16px 24px;
+    border-radius: 4px;
+    
+
+    &.primary{
+        background-color: $blue-primary;
+        color: $white;
+    }
+    
+    &.secondary{
+        padding: 0;
+        border-radius: 0;
+        & p {
+            color: $blue-secondary;
+            text-decoration: solid underline;
+            text-underline-offset: 2px;
+        }
+    }
+
+    &.grey {
+        background-color: $grey-100;
+        
+        & p {
+            color: $white;
+        }
+    }
+
+    &.disabled {
+        cursor: auto;
+        background-color: $grey-300;
+
+        & p {
+            color: $grey-100;
+        }
+    }
+}

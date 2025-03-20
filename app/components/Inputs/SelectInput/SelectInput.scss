@@ -1,0 +1,79 @@
+@use '../../../constants' as *;
+
+
+.select-input-wrapper{
+    display: flex;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+
+    .select-input{
+        & {
+            background-color: transparent;  
+            outline: none;
+            color: $white;
+        }
+        
+        &-container{
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            padding: 8px 12px;
+            border: 1px solid $white;
+            border-radius: 4px;
+            gap: 4px;
+            transition: all 0.3s;
+        }
+
+        &-collapsed {
+            display: flex;
+            justify-content: baseline;
+            align-items: center;
+            gap: 12px;
+        }
+        
+    
+        &-label{
+            margin-top: 9px;
+            color:$white;
+        }
+
+        
+    }
+
+    .select-options {
+        height: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: all 0.3s;
+        position: absolute;
+        top: 100%;
+        background-color: $grey-50;
+
+        &.open{
+            height: auto;
+        }
+
+        .select-option {
+            cursor: pointer;
+            padding: 8px 12px;
+            &:hover{
+                background-color: $grey-200;
+            }
+        }
+    }
+
+    &.grey{
+        .select-input-container{
+            border: 1px solid $grey-100;
+        }
+
+        .select-placeholder{
+            color: $grey-100;
+        }
+
+        & .select-label{
+            color: $grey-100;
+        }
+    }
+}
