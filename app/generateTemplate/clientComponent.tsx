@@ -32,7 +32,8 @@ type propsType = { titles: VideoModel[] }
 
 const Page = ( props: propsType ) => {
 
-    const { titles  } = props;
+    const { titles } = props;
+    console.log(titles)
 
     const videoInit = {} as VideoModelObj;
 
@@ -141,7 +142,7 @@ const Page = ( props: propsType ) => {
     }
 
     const applyFilters = (video: VideoModel) => {
-        if (filters.distributor && video.distributor.toLowerCase().indexOf(filters.distributor.toLowerCase()) === -1) return false;
+        if (filters.distributor && video.licensor.toLowerCase().indexOf(filters.distributor.toLowerCase()) === -1) return false;
         if (filters.title && video.title.toLowerCase().indexOf(filters.title.toLowerCase()) === -1) return false;
         if (filters.brandedVOD && !video.brandedVOD) return false;
         if (filters.unbrandedVOD && !video.unbrandedVOD) return false;

@@ -66,11 +66,11 @@ export const RokuAvailsMaster: outputMasterType = {
             defaultValue: ''
         }, 
         {
-            key: 'serie',
+            key: 'series',
             defaultValue: ''
         },
         {
-            key: 'serieId',
+            key: 'seriesId',
             defaultValue: ''
         },
         {

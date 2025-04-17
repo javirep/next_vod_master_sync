@@ -1,4 +1,24 @@
 const platformOptions = {
+    
+    fubo: {
+        label: 'Fubo',
+        states: [
+            'Not Delivered', 
+            'Uploading',
+            'Delivered',
+            'N/A'
+        ]
+    },
+    sling: {
+        label: 'Sling',
+        states: [
+            'Not Delivered',
+            'Uploading',
+            'Delivered',
+            'On Platform',
+            'N/A'
+        ]
+    },
     roku: {
         label: 'Roku',
         states: [
@@ -12,16 +32,6 @@ const platformOptions = {
             'N/A'
         ]
     },
-
-    fubo: {
-        label: 'Fubo',
-        states: [
-            'Not Delivered', 
-            'Uploading',
-            'Delivered',
-            'N/A'
-        ]
-    }
 }
 
 

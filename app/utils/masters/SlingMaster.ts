@@ -61,7 +61,7 @@ export const SlingMaster: outputMasterType = {
         },
         {
             header: 'Series_Name',
-            key: 'serie',
+            key: 'series',
             defaultValue: '',
         },
         {

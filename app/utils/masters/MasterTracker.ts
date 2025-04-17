@@ -8,7 +8,7 @@ type MasterType = {
 }
 
 
-export const MasterTrackerMaster: MasterType = {
+export const MasterTrackerTitles: MasterType = {
     id: {
         key: 'Title GUID',
     },
@@ -30,14 +30,14 @@ export const MasterTrackerMaster: MasterType = {
     shortSynopsis: {
         key: `Short Synopsis (< 110 Char)`,
     },
-    serie: {
-        key: 'Series',
+    series: {
+        key: 'Series Title',
     },
     season: {
-        key: 'Season',
+        key: 'S#',
     },
     episode: {
-        key: '# Episode',
+        key: 'E#',
     },
     ratingSource: {
         key: 'Rating Source',
@@ -81,11 +81,20 @@ export const MasterTrackerMaster: MasterType = {
     guid: {
         key: 'Title GUID',
     },
-    serieId: {
+    seriesTitle: {
+        key: 'Series Title',
+    },
+    seriesDescription: {
+        key: 'Series Title',
+    },
+    seriesId: {
         key: 'Series GUID',
     },
     slingId: {
         key: 'Sling ID',
+    },
+    slingCategory: {
+        key: 'Sling Category',
     },
     teamsID: {
         key: 'Teams ID',
@@ -125,5 +134,38 @@ export const MasterTrackerMaster: MasterType = {
     },
     rsc: {
         key: 'RSC',
+    },
+    videoPath: {
+        key: 'Video File Path',
+    },
+    captionsFileName: {
+        key: 'Captions Filename',
+    },
+    artFileName: {
+        key: 'Art Filename',
+    },
+}
+
+export const MasterTrackerSeries: MasterType = {
+    id: {
+        key: 'GUID',
+    },
+    seriesName: {
+        key: 'Series Name',
+    },
+    seriesLicensor: {
+        key: 'Licensor',
+    },
+    seriesSlingId: {
+        key: '12 digits id',
+    },
+    seriesSynopsis: {
+        key: 'Synopsis Long',
+    }, 
+    seriesShortSynopsis: {
+        key: `Synopsis Short (< 110 Char)`,
+    },
+    seriesArtFileName: {
+        key: 'Art Filename',
     },
 }
