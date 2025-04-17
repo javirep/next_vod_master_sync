@@ -33,7 +33,6 @@ type propsType = { titles: VideoModel[] }
 const Page = ( props: propsType ) => {
 
     const { titles } = props;
-    console.log(titles)
 
     const videoInit = {} as VideoModelObj;
 
