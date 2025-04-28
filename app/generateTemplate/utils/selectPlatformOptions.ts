@@ -1,5 +1,4 @@
 const platformOptions = {
-    
     fubo: {
         label: 'Fubo',
         states: [
@@ -30,6 +29,13 @@ const platformOptions = {
             'Pending Metadata', 
             'On Platform',
             'N/A'
+        ]
+    },
+    frequency: {
+        label: 'Frequency',
+        states: [
+            'TRUE',
+            'FALSE',
         ]
     },
 }

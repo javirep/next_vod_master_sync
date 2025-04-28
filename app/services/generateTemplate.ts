@@ -22,7 +22,7 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
                 }
             }
             
-            if (typeof value === 'string') value = `"${value}"`
+            if (typeof value === 'string') value = `"${value.replace(/"/g, '""')}"` // Escape double quotes in strings
             row.push(value)
         })
 
@@ -97,6 +97,19 @@ const transformType = (type: string, from: string, to: string) => {
         else return 'Movies'
     }
 
+    if (to === 'frequencyFormat') {
+        if (type === 'Movies') return 'Movie'
+        if (type === 'Television') return 'Show'
+        if (type === 'Sports') return 'Event'
+    }
+
+    if (to === 'frequencyType') {
+        if (type === 'Movies') return 'Film'
+        if (type === 'Television') return 'Episode'
+        if (type === 'Sports') return 'Competitive Match'
+    }
+
+
     return type;
 }
 
@@ -134,7 +147,7 @@ const transformDuration = (value: string, from: string, to: string) => {
         return (hours * 60 + minutes + seconds / 60).toFixed(2);
     }
     if ( to == 'seconds' ) {
-        return (hours * 3600 + minutes * 60 + seconds).toFixed(2);
+        return (hours * 3600 + minutes * 60 + seconds);
     }
 
     return value;
@@ -143,6 +156,10 @@ const transformDuration = (value: string, from: string, to: string) => {
 const transformString = (value: string, from: string, to: string) => {
     if (from === 'filePath' && to === 'fileName') {
         return value.split('/').pop();
+    }
+
+    if (from =='csv' && to == '/sv') {
+        return value.split(',').map(val => val.trim()).join('/');
     }
 
     return value;

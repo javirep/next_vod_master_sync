@@ -146,7 +146,10 @@ const Page = ( props: propsType ) => {
         if (filters.brandedVOD && !video.brandedVOD) return false;
         if (filters.unbrandedVOD && !video.unbrandedVOD) return false;
         if (filters.thirdPartyLinear && !video.thirdPartyLinear) return false;
-        if (filters.platformStatus && video[platformFilter] !== filters.platformStatus ) return false;
+        if (filters.platformStatus && video[platformFilter] !== filters.platformStatus ){
+            console.log('platformStatus', video[platformFilter], filters.platformStatus)
+            return false;
+        } 
 
         return true
     }

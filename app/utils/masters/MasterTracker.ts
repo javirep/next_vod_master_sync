@@ -12,7 +12,7 @@ export const MasterTrackerTitles: MasterType = {
     id: {
         key: 'Title GUID',
     },
-    distributor: {
+    licensor: {
         key: 'Distributor',
     },
     type: {
@@ -98,6 +98,9 @@ export const MasterTrackerTitles: MasterType = {
     },
     teamsID: {
         key: 'Teams ID',
+    },
+    frequency: {
+        key: 'In Frequency',
     },
     brandedVOD: {
         key: `Branded VOD Rights`,

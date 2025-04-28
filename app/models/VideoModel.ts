@@ -36,6 +36,7 @@ export type VideoModel = {
     rightsStart: string;
     rightsEnd: string;
     rightsTerritory: string;
+    frequency: string;
     brandedVOD: boolean;
     unbrandedVOD: boolean;
     thirdPartyLinear: boolean;
