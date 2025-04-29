@@ -7,7 +7,7 @@ import { Button } from "../components/Button/Button";
 import { RowType, Table } from "../components/Table/Table";
 import { VideoModel } from "../models/VideoModel";
 import moment from "moment";
-import { generateTemplate } from "../services/generateTemplate";
+import { generateTemplate } from "../utils/generateTemplate";
 import TextInput from "../components/Inputs/TextInput/TextInput";
 import { Checkbox } from "../components/Inputs/Checkbox/Checkbox";
 import outputMasters from "../utils/masters/outputMasters";
@@ -223,7 +223,7 @@ const Page = (  ) => {
 
             <Table
                 header={[
-                    {colKey: 'distributor', colText: 'Distributor', width: 120},
+                    {colKey: 'licensor', colText: 'Distributor', width: 120},
                     {colKey: 'type', colText: 'Type', width: 80},
                     {colKey: 'title', colText: 'Title', width: 200},
                     {colKey: 'rightsStart', colText: 'Rights Start', width: 100},

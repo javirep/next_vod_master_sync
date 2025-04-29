@@ -1,6 +1,6 @@
 import { run } from "node:test";
 import { VideoModel } from "../models/VideoModel";
-import { outputMasterType, validationType } from "../utils/masters/types";
+import { outputMasterType, validationType } from "./masters/types";
 import moment from "moment";
 
 type validationOutputType = {
