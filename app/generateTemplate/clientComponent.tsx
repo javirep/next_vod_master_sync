@@ -104,19 +104,30 @@ const Page = ( props: propsType ) => {
 
         if (!master) return;
 
-        const tableContent = generateTemplate(master, selectedVideos.map(videoId => videos[videoId]));
+        const tables = generateTemplate(master, selectedVideos.map(videoId => videos[videoId]));
 
-        downloadCsv(tableContent);
+        console.log('tables', tables)
+
+        const now = moment().format('YYYY-MM-DD-HH-mm-ss');
+
+        downloadCsv(tables.content, `data-${now}.csv`);
+
+        if (tables.errors.length > 1) {
+            alert('There are errors in the template. Please check the errors file');
+            downloadCsv(tables.errors, `errors-${now}.csv`);
+        }
     }
 
-    const downloadCsv = (tableContent: any[]) => {
+    const downloadCsv = (tableContent: any[], fileName) => {
+        console.log("Downloading CSV", tableContent)
+
         const csvContent = tableContent.map(row => row.join(',')).join('\n')
 
         const blob = new Blob([csvContent], {type: 'text/csv'})
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url
-        a.download = 'data.csv'
+        a.download = fileName
         a.click()
     }
 
@@ -147,7 +158,6 @@ const Page = ( props: propsType ) => {
         if (filters.unbrandedVOD && !video.unbrandedVOD) return false;
         if (filters.thirdPartyLinear && !video.thirdPartyLinear) return false;
         if (filters.platformStatus && video[platformFilter] !== filters.platformStatus ){
-            console.log('platformStatus', video[platformFilter], filters.platformStatus)
             return false;
         } 
 

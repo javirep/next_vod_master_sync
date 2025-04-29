@@ -1,11 +1,17 @@
+import { run } from "node:test";
 import { VideoModel } from "../models/VideoModel";
-import { outputMasterType } from "../utils/masters/types";
+import { outputMasterType, validationType } from "../utils/masters/types";
 import moment from "moment";
 
+type validationOutputType = {
+    success: boolean;
+    errorMessage?: string;
+}
 
 export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel[]) => {
 
     let header = masterObj.master.map(field => field.header);
+    let errors: any[][] = [['title', 'error_field', 'error_message', 'date']];
 
     let content = videos.map(video => {
         let row: any[] = [];
@@ -21,6 +27,34 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
                     value = video[field.key]
                 }
             }
+
+            if (field.validation && field.validation.required) {
+                let validationOutput: validationOutputType = isRequired( value )
+                if (!validationOutput.success) {
+                    errors.push([video.title, field.key, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
+                }
+            }
+
+            if (field.validation && field.validation.format) {
+                let validationOutput: validationOutputType = isFormated( value, field.validation.format )
+                if (!validationOutput.success) {
+                    errors.push([video.title, field.key, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
+                }
+            }
+
+            if ( field.validation && field.validation.beforeThan ) {
+                let beforeThanValue = row[field.validation.beforeThan];
+
+                if ( !isBeforeThan( value, beforeThanValue ) ) {
+                    errors.push([video.title, field.key, `"${field.key} (value: ${value}) should be later than ${field.validation.beforeThan} (value: ${beforeThanValue.replaceAll('"', "")})"`, moment().format('YYYY-MM-DD')])
+                }
+            }
+
+            if ( field.validation && field.validation.maxLength ) {
+                if ( !isShorterThan( value, field.validation.maxLength ) ) {
+                    errors.push([video.title, field.key, `"${field.key} (value: ${value}) should be shorter than ${field.validation.maxLength}"`, moment().format('YYYY-MM-DD')])
+                }
+            }
             
             if (typeof value === 'string') value = `"${value.replace(/"/g, '""')}"` // Escape double quotes in strings
             row.push(value)
@@ -31,10 +65,13 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
     })
 
 
-    return [header, ...content];
+    return {
+        content: [header, ...content], 
+        errors: [...errors],
+    }
 }
 
-const transform= (value: string, type: string, from: string, to: string) => {
+const transform = (value: string, type: string, from: string, to: string) => {
     if (type === 'date') {
         return transformDate(value, from, to)
     }
@@ -123,7 +160,6 @@ const transformAdBreaks = (adBreaks: string, from: string, to: string) => {
     return adBreaks.split(', ').map((adBreak: string) => transformDuration(adBreak, from, to)).join(', ')
 }
 
-
 const transformDuration = (value: string, from: string, to: string) => {
     let hours = 0;
     let minutes = 0;
@@ -163,4 +199,98 @@ const transformString = (value: string, from: string, to: string) => {
     }
 
     return value;
+}
+
+const isRequired = ( value: string ) => {
+    if ( value ) return  {success: true};
+    return {success: false, errorMessage: `No value provided for required field`};
+}
+
+const isFormated = ( value: string, format: string ) => {
+    if (!value) return { success: true };
+
+    if (format === 'YYYY-MM-DD' && !moment(value, format, true).isValid()) {
+       return {
+            success: false,
+            errorMessage: `"Invalid date format for date ${value}. Expected format is ${format}"`,
+        }
+    }
+
+    else if (format === "rokyContentType" && !['movie', 'episode', 'shortForm'].includes(value)) {
+        return {
+            success: false,
+            errorMessage: `"Invalid content type ${value}. Expected values are movie, episode, shortForm"`,
+        }
+    }
+
+    else if ( format === 'countryCode' && !/^[A-Z]{2}$/.test(value)) {
+        return {
+            success: false,
+            errorMessage: `"Invalid country code ${value}. Expected format is 2 uppercase letters"`,
+        }
+    }
+
+    else if ( format === 'countryCodes' && !/^[A-Z]{2}(,\s*[A-Z]{2})*$/.test(value)) {
+        return {
+            success: false,
+            errorMessage: `"Invalid country codes ${value}. Expected format is 2 uppercase letters separated by commas"`,
+        }
+    }
+
+    else if ( format === 'uuid' && !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value)) {
+        return {
+            success: false,
+            errorMessage: `"Invalid UUID ${value}. Expected format is 8-4-4-4-12 hexadecimal characters"`,
+        }
+    }
+
+    else if ( format === 'wholeNumber' && Number.isInteger(Number(value)) === false) {
+        return {
+            success: false,
+            errorMessage: `"Invalid whole number ${value}. Expected format is a whole number"`,
+        }
+    }
+
+    else if ( format === "ratingSource" && !['MPAA', 'USA_PR', 'BBFC', 'CHVRS', 'CPR', 'RTC' ].includes(value)) {
+        return {
+            success: false,
+            errorMessage: `"Invalid rating source ${value}. Expected values are MPAA, USA_PR, BBFC, CHVRS, CPR, RTC"`,
+        }
+    }
+    else if ( format === "ratingValue" && !/^[A-Z]{2,3}$/.test(value)) {
+        return {
+            success: false,
+            errorMessage: `"Invalid rating ${value}. Expected format is 2 or 3 uppercase letters"`,
+        }
+    }
+
+    return {success: true};
+
+}
+
+const isBeforeThan = ( value: string, threshold: string ) => {
+    if ( value.charAt(0) === '"' ) {
+        value = value.substring(1, value.length - 1);
+    }
+
+    console.log(value, threshold);
+    console.log(moment(value).isBefore(threshold));
+
+    if (moment(value).isBefore(threshold)) {
+        return { success: true };
+    }
+
+    return {
+        success: false,
+    }
+}
+
+const isShorterThan = ( value: string, threshold: number ) => {
+    if (value.length <= threshold) {
+        return { success: true };
+    }
+
+    return {
+        success: false,
+    }
 }
