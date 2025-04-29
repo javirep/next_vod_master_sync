@@ -16,6 +16,7 @@ import './generateTemplate.scss';
 import { SelectInput, SelectOption } from "../components/Inputs/SelectInput/SelectInput";
 import RootLayout from "../layout";
 import selectPlatformsOptions from "./utils/selectPlatformOptions";
+import { getMasterTrackerData } from "../services/masterTracker";
 
 type TableFilters = {
     distributor: string
@@ -28,24 +29,46 @@ type TableFilters = {
 
 type VideoModelObj = { [key:string]: VideoModel }
 
-type propsType = { titles: VideoModel[] }
+const Page = (  ) => {
 
-const Page = ( props: propsType ) => {
-
-    const { titles } = props;
-
-    const videoInit = {} as VideoModelObj;
-
-    titles.forEach(title => {
-        videoInit[title.guid] = title;
-    })
-
-    const [ videos, setVideos ] = useState<VideoModelObj>(videoInit);
+    const [ videos, setVideos ] = useState<VideoModelObj>({});
     const [ filteredVideos, setFilteredVideos ] = useState<VideoModel[]>([]);
     const [ rowsPerPage, setRowsPerPage ] = React.useState<number>(50);
     const [ currentPage, setCurrentPage ] = React.useState<number>(0);
     const [ selectedVideos, setSelectedVideos ] = useState<string[]>([]);
     const [ platformFilter, setPlatformFilter ] = React.useState<string>('');
+    
+    const initContent = async () => {
+        const { titles, series } = await getMasterTrackerData();
+        
+        for (let i = 0; i < titles.length; i++) {
+            const title = titles[i];
+            if (title.series) {
+                const seriesTitle = series[title.series];
+                if (seriesTitle) {
+                    title.seriesName = seriesTitle.seriesName;
+                    title.seriesLicensor = seriesTitle.seriesLicensor;
+                    title.seriesSlingId = seriesTitle.seriesSlingId;
+                    title.seriesSynopsis = seriesTitle.seriesSynopsis;
+                    title.seriesShortSynopsis = seriesTitle.seriesShortSynopsis;
+                    title.seriesArtFileName = seriesTitle.seriesArtFileName;
+                }
+            }
+        }
+
+        const videosInit = {} as VideoModelObj;
+        
+        titles.forEach(title => {
+            videosInit[title.guid] = title;
+        })
+
+        setFilteredVideos(getVideosAsVideoModel(videosInit));
+        setVideos(videosInit);
+    }
+
+    useEffect(() => {
+        initContent();
+    }, [])
 
     const [filters, setFilters] = useState<TableFilters>({
         distributor: '',
@@ -106,8 +129,6 @@ const Page = ( props: propsType ) => {
 
         const tables = generateTemplate(master, selectedVideos.map(videoId => videos[videoId]));
 
-        console.log('tables', tables)
-
         const now = moment().format('YYYY-MM-DD-HH-mm-ss');
 
         downloadCsv(tables.content, `data-${now}.csv`);
@@ -119,7 +140,6 @@ const Page = ( props: propsType ) => {
     }
 
     const downloadCsv = (tableContent: any[], fileName) => {
-        console.log("Downloading CSV", tableContent)
 
         const csvContent = tableContent.map(row => row.join(',')).join('\n')
 
@@ -238,6 +258,6 @@ const Page = ( props: propsType ) => {
     )
 }
 
-const PageWrapper = (props: propsType) => <RootLayout><Page {... props} /></RootLayout>
+const PageWrapper = () => <RootLayout><Page /></RootLayout>
 
 export default PageWrapper;

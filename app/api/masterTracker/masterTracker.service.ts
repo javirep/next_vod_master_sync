@@ -1,13 +1,13 @@
 import axios from "axios";
-import { VideoModel } from "../models/VideoModel";
-import { MasterTrackerTitles, MasterTrackerSeries } from "../utils/masters/MasterTracker";
-import { SeriesModel } from "../models/SeriesModel";
+import { VideoModel } from "../../models/VideoModel";
+import { MasterTrackerTitles, MasterTrackerSeries } from "../../utils/masters/MasterTracker";
+import { SeriesModel } from "../../models/SeriesModel";
 
 export const getTitles = async () => {
     const apiKey = process.env.NEXT_API_KEY;
     const spreadsheetId = process.env.NEXT_MASTER_TRACKER_ID;
     const range = 'Titles'; // Adjust if neededimport React from 'react';
-    
+
     try {
         
         const response = await axios.get(
@@ -15,6 +15,7 @@ export const getTitles = async () => {
         );
 
         let data: string[][] = response.data.values || [];
+
 
 
         let titles: VideoModel[] = mapDataToVideoModel(data);
