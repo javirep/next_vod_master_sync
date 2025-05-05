@@ -14,6 +14,9 @@ export type VideoModel = {
     seriesSynopsis?: string;
     seriesShortSynopsis?: string;
     seriesArtFileName?: string;
+    seriesReleaseDate?: string;
+    seriesGenre?: string;
+    seriesTags?: string;
     season?: number;
     episode?: number;
     ratingSource: string;

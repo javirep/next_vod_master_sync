@@ -74,7 +74,7 @@ export const RokuAvailsMaster: outputMasterType = {
             },
             validation: {
                 required: true,
-                format: 'rokyContentType',
+                format: 'rokuContentType',
             }
         },
         {

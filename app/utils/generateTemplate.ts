@@ -2,6 +2,7 @@ import { run } from "node:test";
 import { VideoModel } from "../models/VideoModel";
 import { outputMasterType, validationType } from "./masters/types";
 import moment from "moment";
+import { use } from "react";
 
 type validationOutputType = {
     success: boolean;
@@ -21,7 +22,9 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
 
             if (field.key && video[field.key] && video[field.key] != '') {
                 if (field.transform) {
-                    value = transform(video[field.key], field.transform.type, field.transform.from, field.transform.to)
+                    console.log(field.transform.using)
+                    console.log(video)
+                    value = transform(video[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => video[useField]))
                 }
                 else {
                     value = video[field.key]
@@ -71,7 +74,7 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
     }
 }
 
-const transform = (value: string, type: string, from: string, to: string) => {
+const transform = (value: string, type: string, from: string, to: string, using: string[] = []) => {
     if (type === 'date') {
         return transformDate(value, from, to)
     }
@@ -93,6 +96,10 @@ const transform = (value: string, type: string, from: string, to: string) => {
     else if (type === 'string') {
         return transformString(value, from, to)
     }
+    else if ( type === 'uuid' ) {
+        return transformUUID(value, from, to, using)
+    }
+            
 
     return value;
 }
@@ -164,12 +171,14 @@ const transformDuration = (value: string, from: string, to: string) => {
     let hours = 0;
     let minutes = 0;
     let seconds = 0;
+    let frames = 0;
 
     if (from == 'HH:mm:ss' || from == 'HH:mm:ss;ff') {
         const durationParts = value.split(':');
         hours = parseInt(durationParts[0], 10);
         minutes = parseInt(durationParts[1], 10);
-        seconds = parseInt(durationParts[2], 10);
+        seconds = parseInt(durationParts[2].split(";")[0], 10);
+        frames = parseInt(durationParts[2].split(";")[1], 10) || 0;
     }
     else if (from == 'min') {
         hours = Math.floor(Number(value) / 60);
@@ -178,6 +187,13 @@ const transformDuration = (value: string, from: string, to: string) => {
 
     if ( to == 'HH:mm:ss' ) {
         return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+    if ( to == 'HH:mm:ss;ff' ) {
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')};${String(frames).padStart(2, '0')}`;
+    }
+    if (to == 'HH:mm:ss.fff') {
+        frames = Math.floor(Number(frames) * 100 / 30);
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(frames).padStart(3, '0')}`;
     }
     if ( to == 'min' ) {
         return (hours * 60 + minutes + seconds / 60).toFixed(2);
@@ -201,6 +217,16 @@ const transformString = (value: string, from: string, to: string) => {
     return value;
 }
 
+const transformUUID = (value: string, from: string, to: string, using: string[]) => {
+    let uuid = value;
+
+    if (from === 'uuid' && to == 'uuid-season') {
+        const season = using[0];
+        return `${uuid}-${season.padStart(2, '0')}`;
+    }
+
+    return value;
+}
 const isRequired = ( value: string ) => {
     if ( value ) return  {success: true};
     return {success: false, errorMessage: `No value provided for required field`};
@@ -216,7 +242,7 @@ const isFormated = ( value: string, format: string ) => {
         }
     }
 
-    else if (format === "rokyContentType" && !['movie', 'episode', 'shortForm'].includes(value)) {
+    else if (format === "rokuContentType" && !['movie', 'episode', 'shortForm'].includes(value)) {
         return {
             success: false,
             errorMessage: `"Invalid content type ${value}. Expected values are movie, episode, shortForm"`,
@@ -257,11 +283,8 @@ const isFormated = ( value: string, format: string ) => {
             errorMessage: `"Invalid rating source ${value}. Expected values are MPAA, USA_PR, BBFC, CHVRS, CPR, RTC"`,
         }
     }
-    else if ( format === "ratingValue" && !/^[A-Z]{2,3}$/.test(value)) {
-        return {
-            success: false,
-            errorMessage: `"Invalid rating ${value}. Expected format is 2 or 3 uppercase letters"`,
-        }
+    else if ( format.includes("adBreaks") ) {
+        return areValidAdBreaks(value, format.split('-')[1]);
     }
 
     return {success: true};
@@ -286,6 +309,8 @@ const isBeforeThan = ( value: string, threshold: string ) => {
 }
 
 const isShorterThan = ( value: string, threshold: number ) => {
+    if (!value) return { success: true };
+
     if (value.length <= threshold) {
         return { success: true };
     }
@@ -293,4 +318,33 @@ const isShorterThan = ( value: string, threshold: number ) => {
     return {
         success: false,
     }
+}
+
+const areValidAdBreaks = ( adBreaks: string, format: string ) => {
+    if ( !adBreaks ) return { success: true };
+
+    let errors: string[] = [];
+    
+    const adBreaksArray = adBreaks.split(', ');
+    for ( let i = 0; i < adBreaksArray.length; i++ ) {
+        const validation = isValidAdBreak(adBreaksArray[i], format);
+        if ( !validation.success && validation.errorMessage ) {
+            errors.push(validation.errorMessage);
+        }
+    }
+
+    return { success: true };
+}
+
+const isValidAdBreak = ( adBreak: string, format: string ) => {
+    if ( !adBreak ) return { success: true };
+
+    if ( !/^[0-9]+:[0-5][0-9]$/.test(adBreak) ) {
+        return {
+            success: false,
+            errorMessage: `Invalid ad break ${adBreak}. Expected format is mm:ss`,
+        }
+    }
+
+    return { success: true };
 }

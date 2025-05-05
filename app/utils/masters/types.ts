@@ -25,6 +25,7 @@ export type outputMasterField = {
         type: string;
         from: string;
         to: string;
+        using?: string[];
     }
     validation?: validationType;
 }

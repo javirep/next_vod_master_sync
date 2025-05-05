@@ -52,6 +52,9 @@ const Page = (  ) => {
                     title.seriesSynopsis = seriesTitle.seriesSynopsis;
                     title.seriesShortSynopsis = seriesTitle.seriesShortSynopsis;
                     title.seriesArtFileName = seriesTitle.seriesArtFileName;
+                    title.seriesReleaseDate = seriesTitle.seriesReleaseDate;
+                    title.seriesGenre = seriesTitle.seriesGenre;
+                    title.seriesTags = seriesTitle.seriesTags;
                 }
             }
         }

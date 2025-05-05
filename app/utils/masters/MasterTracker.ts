@@ -160,13 +160,22 @@ export const MasterTrackerSeries: MasterType = {
         key: 'Licensor',
     },
     seriesSlingId: {
-        key: '12 digits id',
+        key: 'Sling ID',
     },
     seriesSynopsis: {
         key: 'Synopsis Long',
     }, 
     seriesShortSynopsis: {
-        key: `Synopsis Short (< 110 Char)`,
+        key: `Synopsis Short (<110 Char)`,
+    },
+    seriesReleaseDate: {
+        key: 'Release Date',
+    },
+    seriesGenre: {
+        key: 'Genre',
+    },
+    seriesTags: {
+        key: 'Tags',
     },
     seriesArtFileName: {
         key: 'Art Filename',
