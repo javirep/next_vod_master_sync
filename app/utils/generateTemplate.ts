@@ -22,8 +22,6 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
 
             if (field.key && video[field.key] && video[field.key] != '') {
                 if (field.transform) {
-                    console.log(field.transform.using)
-                    console.log(video)
                     value = transform(video[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => video[useField]))
                 }
                 else {
@@ -295,9 +293,6 @@ const isBeforeThan = ( value: string, threshold: string ) => {
     if ( value.charAt(0) === '"' ) {
         value = value.substring(1, value.length - 1);
     }
-
-    console.log(value, threshold);
-    console.log(moment(value).isBefore(threshold));
 
     if (moment(value).isBefore(threshold)) {
         return { success: true };
