@@ -393,6 +393,10 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
             header: "episode_startDate",
             key: '',
             defaultValue: '',
+            validation: {
+                required: true,
+                format: 'YYYY-MM-DD',
+            }
         },
         {
             header: "episode_endDate",

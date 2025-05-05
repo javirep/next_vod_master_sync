@@ -10,9 +10,9 @@ import { RokuMDUEpisodesMaster } from "./RokuMDUEpisodesMaster";
 export default [
     RokuAvailsMaster, 
     RokuMDUEpisodesMaster,
-    SlingMaster,
-    SlingMasterJavi,
+    /* SlingMaster,
+    SlingMasterJavi, */
     VizioMaster,
-    XumoMasterJavi,
+    //XumoMasterJavi,
     FrequencyMaster
 ]
