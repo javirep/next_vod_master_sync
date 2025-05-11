@@ -1,8 +1,9 @@
 import { run } from "node:test";
 import { VideoModel } from "../models/VideoModel";
-import { outputMasterType, validationType } from "./masters/types";
+import { outputMasterType, transformType, validationType } from "./masters/types";
 import moment from "moment";
 import { use } from "react";
+import { unique } from "next/dist/build/utils";
 
 type validationOutputType = {
     success: boolean;
@@ -14,7 +15,7 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
     let header = masterObj.master.map(field => field.header);
     let errors: any[][] = [['title', 'error_field', 'error_message', 'date']];
 
-    let content = videos.map(video => {
+    let content = videos.map((video, index) => {
         let row: any[] = [];
 
         masterObj.master.forEach(field => {
@@ -32,14 +33,14 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
             if (field.validation && field.validation.required) {
                 let validationOutput: validationOutputType = isRequired( value )
                 if (!validationOutput.success) {
-                    errors.push([video.title, field.key, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
+                    errors.push([video.title, field.header, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
                 }
             }
 
             if (field.validation && field.validation.format) {
                 let validationOutput: validationOutputType = isFormated( value, field.validation.format )
                 if (!validationOutput.success) {
-                    errors.push([video.title, field.key, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
+                    errors.push([video.title, field.header, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
                 }
             }
 
@@ -47,13 +48,21 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
                 let beforeThanValue = row[field.validation.beforeThan];
 
                 if ( !isBeforeThan( value, beforeThanValue ) ) {
-                    errors.push([video.title, field.key, `"${field.key} (value: ${value}) should be later than ${field.validation.beforeThan} (value: ${beforeThanValue.replaceAll('"', "")})"`, moment().format('YYYY-MM-DD')])
+                    errors.push([video.title, field.header, `"${field.key} (value: ${value}) should be later than ${field.validation.beforeThan} (value: ${beforeThanValue.replaceAll('"', "")})"`, moment().format('YYYY-MM-DD')])
                 }
             }
 
             if ( field.validation && field.validation.maxLength ) {
                 if ( !isShorterThan( value, field.validation.maxLength ) ) {
-                    errors.push([video.title, field.key, `"${field.key} (value: ${value}) should be shorter than ${field.validation.maxLength}"`, moment().format('YYYY-MM-DD')])
+                    errors.push([video.title, field.header, `"${field.header} (value: ${value}) should be shorter than ${field.validation.maxLength}"`, moment().format('YYYY-MM-DD')])
+                }
+            }
+
+            if ( field.validation && field.validation.isUnique ) {
+                let isUniqueResult = isUnique( value, field.key, index, videos, field.transform)
+                console.log("isUniqueResult", isUniqueResult)
+                if ( isUniqueResult.success === false  && isUniqueResult.errorMessage ) {
+                    errors.push([video.title, field.header, isUniqueResult.errorMessage, moment().format('YYYY-MM-DD')])
                 }
             }
             
@@ -80,7 +89,7 @@ const transform = (value: string, type: string, from: string, to: string, using:
         return transformTerritory(value, from, to)
     }
     else if (type === 'type') {
-        return transformType(value, from, to)
+        return transformTypeFn(value, from, to)
     }
     else if (type === 'ratingSource') {
         return transformRatingSource(value, from, to)
@@ -120,7 +129,7 @@ const transformTerritory = (territories: string, from: string, to: string) => {
     return territories;
 }
 
-const transformType = (type: string, from: string, to: string) => {
+const transformTypeFn = (type: string, from: string, to: string) => {
     if (to === 'Roku') {
         if (type === 'Movies') return 'movie'
         if (type === 'Television') return 'episode'
@@ -342,4 +351,31 @@ const isValidAdBreak = ( adBreak: string, format: string ) => {
     }
 
     return { success: true };
+}
+
+const isUnique = ( value: string, key:string, index: number, videos: VideoModel[], transformData?: transformType ) => {
+    
+    if ( !value ) return { success: true };
+
+    let isUnique = true;
+    let i = 0;
+
+    for (i; i < index; i++) {
+        const comparingValue = transformData ? transform ( videos[i][key], transformData.type, transformData.from, transformData.to, transformData.using?.map(useField => videos[i][useField])) 
+        : videos[i][key];
+
+        if (comparingValue === value) {
+            isUnique = false;
+            break;
+        }
+    }
+
+    if (isUnique) {
+        return { success: true };
+    }
+
+    return {
+        success: false,
+        errorMessage: `"${value} should be unique. Repeated in row ${i + 1}"`,
+    }
 }

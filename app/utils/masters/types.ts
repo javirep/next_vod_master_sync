@@ -14,6 +14,14 @@ export type validationType = {
     format?: string;
     beforeThan?: number; // index of the field to compare with
     maxLength?: number;
+    isUnique?: boolean;
+}
+
+export type transformType = {
+    type: string;
+    from: string;
+    to: string;
+    using?: string[];
 }
 
 export type outputMasterField = {
@@ -21,12 +29,7 @@ export type outputMasterField = {
     defaultValue?: any;
     header?: string;
     description?: string;
-    transform?: {
-        type: string;
-        from: string;
-        to: string;
-        using?: string[];
-    }
+    transform?: transformType;
     validation?: validationType;
 }
 

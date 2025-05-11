@@ -142,6 +142,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
             validation: {
                 required: true,
                 format: 'uuid',
+                isUnique: true,
             }
         },
         {
@@ -283,6 +284,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
             validation: {
                 required: true,
                 format: 'fileName',
+                isUnique: true,
             }
         },
         {
@@ -307,7 +309,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Closed_Caption_File_Name",
-            key: 'captionFileName',
+            key: 'captionsFileName',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -373,6 +375,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
             validation: {
                 required: true,
                 format: 'fileName',
+                isUnique: true,
             }
         },
         {
