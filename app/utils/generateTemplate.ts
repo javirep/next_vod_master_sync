@@ -237,14 +237,11 @@ const transformUUID = (value: string, from: string, to: string, using: string[])
 }
 
 const transformGenre = (value: string, from: string, to: string) => {
-    console.log("transformGenre", value, from, to)
     if (to === 'frequency') {
         value = value.split(',')[0].trim()
     }
 
     const masterKey = value.replaceAll(" ", "_")
-    console.log("masterKey", masterKey)
-    console.log("genresMaster", genresMaster, genresMaster[masterKey])
 
     if (genresMaster[masterKey]) {
         return genresMaster[masterKey][to];

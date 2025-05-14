@@ -8,11 +8,17 @@ export const FrequencyMaster: outputMasterType = {
             header: 'title',
             key: 'title',
             defaultValue: '',
+            validation: {
+                required: true,
+            }
         },
         {
             header: 'description',
             key: 'shortSynopsis',
             defaultValue: '',
+            validation: {
+                required: true,
+            }
         },
         {
             header: 'video_file',
@@ -22,6 +28,10 @@ export const FrequencyMaster: outputMasterType = {
                 type: 'string',
                 from: 'filePath',
                 to: 'fileName',
+            }, 
+            validation: {
+                required: true,
+                isUnique: true,
             }
         },
         {
@@ -32,6 +42,9 @@ export const FrequencyMaster: outputMasterType = {
                 type: 'string',
                 from: 'filePath',
                 to: 'fileName',
+            },
+            validation: {
+                required: true,
             }
         },
         {
@@ -47,6 +60,9 @@ export const FrequencyMaster: outputMasterType = {
                 type: 'type',
                 from: 'masterTracker',
                 to: 'frequencyFormat',
+            },
+            validation: {
+                required: true,
             }
         },
         {
@@ -57,6 +73,9 @@ export const FrequencyMaster: outputMasterType = {
                 type: 'type',
                 from: 'masterTracker',
                 to: 'frequencyType',
+            },
+            validation: {
+                required: true,
             }
         },
         {
@@ -82,6 +101,9 @@ export const FrequencyMaster: outputMasterType = {
                 type: 'genre',
                 from: 'masterTracker',
                 to: 'frequency',
+            },
+            validation: {
+                required: true,
             }
         },
         {
@@ -92,7 +114,7 @@ export const FrequencyMaster: outputMasterType = {
                 type: 'duration',
                 from: 'min',
                 to: 'seconds',
-            }
+            },
         },
         {
             header: 'cue_points',
@@ -103,6 +125,10 @@ export const FrequencyMaster: outputMasterType = {
             header: 'publish_date',
             key: 'releaseDate',
             defaultValue: '',
+            validation: {
+                required: false,
+                format: 'YYYY-MM-DD',
+            }
         },
         {
             header: 'country',
