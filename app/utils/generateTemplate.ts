@@ -1,9 +1,8 @@
-import { run } from "node:test";
+
 import { VideoModel } from "../models/VideoModel";
 import { outputMasterType, transformType, validationType } from "./masters/types";
 import moment from "moment";
-import { use } from "react";
-import { unique } from "next/dist/build/utils";
+import { genresMaster } from "./masters/genresMaster";
 
 type validationOutputType = {
     success: boolean;
@@ -106,7 +105,9 @@ const transform = (value: string, type: string, from: string, to: string, using:
     else if ( type === 'uuid' ) {
         return transformUUID(value, from, to, using)
     }
-            
+    else if (type === 'genre') {
+        return transformGenre(value, from, to)
+    }
 
     return value;
 }
@@ -234,6 +235,24 @@ const transformUUID = (value: string, from: string, to: string, using: string[])
 
     return value;
 }
+
+const transformGenre = (value: string, from: string, to: string) => {
+    console.log("transformGenre", value, from, to)
+    if (to === 'frequency') {
+        value = value.split(',')[0].trim()
+    }
+
+    const masterKey = value.replaceAll(" ", "_")
+    console.log("masterKey", masterKey)
+    console.log("genresMaster", genresMaster, genresMaster[masterKey])
+
+    if (genresMaster[masterKey]) {
+        return genresMaster[masterKey][to];
+    }
+
+    return value
+}
+
 const isRequired = ( value: string ) => {
     if ( value ) return  {success: true};
     return {success: false, errorMessage: `No value provided for required field`};

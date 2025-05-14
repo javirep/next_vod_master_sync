@@ -36,7 +36,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'keywords',
-            key: 'genre',
+            key: 'tags',
             defaultValue: '',
         },
         {
@@ -79,9 +79,9 @@ export const FrequencyMaster: outputMasterType = {
             key: 'genre',
             defaultValue: '',
             transform: {
-                type: 'string',
-                from: 'csv',
-                to: '/sv',
+                type: 'genre',
+                from: 'masterTracker',
+                to: 'frequency',
             }
         },
         {
