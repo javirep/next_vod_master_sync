@@ -43,11 +43,20 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
                 }
             }
 
-            if ( field.validation && field.validation.beforeThan ) {
-                let beforeThanValue = row[field.validation.beforeThan];
+            if ( field.validation && field.validation.afterThan ) {
+                let threshold = row[field.validation.afterThan];
+                let isBeforeThanResult = isBeforeThan( value, threshold )
 
-                if ( !isBeforeThan( value, beforeThanValue ) ) {
-                    errors.push([video.title, field.header, `"${field.key} (value: ${value}) should be later than ${field.validation.beforeThan} (value: ${beforeThanValue.replaceAll('"', "")})"`, moment().format('YYYY-MM-DD')])
+                if ( isBeforeThanResult.success ) {
+                    errors.push([video.title, field.header, `${field.key} ( ${value} ) should be later than ${threshold.replaceAll('"', "")}`, moment().format('YYYY-MM-DD')])
+                }
+            }
+
+            if ( field.validation && field.validation.futureDate ) {
+                let isBeforeThanResult = isBeforeThan( value, moment().format('YYYY-MM-DD') )
+
+                if ( isBeforeThanResult.success ) {
+                    errors.push([video.title, field.header, `"${field.key} (value: ${value}) should be in the future"`, moment().format('YYYY-MM-DD')])
                 }
             }
 
@@ -59,7 +68,6 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
 
             if ( field.validation && field.validation.isUnique ) {
                 let isUniqueResult = isUnique( value, field.key, index, videos, field.transform)
-                console.log("isUniqueResult", isUniqueResult)
                 if ( isUniqueResult.success === false  && isUniqueResult.errorMessage ) {
                     errors.push([video.title, field.header, isUniqueResult.errorMessage, moment().format('YYYY-MM-DD')])
                 }
@@ -318,14 +326,8 @@ const isBeforeThan = ( value: string, threshold: string ) => {
     if ( value.charAt(0) === '"' ) {
         value = value.substring(1, value.length - 1);
     }
-
-    if (moment(value).isBefore(threshold)) {
-        return { success: true };
-    }
-
-    return {
-        success: false,
-    }
+    
+    return { success: moment(value).isBefore(threshold) }
 }
 
 const isShorterThan = ( value: string, threshold: number ) => {

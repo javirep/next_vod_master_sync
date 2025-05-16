@@ -90,7 +90,7 @@ export const RokuAvailsMaster: outputMasterType = {
         {
             header: headers[5],
             key: '',
-            defaultValue: moment().add(30, 'day').format('YYYY-MM-DD') // Start Date
+            defaultValue: moment().add(60, 'day').format('YYYY-MM-DD') // Start Date
         },
         {
             header: headers[6],
@@ -98,7 +98,8 @@ export const RokuAvailsMaster: outputMasterType = {
             validation: {
                 required: true,
                 format: 'YYYY-MM-DD',
-                beforeThan: 5,
+                afterThan: 5,
+                futureDate: true,
             }
         },
         {

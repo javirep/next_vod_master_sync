@@ -408,6 +408,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
             validation: {
                 required: true,
                 format: 'YYYY-MM-DD',
+                futureDate: true,
             }
         },
         {

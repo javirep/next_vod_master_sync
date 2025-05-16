@@ -12,7 +12,8 @@ export type sourceMasterType = {
 export type validationType = {
     required: boolean;
     format?: string;
-    beforeThan?: number; // index of the field to compare with
+    afterThan?: number; // index of the field to compare with
+    futureDate?: boolean;
     maxLength?: number;
     isUnique?: boolean;
 }
