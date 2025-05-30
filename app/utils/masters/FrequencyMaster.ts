@@ -3,6 +3,7 @@ import { outputMasterType } from "./types";
 export const FrequencyMaster: outputMasterType = {
     name: 'Frequency Manifest',
     id: 'frequencyManifest',
+    outputName: 'Swerve-Metadata-Manifest',
     master: [
         {
             header: 'title',
@@ -118,17 +119,18 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'cue_points',
-            key: '',
+            key: 'adBreaks',
             defaultValue: '',
+            transform: {
+                type: 'adBreaks',
+                from: 'HH:mm:ss;ff',
+                to: 'HH:mm:ss.fff',
+            },
         },
         {
             header: 'publish_date',
-            key: 'releaseDate',
+            key: '',
             defaultValue: '',
-            validation: {
-                required: false,
-                format: 'YYYY-MM-DD',
-            }
         },
         {
             header: 'country',
@@ -139,6 +141,9 @@ export const FrequencyMaster: outputMasterType = {
             header: 'rating',
             key: 'ratingValue',
             defaultValue: '',
+            validation: {
+                required: true,
+            }
         },
         {
             header: 'audio_language',
@@ -149,6 +154,11 @@ export const FrequencyMaster: outputMasterType = {
             header: 'captions_language',
             key: '',
             defaultValue: 'en',
+            transform: {
+                type: 'string',
+                from: 'filePath',
+                to: 'fileName',
+            }
         },
         {
             header: 'captions_file',
@@ -157,13 +167,8 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'guid',
-            key: 'videoPath',
-            defaultValue: '',
-            transform: {
-                type: 'string',
-                from: 'filePath',
-                to: 'fileName',
-            }
+            key: 'guid',
+            defaultValue: ''
         },
     ]
 }

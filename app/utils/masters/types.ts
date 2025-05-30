@@ -38,6 +38,7 @@ export type outputMasterType = {
     name: string;
     id: string;
     master: outputMasterField[]
+    outputName?: string;
 }
 
 export enum AvailsType {

@@ -134,7 +134,9 @@ const Page = (  ) => {
 
         const now = moment().format('YYYY-MM-DD-HH-mm-ss');
 
-        downloadCsv(tables.content, `data-${now}.csv`);
+        const ouputFileName = master.outputName ? `${master.outputName}-${now}.csv` : `data-${now}.csv`;
+
+        downloadCsv(tables.content, ouputFileName);
 
         if (tables.errors.length > 1) {
             alert('There are errors in the template. Please check the errors file');
@@ -231,18 +233,10 @@ const Page = (  ) => {
                     {colKey: 'title', colText: 'Title', width: 200},
                     {colKey: 'rightsStart', colText: 'Rights Start', width: 100},
                     {colKey: 'rightsEnd', colText: 'Rights End', width: 100},
+                    {colKey: 'frequency', colText: 'In Frequency', width: 150},
                     {colKey: 'brandedVOD', colText: 'Branded VOD', width: 50},
                     {colKey: 'unbrandedVOD', colText: 'Unbranded VOD', width: 50},
-                    {colKey: 'thirdPartyLinear', colText: '3rd Party Linear', width: 50},
-                    {colKey: 'fubo', colText: 'Fubo', width: 100},
-                    {colKey: 'sling', colText: 'Sling', width: 100},
-                    {colKey: 'xumo', colText: 'Xumo', width: 100},
-                    {colKey: 'amazon', colText: 'Amazon', width: 100},
-                    {colKey: 'pluto', colText: 'Pluto', width: 100},
-                    {colKey: 'roku', colText: 'Roku', width: 100},
-                    {colKey: 'vizio', colText: 'Vizio', width: 100},
-                    {colKey: 'fsn', colText: 'FSN', width: 100},
-                    {colKey: 'rsc', colText: 'RSC', width: 100},
+                    {colKey: 'thirdPartyLinear', colText: '3rd Party Linear', width: 100},
                 ]}
                 rows={getRows()}
                 onRowsPerPageChange={(num) => setRowsPerPage(num)}
