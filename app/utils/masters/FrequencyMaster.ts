@@ -153,17 +153,17 @@ export const FrequencyMaster: outputMasterType = {
         {
             header: 'captions_language',
             key: '',
-            defaultValue: 'en',
-            transform: {
-                type: 'string',
-                from: 'filePath',
-                to: 'fileName',
-            }
+            defaultValue: 'en'
         },
         {
             header: 'captions_file',
             key: 'captionsFileName',
             defaultValue: '',
+            transform: {
+                type: 'string',
+                from: 'filePath',
+                to: 'fileName',
+            }
         },
         {
             header: 'guid',
