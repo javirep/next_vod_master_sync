@@ -10,9 +10,11 @@ import { Checkbox } from "../Inputs/Checkbox/Checkbox";
 import { TableRow } from "./Row";
 import TableIndexator, { TableIndexatorProps } from "./TableIndexator";
 import { NumberInput } from "../Inputs/NumberInput/NumberInput";
+import { VideoModel } from "@/app/models/VideoModel";
 
-export type RowType =  {
-    [key: string]: string ;
+export type RowType = Partial <VideoModel> & {
+    guid: string,
+    selected: Boolean
 }
 
 type HeaderType = {
@@ -26,8 +28,7 @@ type TableProps = {
     rows: RowType[];
     onRowsPerPageChange: (rowsPerPage: number) => void;
     indexatorInfo: TableIndexatorProps;
-
-    onSelectRows: (selectedRowsIds: string[], selected: boolean) => void;
+    onSelectRows: (selectedRowIds: string, selected: boolean) => void;
 };
 
 export const Table: React.FC<TableProps> = (props: TableProps) => {
@@ -49,13 +50,7 @@ export const Table: React.FC<TableProps> = (props: TableProps) => {
 
         setColsToShow(newColsToShow);
 
-        setRowsToShow(rows.map(row => {
-            return Object.keys(row).reduce((acc, key) => {
-                if (newColsToShow[key]) acc[key] = row[key];
-                if (key === 'id') acc['id'] = row[key];
-                return acc;
-            }, {});
-        }));
+        setRowsToShow(rows);
 
         setLoading(false);
     }
@@ -76,13 +71,12 @@ export const Table: React.FC<TableProps> = (props: TableProps) => {
     }
 
     const handleSelectAllRows = () => {
+        rows.forEach( row => onSelectRows(row.guid, !allBoxesChecked))
         setAllBoxesChecked(!allBoxesChecked);
-       
-        onSelectRows(rows.map(row => row['id']), !allBoxesChecked);
     }
 
     const handleSelectRow = (rowId: string, selected: boolean) => {
-        onSelectRows([rowId], selected);
+        onSelectRows(rowId, selected);
     }
 
     if (loading) return <div>Loading...</div>;

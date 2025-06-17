@@ -31,7 +31,7 @@ export type VideoModel = {
     captionsFileName: string;
     artFileName: string;
     women: boolean;
-    teamsID: string;
+    TMSID: string;
     adBreaks: string;
     seriesID: string;
     slingCategory: string;
@@ -53,4 +53,5 @@ export type VideoModel = {
     fsn: string;
     rsc: string;
     selected: boolean;
+    convenctionPath?: string;
   };

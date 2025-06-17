@@ -96,8 +96,8 @@ export const MasterTrackerTitles: MasterType = {
     slingCategory: {
         key: 'Sling Category',
     },
-    teamsID: {
-        key: 'Teams ID',
+    TMSID: {
+        key: 'TMS ID',
     },
     frequency: {
         key: 'In Frequency',

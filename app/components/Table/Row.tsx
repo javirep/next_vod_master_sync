@@ -11,16 +11,10 @@ type RowProps = {
   className?: string;
 };
 
-export const TableRow = ( {rowData, className, colsToShow, forceSelected=false, onSelectRow}: RowProps ) => {
-  const [ selected, setSelected ] = useState<boolean>(false);
+export const TableRow = ( {rowData, className, colsToShow, onSelectRow}: RowProps ) => {
 
-    useEffect(() => {
-        setSelected(forceSelected);
-    }
-    , [forceSelected])
 
   const handleSelect = (selected: boolean) => {
-    setSelected(selected);
     onSelectRow(selected);
   }
 
@@ -28,7 +22,7 @@ export const TableRow = ( {rowData, className, colsToShow, forceSelected=false, 
     <tr className={className}  >
         {
             <th>
-                <Checkbox label="" checked={selected} onChange={(selected) => {handleSelect(selected)}}/>
+                <Checkbox label="" checked={rowData.selected} onChange={(selected) => {handleSelect(selected)}}/>
             </th>
         }
         {

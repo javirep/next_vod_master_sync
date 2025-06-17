@@ -35,7 +35,6 @@ const Page = (  ) => {
     const [ filteredVideos, setFilteredVideos ] = useState<VideoModel[]>([]);
     const [ rowsPerPage, setRowsPerPage ] = React.useState<number>(50);
     const [ currentPage, setCurrentPage ] = React.useState<number>(0);
-    const [ selectedVideos, setSelectedVideos ] = useState<string[]>([]);
     const [ platformFilter, setPlatformFilter ] = React.useState<string>('');
     
     const initContent = async () => {
@@ -62,7 +61,12 @@ const Page = (  ) => {
         const videosInit = {} as VideoModelObj;
         
         titles.forEach(title => {
-            videosInit[title.guid] = title;
+            if (title.guid && title.title){
+                videosInit[title.guid] = title;
+                videosInit[title.guid].brandedVOD = title.brandedVOD == "TRUE" ? true : false;
+                videosInit[title.guid].unbrandedVOD = title.unbrandedVOD == "TRUE" ? true : false;
+                videosInit[title.guid].thirdPartyLinear = title.thirdPartyLinear == "TRUE" ? true : false;
+            }
         })
 
         setFilteredVideos(getVideosAsVideoModel(videosInit));
@@ -111,8 +115,6 @@ const Page = (  ) => {
                 else row[key] = video[key]
             })
 
-            row.id = video.guid;
-
             rows.push(row) ;
         })
 
@@ -130,7 +132,9 @@ const Page = (  ) => {
 
         if (!master) return;
 
-        const tables = generateTemplate(master, selectedVideos.map(videoId => videos[videoId]));
+        const selectedVideos = Object.values(videos).filter(video => video.selected)
+
+        const tables = generateTemplate(master, selectedVideos);
 
         const now = moment().format('YYYY-MM-DD-HH-mm-ss');
 
@@ -168,8 +172,15 @@ const Page = (  ) => {
         setMasterId(o.value as string)
     }
 
-    const handleSelectRows = (rowsId: string[], selected: boolean) => {
-        setSelectedVideos(selected ? [...selectedVideos, ...rowsId] : selectedVideos.filter(id => !rowsId.includes(id)))
+    const handleSelectRows = (rowId: string, selected: boolean) => {
+        let newSelectedVideo = videos[rowId];
+        newSelectedVideo.selected = selected;
+
+        setVideos({
+            [rowId]: newSelectedVideo,
+            ... videos
+        })
+        
     }
 
     const handleSelectFilters = (value: string, key: string) => {
@@ -208,8 +219,8 @@ const Page = (  ) => {
                     <div className='filters-container'>
                         <TextInput labelText="Distributor" onChange={(e) => handleTextFilters(e, 'distributor')}/>
                         <TextInput labelText="Title" onChange={(e) => handleTextFilters(e, 'title')}/>
-                    </div>
-                    <div className='filters-container'>
+                    
+                
                         <Checkbox label="Branded VOD" onChange={(value) => handleCheckboxFilters(value, 'brandedVOD')} checked={filters.brandedVOD}/>
                         <Checkbox label="Unbranded VOD" onChange={(value) => handleCheckboxFilters(value, 'unbrandedVOD')} checked={filters.unbrandedVOD}/>
                         <Checkbox label="3rd Party Linear" onChange={(value) => handleCheckboxFilters(value, 'thirdPartyLinear')} checked={filters.thirdPartyLinear}/>
@@ -217,10 +228,11 @@ const Page = (  ) => {
                 </div>
 
                 <div className='filters-container'>
-                    <SelectInput options={getSelectPlatformOptions()} onChange={(o) => setPlatformFilter(o.value as string)} />
-                    <SelectInput options={getSelectPlatformStatusOptions()} onChange={(o) => handleSelectFilters(o.value as string, 'platformStatus')}/>
+                    <Typography type="input-label"> Filter by Platform Status</Typography>
+                    <SelectInput labelText="Platform:" options={getSelectPlatformOptions()} onChange={(o) => setPlatformFilter(o.value as string)} />
+                    <SelectInput labelText="Status:" options={getSelectPlatformStatusOptions()} onChange={(o) => handleSelectFilters(o.value as string, 'platformStatus')}/>
                 </div>
-                <div className='buttons-container'>
+                <div className='filters-container'>
                     <SelectInput options={outputMasters.map(master => {return { value: master.id, label: master.name}})} onChange={handleSelectMaster} />
                     <Button type='primary' text='Generate Template' onClick={() => handleGenerateTemplate()}/>
                 </div>

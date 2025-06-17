@@ -135,6 +135,80 @@ const transformTerritory = (territories: string, from: string, to: string) => {
     if ( to == 'CA' )
         return territories.includes('CA') ? 'X' : ''
 
+    if ( to == "FutureTodayWW")
+        return territories.includes("WW") ? 'Yes' : "No"
+
+    if ( to == "FutureTodayUS")
+        return territories.includes("WW") || territories.includes("US") ? 'Yes' : "No"
+
+    if ( to == "FutureTodayCA")
+        return territories.includes("WW") || territories.includes("CA")  ? 'Yes' : "No"
+
+    if (to == "FutureTodayOther") {
+        const other = [ 
+            {
+                country: 'United Kingdom', 
+                code: 'UK'
+            }, 
+            {
+                country: 'Mexico', 
+                code: 'MX'
+            }, 
+            {
+                country: 'Australia', 
+                code: 'AU'
+            }, 
+            {
+                country: 'France', 
+                code: 'FR'
+            }, 
+            {
+                country: 'Germany', 
+                code: 'DE'
+            }, 
+            {
+                country: 'Italy', 
+                code: 'IT'
+            }, 
+            {
+                country: 'Brazil', 
+                code: 'BR'
+            }, 
+            {
+                country: 'China', 
+                code: 'CN'
+            }, 
+            {
+                country: 'India', 
+                code: 'IN'
+            }, 
+            {
+                country: 'Poland', 
+                code: 'PO'
+            }, 
+            {
+                country: 'Portugal', 
+                code: 'PW'
+            }, 
+            {
+                country: 'Spain', 
+                code: 'ES'
+            }
+         ]
+
+        let result = ''
+        
+        other.forEach( countryObj =>{
+            if (territories.includes(countryObj.code)) {
+                if (!result) result = countryObj.country
+                else result += ", " + countryObj.country
+            }
+        })
+
+        return result
+    }
+        
+
     return territories;
 }
 
@@ -175,6 +249,16 @@ const transformTypeFn = (type: string, from: string, to: string) => {
 
 const transformRatingSource = (rating: string, from: string, to: string) => {
     if ( rating === 'Self-Rated') return 'USA_PR'
+
+    if (to = "FutureToday") {
+        if ( 
+            rating == 'Self-Rated' || 
+            rating == 'TV-MA' || 
+            rating == 'NR' ||
+            rating == ''
+        ) return "13+"
+        if ( rating.includes("TV") ) return rating.split("TV-")[1]
+    }
     
     return rating;
 }
