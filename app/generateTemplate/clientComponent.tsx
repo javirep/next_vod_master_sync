@@ -21,6 +21,7 @@ import { getMasterTrackerData, getNewFilePath } from "../services/masterTracker"
 type TableFilters = {
     distributor: string
     title: string
+    guids: string
     brandedVOD: boolean
     unbrandedVOD: boolean
     thirdPartyLinear: boolean
@@ -36,6 +37,17 @@ const Page = (  ) => {
     const [ rowsPerPage, setRowsPerPage ] = React.useState<number>(50);
     const [ currentPage, setCurrentPage ] = React.useState<number>(0);
     const [ platformFilter, setPlatformFilter ] = React.useState<string>('');
+    const [masterId, setMasterId] = useState('')
+
+    const [filters, setFilters] = useState<TableFilters>({
+        distributor: '',
+        title: '',
+        guids: '',
+        brandedVOD: false,
+        unbrandedVOD: false,
+        thirdPartyLinear: false,
+        platformStatus: ''
+    })
     
     const initContent = async () => {
         const response = await getMasterTrackerData();
@@ -78,22 +90,25 @@ const Page = (  ) => {
         initContent();
     }, [])
 
-    const [filters, setFilters] = useState<TableFilters>({
-        distributor: '',
-        title: '',
-        brandedVOD: false,
-        unbrandedVOD: false,
-        thirdPartyLinear: false,
-        platformStatus: ''
-    })
-
     useEffect(() => {
-        setFilteredVideos( getVideosAsVideoModel(videos).filter(applyFilters) );
+        let filteredVideos = {} as VideoModelObj;
+
+        if (filters.guids && filters.guids != '') {
+            const guids = filters.guids.split(' ').map(guid => guid.trim());
+            guids.forEach(guid => {
+                if (videos[guid]) {
+                    filteredVideos[guid] = videos[guid];
+                }
+            });
+        }
+        else {
+            filteredVideos = videos;
+        }
+
+        setFilteredVideos( getVideosAsVideoModel(filteredVideos).filter(applyFilters) );
         setCurrentPage(0);
     }
     , [filters])
-
-    const [masterId, setMasterId] = useState('')
 
     const getVideosAsVideoModel = (videos: VideoModelObj) => {
         return Object.keys(videos).map(videoId => videos[videoId]);
@@ -220,11 +235,12 @@ const Page = (  ) => {
                     <div className='filters-container'>
                         <TextInput labelText="Distributor" onChange={(e) => handleTextFilters(e, 'distributor')}/>
                         <TextInput labelText="Title" onChange={(e) => handleTextFilters(e, 'title')}/>
+                        <TextInput labelText="GUID(s)" onChange={(e) => handleTextFilters(e, 'guids')}/>
                     
                 
-                        <Checkbox label="Branded VOD" onChange={(value) => handleCheckboxFilters(value, 'brandedVOD')} checked={filters.brandedVOD}/>
+                        {/* <Checkbox label="Branded VOD" onChange={(value) => handleCheckboxFilters(value, 'brandedVOD')} checked={filters.brandedVOD}/>
                         <Checkbox label="Unbranded VOD" onChange={(value) => handleCheckboxFilters(value, 'unbrandedVOD')} checked={filters.unbrandedVOD}/>
-                        <Checkbox label="3rd Party Linear" onChange={(value) => handleCheckboxFilters(value, 'thirdPartyLinear')} checked={filters.thirdPartyLinear}/>
+                        <Checkbox label="3rd Party Linear" onChange={(value) => handleCheckboxFilters(value, 'thirdPartyLinear')} checked={filters.thirdPartyLinear}/> */}
                     </div>
                 </div>
 
