@@ -14,7 +14,7 @@ import { VideoModel } from "@/app/models/VideoModel";
 
 export type RowType = Partial <VideoModel> & {
     guid: string,
-    selected: Boolean
+    selected: boolean
 }
 
 type HeaderType = {
