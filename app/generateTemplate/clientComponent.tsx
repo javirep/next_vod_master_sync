@@ -16,7 +16,7 @@ import './generateTemplate.scss';
 import { SelectInput, SelectOption } from "../components/Inputs/SelectInput/SelectInput";
 import RootLayout from "../layout";
 import selectPlatformsOptions from "./utils/selectPlatformOptions";
-import { getMasterTrackerData } from "../services/masterTracker";
+import { getMasterTrackerData, getNewFilePath } from "../services/masterTracker";
 
 type TableFilters = {
     distributor: string
@@ -38,7 +38,9 @@ const Page = (  ) => {
     const [ platformFilter, setPlatformFilter ] = React.useState<string>('');
     
     const initContent = async () => {
-        const { titles, series } = await getMasterTrackerData();
+        const response = await getMasterTrackerData();
+
+        const { titles, series } = response ? response : { titles: [], series: [] }
         
         for (let i = 0; i < titles.length; i++) {
             const title = titles[i];
@@ -56,6 +58,8 @@ const Page = (  ) => {
                     title.seriesTags = seriesTitle.seriesTags;
                 }
             }
+
+            title.newVideoFilePath = getNewFilePath(title)
         }
 
         const videosInit = {} as VideoModelObj;
@@ -63,9 +67,6 @@ const Page = (  ) => {
         titles.forEach(title => {
             if (title.guid && title.title){
                 videosInit[title.guid] = title;
-                videosInit[title.guid].brandedVOD = title.brandedVOD == "TRUE" ? true : false;
-                videosInit[title.guid].unbrandedVOD = title.unbrandedVOD == "TRUE" ? true : false;
-                videosInit[title.guid].thirdPartyLinear = title.thirdPartyLinear == "TRUE" ? true : false;
             }
         })
 

@@ -1,3 +1,10 @@
+import { VideoModel } from "../models/VideoModel";
+import { SeriesModel } from "../models/SeriesModel";
+
+type masterTrackerResponse = {
+    titles: VideoModel[],
+    series: SeriesModel[]
+}
 
 export const getMasterTrackerData = async () => {
     try{ 
@@ -8,7 +15,7 @@ export const getMasterTrackerData = async () => {
             },
         });
         if (response.ok) {
-            const data = await response.json();
+            const data: masterTrackerResponse = await response.json();
             
             return data;
         } else {
@@ -20,4 +27,62 @@ export const getMasterTrackerData = async () => {
       console.log(error);
       return false;
     }
+}
+
+export const getNewFilePath = (title: VideoModel) => { 
+
+    let newFilePath = "/Titles/"
+
+    newFilePath += toCamelCase(title.licensor) + '/'
+
+    newFilePath += title.type + '/'
+
+    let titleFileName = title.seriesName ? toCamelCase(title.seriesName) : toCamelCase(title.title)
+
+    newFilePath += titleFileName + "/" + titleFileName
+
+    if (title.season && title.episode) newFilePath += '_' + title.season.toString().padStart(2, '0') + title.episode.toString().padStart(2, '0')
+
+    newFilePath += '.mp4'
+
+    return newFilePath
+
+}
+
+const toCamelCase = (string: string) => {
+
+    const replacements = [
+        "/",
+        "\\",
+        ".",
+        ":",
+        "&",
+        '"',
+        "(",
+        ")",
+        "[",
+        "]",
+        "{",
+        "}",
+        "<",
+        ">",
+        "?",
+        ";",
+        "!",
+        "@",
+        "#",
+        "$",
+        "%",
+        "^",
+        "*",
+        "+",
+        "=",
+        "-",
+        "|",
+    ]
+    
+
+    replacements.forEach(char => string = string.replace(char, ''))
+
+    return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1)).join('')
 }

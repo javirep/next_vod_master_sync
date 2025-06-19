@@ -28,6 +28,7 @@ export type VideoModel = {
     tags: string;
     mainCast: string;
     videoFilePath: string;
+    newVideoFilePath: string;
     captionsFileName: string;
     artFileName: string;
     women: boolean;
@@ -40,9 +41,9 @@ export type VideoModel = {
     rightsEnd: string;
     rightsTerritory: string;
     frequency: string;
-    brandedVOD: boolean;
-    unbrandedVOD: boolean;
-    thirdPartyLinear: boolean;
+    brandedVOD: string;
+    unbrandedVOD: string;
+    thirdPartyLinear: string;
     fubo: string;
     sling: string;
     xumo: string;
