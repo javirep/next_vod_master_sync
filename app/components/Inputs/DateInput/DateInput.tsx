@@ -27,16 +27,16 @@ export const DateInput = (props: DateInputProps) => {
             }
     
             // add a dash after the first two characters
-            date = date.replace(/(\d{2})(\d)/, '$1-$2');
+            date = date.replace(/(\d{4})(\d)/, '$1-$2');
             // add a dash after the 5th character
-            date = date.replace(/(\d{2}-\d{2})(\d)/, '$1-$2');
+            date = date.replace(/(\d{4}-\d{2})(\d)/, '$1-$2');
             return date;
     
         }
 
-    const isValidFormat = (s: string) => s.length < 10 || moment(s, 'MM-DD-YYYY').isValid();
+    const isValidFormat = (s: string) => s.length < 10 || moment(s, 'YYYY-MM-DD').isValid();
 
-    const isValidFinalFormat = (s: string) =>  moment(s, 'MM-DD-YYYY').isValid();
+    const isValidFinalFormat = (s: string) =>  moment(s, 'YYYY-MM-DD').isValid() || s.length === 0;
     
     return (
         <TextInput

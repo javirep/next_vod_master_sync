@@ -14,9 +14,9 @@ import outputMasters from "../utils/masters/outputMasters";
 
 import './generateTemplate.scss';
 import { SelectInput, SelectOption } from "../components/Inputs/SelectInput/SelectInput";
-import RootLayout from "../layout";
 import selectPlatformsOptions from "./utils/selectPlatformOptions";
 import { getMasterTrackerData, getNewFilePath } from "../services/masterTracker";
+import Layout from "../components/Layout/Layout";
 
 type TableFilters = {
     distributor: string
@@ -37,7 +37,7 @@ const Page = (  ) => {
     const [ rowsPerPage, setRowsPerPage ] = React.useState<number>(50);
     const [ currentPage, setCurrentPage ] = React.useState<number>(0);
     const [ platformFilter, setPlatformFilter ] = React.useState<string>('');
-    const [masterId, setMasterId] = useState('')
+    const [ masterId, setMasterId ] = useState('')
 
     const [filters, setFilters] = useState<TableFilters>({
         distributor: '',
@@ -51,6 +51,9 @@ const Page = (  ) => {
     
     const initContent = async () => {
         const response = await getMasterTrackerData();
+
+
+        console.log('Videos Init:', response);
 
         const { titles, series } = response ? response : { titles: [], series: [] }
         
@@ -284,6 +287,6 @@ const Page = (  ) => {
     )
 }
 
-const PageWrapper = () => <RootLayout><Page /></RootLayout>
+const PageWrapper = () => <Layout><Page /></Layout>
 
 export default PageWrapper;

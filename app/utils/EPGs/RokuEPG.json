@@ -1,0 +1,5033 @@
+{
+  "linearPartnerName": "Frequency",
+  "providerName": "Swerve",
+  "lastUpdated": "2025-06-24T12:41:44.000Z",
+  "language": "en",
+  "categories": [
+    "sports"
+  ],
+  "liveFeeds": [
+    {
+      "id": "253",
+      "title": "Swerve Combat",
+      "content": {
+        "dateAdded": "2021-09-28",
+        "scheduledUpdated": "2025-06-24T12:41:44.000Z",
+        "videos": [
+          {
+            "url": "https://linear-253.frequency.stream/dist/roku/253/hls/master/playlist.m3u8?ads.rdid=ROKU_ADS_TRACKING_ID&ads.coppa=ROKU_ADS_KIDS_CONTENT&ads.is_roku_lat=ROKU_ADS_LIMIT_TRACKING&ads.genre=ROKU_ADS_CONTENT_GENRE&ads.platform=ROKU_ADS_PLATFORM_TYPE&ads.content=ROKU_ADS_CONTENT_ID&ads.studio_id=ROKU_ADS_PROVIDER_ID&ads.ua=ROKU_ADS_USER_AGENT&ads.series_id=ROKU_ADS_SERIES_ID&ads.season_id=ROKU_ADS_SEASON_ID&ads.content_rating=ROKU_ADS_CONTENT_RATING&ads.content_type=ROKU_ADS_CONTENT_TYPE&ads.channelstore=CHANNEL_STORE_CODE&ads.bmodel=ROKU_BIZ_MODEL&ads.pod_min=OTT_POD_MIN&ads.pod_max=OTT_POD_MAX&ads.pod_ads=OTT_POD_ADS&ads.tags=ROKU_CONTENT_TAGS&ads.device_lang=ROKU_ADS_LOCALE&ads.unlocked=UNLOCKED&ads.device=OTT_DEVICE_MODEL",
+            "quality": "FHD",
+            "videoType": "HLS"
+          }
+        ],
+        "schedule": [
+          {
+            "id": "5886651",
+            "durationInSeconds": 1810,
+            "date": "2025-06-23",
+            "isLive": false,
+            "times": [
+              "23:56:32"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "174419",
+            "durationInSeconds": 3455,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "10:26:44"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "174431",
+            "durationInSeconds": 3270,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "11:24:19"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2384365",
+            "durationInSeconds": 7617,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "08:19:47"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2586606",
+            "durationInSeconds": 4808,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "12:18:49"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027256",
+            "durationInSeconds": 3479,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "16:45:29"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027419",
+            "durationInSeconds": 7778,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "21:37:23"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4207751",
+            "durationInSeconds": 2975,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "14:59:54"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818200",
+            "durationInSeconds": 4436,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "23:47:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982557",
+            "durationInSeconds": 3192,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "05:31:16"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982639",
+            "durationInSeconds": 3313,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "04:36:03"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982667",
+            "durationInSeconds": 3192,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "03:42:51"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982678",
+            "durationInSeconds": 3192,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "02:49:39"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982753",
+            "durationInSeconds": 3192,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "01:56:27"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5145579",
+            "durationInSeconds": 4857,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "13:38:57"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5280569",
+            "durationInSeconds": 3360,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "15:49:29"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5702297",
+            "durationInSeconds": 3480,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "18:39:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5702395",
+            "durationInSeconds": 3360,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "17:43:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886647",
+            "durationInSeconds": 2025,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "00:26:42",
+              "20:07:38"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886651",
+            "durationInSeconds": 1810,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "19:37:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886661",
+            "durationInSeconds": 6919,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "06:24:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886717",
+            "durationInSeconds": 3360,
+            "date": "2025-06-24",
+            "isLive": false,
+            "times": [
+              "01:00:27",
+              "20:41:23"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "1320145",
+            "durationInSeconds": 6008,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "13:37:40"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2244626",
+            "durationInSeconds": 13183,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "09:57:57"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2712901",
+            "durationInSeconds": 5105,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "01:00:57"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3567486",
+            "durationInSeconds": 7836,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "07:47:21"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027256",
+            "durationInSeconds": 3479,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "03:22:02"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4195996",
+            "durationInSeconds": 3477,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "19:09:36"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196013",
+            "durationInSeconds": 3477,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "18:11:39"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196082",
+            "durationInSeconds": 3477,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "17:13:42"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196102",
+            "durationInSeconds": 3477,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "16:15:45"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196127",
+            "durationInSeconds": 3477,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "15:17:48"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5056713",
+            "durationInSeconds": 4453,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "23:46:15"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5280569",
+            "durationInSeconds": 3360,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "02:26:02"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5702342",
+            "durationInSeconds": 3360,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "04:20:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5841067",
+            "durationInSeconds": 9080,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "05:16:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914023",
+            "durationInSeconds": 13122,
+            "date": "2025-06-25",
+            "isLive": false,
+            "times": [
+              "20:07:33"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2380541",
+            "durationInSeconds": 7215,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "10:18:14"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027419",
+            "durationInSeconds": 7778,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "20:52:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4195996",
+            "durationInSeconds": 3477,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "04:52:16"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196013",
+            "durationInSeconds": 3477,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "03:54:19"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196082",
+            "durationInSeconds": 3477,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "02:56:22"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196102",
+            "durationInSeconds": 3477,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "01:58:25"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196127",
+            "durationInSeconds": 3477,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "01:00:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4977382",
+            "durationInSeconds": 3313,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "16:09:33"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982557",
+            "durationInSeconds": 3192,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "09:25:02"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982639",
+            "durationInSeconds": 3313,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "08:29:49"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982667",
+            "durationInSeconds": 3192,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "07:36:37"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982678",
+            "durationInSeconds": 3192,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "06:43:25"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982753",
+            "durationInSeconds": 3192,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "05:50:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5056666",
+            "durationInSeconds": 3859,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "13:49:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5056911",
+            "durationInSeconds": 5432,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "12:18:29"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5150317",
+            "durationInSeconds": 4573,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "14:53:20"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5308811",
+            "durationInSeconds": 6743,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "19:00:05"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408854",
+            "durationInSeconds": 3461,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "18:02:24"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408901",
+            "durationInSeconds": 3458,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "17:04:46"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886647",
+            "durationInSeconds": 2025,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "23:32:16"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886651",
+            "durationInSeconds": 1810,
+            "date": "2025-06-26",
+            "isLive": false,
+            "times": [
+              "23:02:06"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2384365",
+            "durationInSeconds": 7617,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "10:16:10"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3567529",
+            "durationInSeconds": 7018,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "03:52:33"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4195996",
+            "durationInSeconds": 3477,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "20:01:18"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196013",
+            "durationInSeconds": 3477,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "19:03:21"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196082",
+            "durationInSeconds": 3477,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "18:05:24"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196102",
+            "durationInSeconds": 3477,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "17:07:27"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196127",
+            "durationInSeconds": 3477,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "16:09:30"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4977382",
+            "durationInSeconds": 3313,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "01:02:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5308811",
+            "durationInSeconds": 6743,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "13:21:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408854",
+            "durationInSeconds": 3461,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "02:54:52"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408901",
+            "durationInSeconds": 3458,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "01:57:14"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5702414",
+            "durationInSeconds": 3480,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "12:23:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5841067",
+            "durationInSeconds": 9080,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "05:49:31"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886661",
+            "durationInSeconds": 6919,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "08:20:51"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886717",
+            "durationInSeconds": 3360,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "00:06:01",
+              "15:13:30"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914023",
+            "durationInSeconds": 13122,
+            "date": "2025-06-27",
+            "isLive": false,
+            "times": [
+              "20:59:15"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "1862630",
+            "durationInSeconds": 31,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "15:30:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2380541",
+            "durationInSeconds": 7215,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "15:30:31"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28490",
+            "durationInSeconds": 12600,
+            "date": "2025-06-28",
+            "isLive": true,
+            "times": [
+              "12:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28492",
+            "durationInSeconds": 10800,
+            "date": "2025-06-28",
+            "isLive": true,
+            "times": [
+              "19:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28727",
+            "durationInSeconds": 3600,
+            "date": "2025-06-28",
+            "isLive": true,
+            "times": [
+              "18:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3596282",
+            "durationInSeconds": 2020,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "11:26:20"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027419",
+            "durationInSeconds": 7778,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "09:16:42"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4115028",
+            "durationInSeconds": 49,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "22:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4195996",
+            "durationInSeconds": 3477,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "04:54:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196013",
+            "durationInSeconds": 3477,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "03:56:31"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196082",
+            "durationInSeconds": 3477,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "02:58:34"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4196102",
+            "durationInSeconds": 3477,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "02:00:37"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4592960",
+            "durationInSeconds": 3597,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "01:00:40"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4884360",
+            "durationInSeconds": 7151,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "22:00:49"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4977382",
+            "durationInSeconds": 3313,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "06:26:10"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408854",
+            "durationInSeconds": 3461,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "08:19:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408901",
+            "durationInSeconds": 3458,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "07:21:23"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886647",
+            "durationInSeconds": 2025,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "05:52:25"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886651",
+            "durationInSeconds": 1754,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "17:30:46"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900986",
+            "durationInSeconds": 1363,
+            "date": "2025-06-28",
+            "isLive": false,
+            "times": [
+              "00:37:57"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2244626",
+            "durationInSeconds": 13183,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "10:24:27"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28494",
+            "durationInSeconds": 10800,
+            "date": "2025-06-29",
+            "isLive": true,
+            "times": [
+              "19:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28495",
+            "durationInSeconds": 10800,
+            "date": "2025-06-29",
+            "isLive": true,
+            "times": [
+              "22:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28718",
+            "durationInSeconds": 10800,
+            "date": "2025-06-29",
+            "isLive": true,
+            "times": [
+              "16:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28723",
+            "durationInSeconds": 14400,
+            "date": "2025-06-29",
+            "isLive": true,
+            "times": [
+              "00:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059672",
+            "durationInSeconds": 3479,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "05:58:25"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4195844",
+            "durationInSeconds": 3477,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "05:00:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4227955",
+            "durationInSeconds": 3539,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "06:56:24"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604705",
+            "durationInSeconds": 31,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "04:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5870436",
+            "durationInSeconds": 3597,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "04:00:31"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886647",
+            "durationInSeconds": 2025,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "07:55:23"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886661",
+            "durationInSeconds": 6919,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "08:29:08"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886717",
+            "durationInSeconds": 3360,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "14:04:10"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5931351",
+            "durationInSeconds": 3590,
+            "date": "2025-06-29",
+            "isLive": false,
+            "times": [
+              "15:00:10"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2141429",
+            "durationInSeconds": 3929,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "19:12:08"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3590923",
+            "durationInSeconds": 33,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "01:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5465906",
+            "durationInSeconds": 14302,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "08:37:25"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604483",
+            "durationInSeconds": 14379,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "04:37:46"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5734285",
+            "durationInSeconds": 11347,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "16:03:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5772116",
+            "durationInSeconds": 1500,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "01:34:18"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5772121",
+            "durationInSeconds": 1560,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "01:59:18"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886647",
+            "durationInSeconds": 2025,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "01:00:33"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900954",
+            "durationInSeconds": 1106,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "15:44:35"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900965",
+            "durationInSeconds": 1944,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "20:17:37"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900978",
+            "durationInSeconds": 1787,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "15:14:48"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5908803",
+            "durationInSeconds": 9541,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "12:35:47"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5913549",
+            "durationInSeconds": 7948,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "02:25:18"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914008",
+            "durationInSeconds": 13138,
+            "date": "2025-06-30",
+            "isLive": false,
+            "times": [
+              "20:50:01"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "1875748",
+            "durationInSeconds": 11869,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "01:00:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3353132",
+            "durationInSeconds": 1874,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "00:28:59"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027241",
+            "durationInSeconds": 3479,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "16:00:08"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027256",
+            "durationInSeconds": 3479,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "16:58:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4276986",
+            "durationInSeconds": 8142,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "06:57:03"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5144458",
+            "durationInSeconds": 11707,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "17:56:06"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604353",
+            "durationInSeconds": 2116,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "12:10:31"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604361",
+            "durationInSeconds": 1743,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "12:45:47"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604368",
+            "durationInSeconds": 1741,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "14:28:56"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604371",
+            "durationInSeconds": 1913,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "13:33:38"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604373",
+            "durationInSeconds": 1405,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "14:05:31"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5653884",
+            "durationInSeconds": 1128,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "13:14:50"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5702414",
+            "durationInSeconds": 3480,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "22:07:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5713521",
+            "durationInSeconds": 8856,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "09:42:55"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886651",
+            "durationInSeconds": 1810,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "09:12:45"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886717",
+            "durationInSeconds": 3360,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "21:11:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900873",
+            "durationInSeconds": 6926,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "23:05:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900965",
+            "durationInSeconds": 1944,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "15:27:44"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900973",
+            "durationInSeconds": 1787,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "14:57:57"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5908803",
+            "durationInSeconds": 9541,
+            "date": "2025-07-01",
+            "isLive": false,
+            "times": [
+              "04:18:02"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3952779",
+            "durationInSeconds": 3480,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "21:48:09"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3952810",
+            "durationInSeconds": 3479,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "20:50:10"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027241",
+            "durationInSeconds": 3479,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "01:00:39"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027256",
+            "durationInSeconds": 3479,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "01:58:38",
+              "19:52:11"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027303",
+            "durationInSeconds": 3479,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "18:54:12"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059547",
+            "durationInSeconds": 3479,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "16:00:15"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059565",
+            "durationInSeconds": 3479,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "17:56:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059610",
+            "durationInSeconds": 3479,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "16:58:14"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4228363",
+            "durationInSeconds": 1201,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "15:40:14"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408603",
+            "durationInSeconds": 1621,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "15:13:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5713505",
+            "durationInSeconds": 8354,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "06:35:35"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5734245",
+            "durationInSeconds": 9084,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "12:41:49"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900873",
+            "durationInSeconds": 6926,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "22:46:09"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914008",
+            "durationInSeconds": 13138,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "02:56:37"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914019",
+            "durationInSeconds": 13620,
+            "date": "2025-07-02",
+            "isLive": false,
+            "times": [
+              "08:54:49"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2710329",
+            "durationInSeconds": 1413,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "12:12:58"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3631019",
+            "durationInSeconds": 5775,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "13:44:06"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3952779",
+            "durationInSeconds": 3480,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "05:54:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3952810",
+            "durationInSeconds": 3479,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "04:56:14"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027303",
+            "durationInSeconds": 3479,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "03:58:15"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059547",
+            "durationInSeconds": 3479,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "01:04:18"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059565",
+            "durationInSeconds": 3479,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "03:00:16"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059610",
+            "durationInSeconds": 3479,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "02:02:17"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4228363",
+            "durationInSeconds": 1201,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "13:24:05"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4228371",
+            "durationInSeconds": 1233,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "12:36:31"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818030",
+            "durationInSeconds": 4436,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "19:02:09"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818112",
+            "durationInSeconds": 4436,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "17:48:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818152",
+            "durationInSeconds": 4436,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "16:34:17"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818179",
+            "durationInSeconds": 4436,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "15:20:21"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5144965",
+            "durationInSeconds": 12888,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "21:26:10"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5331032",
+            "durationInSeconds": 9704,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "09:31:14"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5385944",
+            "durationInSeconds": 4205,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "20:16:05"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408603",
+            "durationInSeconds": 1621,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "12:57:04"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900986",
+            "durationInSeconds": 1363,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "00:41:35"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5908803",
+            "durationInSeconds": 9541,
+            "date": "2025-07-03",
+            "isLive": false,
+            "times": [
+              "06:52:13"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "174431",
+            "durationInSeconds": 3270,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "22:38:58"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059547",
+            "durationInSeconds": 3479,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "15:02:39"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4592960",
+            "durationInSeconds": 3597,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "23:56:11"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4631087",
+            "durationInSeconds": 6292,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "19:26:48"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4724036",
+            "durationInSeconds": 4145,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "05:57:11"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818112",
+            "durationInSeconds": 4436,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "03:28:50"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818152",
+            "durationInSeconds": 4436,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "02:14:54"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818179",
+            "durationInSeconds": 4436,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "01:00:58"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818200",
+            "durationInSeconds": 4436,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "09:01:42"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4848591",
+            "durationInSeconds": 4465,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "04:42:46"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5006435",
+            "durationInSeconds": 4526,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "10:15:38"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5408781",
+            "durationInSeconds": 5238,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "21:11:40"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604361",
+            "durationInSeconds": 1743,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "12:27:04"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604364",
+            "durationInSeconds": 1080,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "12:56:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604368",
+            "durationInSeconds": 1741,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "14:10:55"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5604373",
+            "durationInSeconds": 1405,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "13:47:30"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5702325",
+            "durationInSeconds": 3360,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "11:31:04"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900873",
+            "durationInSeconds": 6926,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "07:06:16"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900986",
+            "durationInSeconds": 1363,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "14:39:56",
+              "23:33:28"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914035",
+            "durationInSeconds": 12370,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "16:00:38"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5931661",
+            "durationInSeconds": 2003,
+            "date": "2025-07-04",
+            "isLive": false,
+            "times": [
+              "13:14:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "1862630",
+            "durationInSeconds": 18,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "15:30:18"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2027764",
+            "durationInSeconds": 11409,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "07:46:14"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2686540",
+            "durationInSeconds": 2407,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "19:26:43"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2855863",
+            "durationInSeconds": 4967,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "05:50:04"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "28720",
+            "durationInSeconds": 12618,
+            "date": "2025-07-05",
+            "isLive": true,
+            "times": [
+              "12:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3300991",
+            "durationInSeconds": 3080,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "20:06:50"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3301015",
+            "durationInSeconds": 3508,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "20:58:10"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3952779",
+            "durationInSeconds": 3480,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "04:52:04"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3997353",
+            "durationInSeconds": 3599,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "03:52:05"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4027303",
+            "durationInSeconds": 3479,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "02:54:06"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4059610",
+            "durationInSeconds": 3479,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "00:56:08"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4728684",
+            "durationInSeconds": 3599,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "01:54:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5056911",
+            "durationInSeconds": 5432,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "17:56:11"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5056925",
+            "durationInSeconds": 5644,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "16:22:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5057533",
+            "durationInSeconds": 3091,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "15:30:36"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5099369",
+            "durationInSeconds": 11130,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "21:56:38"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886647",
+            "durationInSeconds": 2007,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "11:26:33"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5886651",
+            "durationInSeconds": 1810,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "10:56:23"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5931661",
+            "durationInSeconds": 2003,
+            "date": "2025-07-05",
+            "isLive": false,
+            "times": [
+              "07:12:51"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "2710437",
+            "durationInSeconds": 1755,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "23:38:04"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "3235278",
+            "durationInSeconds": 12273,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "02:57:34"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4207751",
+            "durationInSeconds": 2975,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "14:24:21"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982639",
+            "durationInSeconds": 3313,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "09:01:08"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4982667",
+            "durationInSeconds": 3192,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "09:56:21"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5056819",
+            "durationInSeconds": 3139,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "21:48:33"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5056830",
+            "durationInSeconds": 3432,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "22:40:52"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5057170",
+            "durationInSeconds": 3738,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "16:34:53"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5144965",
+            "durationInSeconds": 12888,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "10:49:33"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5145579",
+            "durationInSeconds": 4857,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "15:13:56"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900873",
+            "durationInSeconds": 6926,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "01:02:08"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900965",
+            "durationInSeconds": 1944,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "17:37:11"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5908803",
+            "durationInSeconds": 9541,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "06:22:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914008",
+            "durationInSeconds": 13138,
+            "date": "2025-07-06",
+            "isLive": false,
+            "times": [
+              "18:09:35"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818020",
+            "durationInSeconds": 4436,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "07:50:59"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818030",
+            "durationInSeconds": 4436,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "06:37:03"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818112",
+            "durationInSeconds": 4436,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "05:23:07"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818152",
+            "durationInSeconds": 4436,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "02:55:15"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "4818179",
+            "durationInSeconds": 4436,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "04:09:11"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900873",
+            "durationInSeconds": 6926,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "00:07:19"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900881",
+            "durationInSeconds": 1590,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "02:28:45"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5900886",
+            "durationInSeconds": 1560,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "02:02:45"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5931774",
+            "durationInSeconds": 4491,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "09:04:55"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5932183",
+            "durationInSeconds": 7850,
+            "date": "2025-07-07",
+            "isLive": false,
+            "times": [
+              "16:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5914008",
+            "durationInSeconds": 13138,
+            "date": "2025-07-08",
+            "isLive": false,
+            "times": [
+              "09:00:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5931351",
+            "durationInSeconds": 3600,
+            "date": "2025-07-08",
+            "isLive": false,
+            "times": [
+              "02:05:50"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5932183",
+            "durationInSeconds": 7850,
+            "date": "2025-07-08",
+            "isLive": false,
+            "times": [
+              "03:05:50"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          },
+          {
+            "id": "5932186",
+            "durationInSeconds": 3950,
+            "date": "2025-07-08",
+            "isLive": false,
+            "times": [
+              "01:00:00",
+              "20:30:00"
+            ],
+            "attributes": [
+              "CC"
+            ]
+          }
+        ]
+      },
+      "rating": {
+        "ratingSource": "MPAA",
+        "rating": "NR"
+      },
+      "language": "en",
+      "thumbnail": "https://static.frequency.com/studio/swerve/SWERVE_TILE.jpeg?2025-06-24",
+      "brandedThumbnail": "https://static.frequency.com/studio/swerve/SWERVE_TILE.jpeg?2025-06-24",
+      "shortDescription": "Swerve Combat delivers non-stop action with boxing, MMA, wrestling, and strength competitions along with gripping stories about the world’s most inspirational athletes.",
+      "longDescription": "Swerve Combat delivers non-stop action with boxing, MMA, wrestling, and strength competitions along with gripping stories about the world’s most inspirational athletes.",
+      "tags": [
+        "Frequency",
+        "Swerve Combat",
+        "Sports"
+      ],
+      "startTime": "2021-09-28T17:03:28.000Z",
+      "endTime": "2099-01-01T00:00:00.000Z"
+    }
+  ],
+  "movies": [
+    {
+      "id": "174419",
+      "title": "Conor Mcgregor: The Irishman",
+      "shortDescription": "Conor McGregor’s journey from welfare in Crumlin, Ireland to the highest paid UFC fighter in history.",
+      "genres": [
+        "documentary"
+      ],
+      "thumbnail": "https://images.frequency.com/video/a3bydawema81xl7juax4f953/w1920_h1080/a3bydawema81xl7juax4f953.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TV14"
+      }
+    },
+    {
+      "id": "174431",
+      "title": "Fight of a Lifetime: Mayweather (USA) vs. Mcgregor (IRE)",
+      "shortDescription": "Two of the biggest combat sports stars in the world. A once in a lifetime fight.",
+      "genres": [
+        "documentary"
+      ],
+      "thumbnail": "https://images.frequency.com/video/aw4did5bnmkd1jfkqe8n6my7o/w1920_h1080/aw4did5bnmkd1jfkqe8n6my7o.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "1320145",
+      "title": "Tyson",
+      "shortDescription": "Boxer Mike Tyson’s rise from a life of poverty and crime to the youngest Heavyweight Champion of the World.",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/1kyie8s1tey6r10vc5k3fw3y7/w1920_h1080/1kyie8s1tey6r10vc5k3fw3y7.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3590923",
+      "title": "Enter the Jungle",
+      "shortDescription": "This feature documentary is the first to explore the rise of Brazilian MMA.",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/mx9jh9ib5omh1tx9gdouo2l3j/w1920_h1080/mx9jh9ib5omh1tx9gdouo2l3j.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    }
+  ],
+  "series": [
+    {
+      "id": "S2141429",
+      "title": "2021 PFL World Championship",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/8qxtqru4psf2148fvll2cjjbo/w1920_h1080/8qxtqru4psf2148fvll2cjjbo.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVG"
+      },
+      "seasons": [
+        {
+          "seasonNumber": 1,
+          "episodes": [
+            {
+              "id": "2141429",
+              "episodeNumber": 1,
+              "title": "2021 PFL World Championship",
+              "shortDescription": "The 2021 World Championship event, held on October 27, 2021 in Hollywood, Florida.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/8qxtqru4psf2148fvll2cjjbo/w1920_h1080/8qxtqru4psf2148fvll2cjjbo.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVG"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S7232815583140088250",
+      "title": "Combat X",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/7328559684213709593/solid/rectangle/w1920_h1080/1jldh681rugfw1293o8y46f79a.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      },
+      "seasons": [
+        {
+          "seasonNumber": 1,
+          "episodes": [
+            {
+              "id": "5900954",
+              "episodeNumber": 14,
+              "title": "Joseph Creer",
+              "shortDescription": "Meet the warrior who's mastered it all: a true fighting legend shares his philosophy and passion.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7338977419811661199/solid/rectangle/w1920_h1080/k4upvb1tntov19zukkx0jhsbj.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "5900986",
+              "episodeNumber": 15,
+              "title": "Mike Richman",
+              "shortDescription": "The King's Throne: BKFC star shares his journey from Marine to champion, where combat meets conviction.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7328559684213709593/solid/rectangle/w1920_h1080/1jldh681rugfw1293o8y46f79a.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "5900965",
+              "episodeNumber": 16,
+              "title": "Deontay Wilder",
+              "shortDescription": "Inside the mind of a boxer on a quest for redemption, as Deontay Wilder prepares to reclaim his title.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7338986680909303553/solid/rectangle/w1920_h1080/3mhh5q9ixdlw1lbbhpbctppfw.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVPG"
+              }
+            },
+            {
+              "id": "5900973",
+              "episodeNumber": 17,
+              "title": "Caleb Plant & Jermall Charlo",
+              "shortDescription": "Two world-class boxers share their inspiring journeys, overcoming adversity and finding purpose.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7338986680603077980/solid/rectangle/w1920_h1080/ku50dlzudvia14iafsm2t7tky.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVPG"
+              }
+            },
+            {
+              "id": "5900978",
+              "episodeNumber": 17,
+              "title": "Caleb Plant & Jermall Charlo",
+              "shortDescription": "Two world-class boxers share their inspiring journeys, overcoming adversity and finding purpose.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7338986680603077980/solid/rectangle/w1920_h1080/ku50dlzudvia14iafsm2t7tky.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVPG"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S7341900830109096677",
+      "title": "Grand Sumo",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/7333703063245684056/solid/rectangle/w1920_h1080/d3hqmiqjerts1545n2umd968y.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVG"
+      },
+      "seasons": [
+        {
+          "seasonNumber": 1,
+          "episodes": [
+            {
+              "id": "5900881",
+              "episodeNumber": 1,
+              "title": "May 2025 Tournament Day 8",
+              "shortDescription": "Japan Sumo and Swerve Combat present the top 10 matches on Day 8 of the May 2025 Grand Sumo Tournament.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7340443690165367826/solid/rectangle/w1920_h1080/k9w5elkz54zz1mfn6yyx62nsv.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVG"
+              }
+            },
+            {
+              "id": "5772121",
+              "episodeNumber": 1,
+              "title": "May 2025 Tournament Day 6",
+              "shortDescription": "Japan Sumo and Swerve Combat present the top 10 matches on Day 6 of the May 2025 Grand Sumo Tournament.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7333703053163590941/solid/rectangle/w1920_h1080/13xuek09ziz751jqad5lbet41v.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVG"
+              }
+            },
+            {
+              "id": "5772116",
+              "episodeNumber": 1,
+              "title": "May 2025 Tournament Day 5",
+              "shortDescription": "Japan Sumo and Swerve Combat present the top 10 matches on Day 5 of the May 2025 Grand Sumo Tournament.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7333703063245684056/solid/rectangle/w1920_h1080/d3hqmiqjerts1545n2umd968y.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVG"
+              }
+            },
+            {
+              "id": "5900886",
+              "episodeNumber": 1,
+              "title": "May 2025 Tournament Day 7",
+              "shortDescription": "Japan Sumo and Swerve Combat present the top 10 matches on Day 7 of the May 2025 Grand Sumo Tournament.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7340443687048627701/solid/rectangle/w1920_h1080/lsukrqs88c9b1nu8u3hen087s.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVG"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S7088191499796704292",
+      "title": "Legacy Fighting Alliance",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/jhcmxnebo2hg1b2tqnwtcxp1t/w1920_h1080/jhcmxnebo2hg1b2tqnwtcxp1t.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      },
+      "seasons": [
+        {
+          "seasonNumber": 10,
+          "episodes": [
+            {
+              "id": "1875748",
+              "episodeNumber": 1,
+              "title": "10 Royval vs. Urso",
+              "shortDescription": "Brandon Royval and Nick Urso highlight the co-main event of LFA 10",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/1lteeexksqbg419n3m4kk4806/w1920_h1080/1lteeexksqbg419n3m4kk4806.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 11,
+          "episodes": [
+            {
+              "id": "3596282",
+              "episodeNumber": 4,
+              "title": "11 Silva vs. Kenney",
+              "shortDescription": "Bruno Silva and Casey Kenney go at it during this LFA 11 bout",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/11sh4al194f8w1ddimmnfrgj8/w1920_h1080/11sh4al194f8w1ddimmnfrgj8.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 31,
+          "episodes": [
+            {
+              "id": "2027764",
+              "episodeNumber": 1,
+              "title": "31 Sandhagen vs. Aguayo",
+              "shortDescription": "Impressive young fighters Cory Sandhagen and Jose Aguayo are tested in LFA 31",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/1e15aqwf71oin10dhlte0unzr/w1920_h1080/1e15aqwf71oin10dhlte0unzr.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 53,
+          "episodes": [
+            {
+              "id": "2244626",
+              "episodeNumber": 1,
+              "title": "53 Kenney vs. Royval",
+              "shortDescription": "A Title fight between Casey Kenney and Brandon Royval caps LFA 53",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/jhcmxnebo2hg1b2tqnwtcxp1t/w1920_h1080/jhcmxnebo2hg1b2tqnwtcxp1t.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S7341899623702926909",
+      "title": "Salita Promotions",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/11qjj2vimn4h310p8ommvcjir/w1920_h1080/11qjj2vimn4h310p8ommvcjir.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      },
+      "seasons": [
+        {
+          "seasonNumber": 1,
+          "episodes": [
+            {
+              "id": "2686540",
+              "episodeNumber": 1,
+              "title": "James Tillis vs Evander Holyfield",
+              "shortDescription": "Witness Evander Holyfield in his debut heavyweight bout against the veteran James Tillis.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/1d631dj8muqap17em25jjxq7n/w1920_h1080/1d631dj8muqap17em25jjxq7n.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TV14"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 2,
+          "episodes": [
+            {
+              "id": "2710437",
+              "episodeNumber": 2,
+              "title": "Augie Sanchez vs Luisito Espinosa",
+              "shortDescription": "Featherweights Sanchez and Espinosa clash in a battle of youth versus experience",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/29nnmijr955e1wqvkqwds73lk/w1920_h1080/29nnmijr955e1wqvkqwds73lk.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "3353132",
+              "episodeNumber": 2,
+              "title": "Augie Sanchez vs Luisito Espinosa",
+              "shortDescription": "Featherweights Sanchez and Espinosa clash in a battle of youth versus experience",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/29nnmijr955e1wqvkqwds73lk/w1920_h1080/29nnmijr955e1wqvkqwds73lk.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "3300991",
+              "episodeNumber": 3,
+              "title": "Kevin Kelley vs Derrick Gainer",
+              "shortDescription": "WBC champion Kevin Kelley & former WBA champion Derrick Gainer trade blows in this featherweight classic.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/1wam3ra52w6cm1pcffhn1pusw/w1920_h1080/1wam3ra52w6cm1pcffhn1pusw.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "2586606",
+              "episodeNumber": 4,
+              "title": "David Tua vs Chris Byrd",
+              "shortDescription": "David Tua takes on two-time world heavyweight IBF and WBO champion Chris Byrd.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/11qjj2vimn4h310p8ommvcjir/w1920_h1080/11qjj2vimn4h310p8ommvcjir.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 4,
+          "episodes": [
+            {
+              "id": "4228363",
+              "episodeNumber": 4,
+              "title": "Jaron Ennis vs Armando Alvarez",
+              "shortDescription": "A battle of undefeated fighters as Jaron \"Boots\" Ennis takes on Armando \"Gentleman\" Alvarez.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7iexmik1ey881kjlvqptzft37/w1920_h1080/7iexmik1ey881kjlvqptzft37.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "4228371",
+              "episodeNumber": 5,
+              "title": "Jaron Ennis vs Raymond Serrano",
+              "shortDescription": "Undefeated Jaron Ennis (21-0, 19 KOs) squares off vs. fellow Philly native Raymond Serrano (24-5, 10 KOs).",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/104ea3k7907tb1mpocpg0fdh0/w1920_h1080/104ea3k7907tb1mpocpg0fdh0.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 5,
+          "episodes": [
+            {
+              "id": "4207751",
+              "episodeNumber": 4,
+              "title": "Jermaine Franklin vs Devin Vargas",
+              "shortDescription": "Returning to ring after 10 months off, heavyweight Jermaine Franklin battles 2004 U.S. Olympian Devin Vargas.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/1vd4tdfwvetdm1gy5l5a9ub8y/w1920_h1080/1vd4tdfwvetdm1gy5l5a9ub8y.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 6,
+          "episodes": [
+            {
+              "id": "2710329",
+              "episodeNumber": 1,
+              "title": "Jaron Ennis vs Bakhtiyar Eyubov",
+              "shortDescription": "Undefeated rising star Ennis is looking for his 15th straight victory against the hard-hitting Eyubov",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/o0m1ew1kn9ab1okxq7nh5u7cq/w1920_h1080/o0m1ew1kn9ab1okxq7nh5u7cq.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 8,
+          "episodes": [
+            {
+              "id": "5144458",
+              "episodeNumber": 3,
+              "title": "Shields vs Cornejo (Full Event) Edit",
+              "shortDescription": "Undisputed greatness is on display as Claressa Shields defends her title against Maricela Cornejo.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7298809840873345315/solid/rectangle/w1920_h1080/197oasdw28o2w1p661tfbv7152.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVPG"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S7325221687680269744",
+      "title": "Total Combat Presents",
+      "genres": [
+        "sports"
+      ],
+      "thumbnail": "https://images.frequency.com/video/7340064654490607966/solid/rectangle/w1920_h1080/1fdilnmdolcoa1b079ye0vqh82.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      },
+      "seasons": [
+        {
+          "seasonNumber": 3,
+          "episodes": [
+            {
+              "id": "5702297",
+              "episodeNumber": 3,
+              "title": "NFC | Langowki vs. Rayomba",
+              "shortDescription": "On this edition of “Total Combat Presents”. We take you into the NFC world of martial arts.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7322861566510728286/solid/rectangle/w1920_h1080/1ipe82z6u2m2q1t81cchjoo50s.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "5702325",
+              "episodeNumber": 4,
+              "title": "LUX | Delgado vs. Ramirez",
+              "shortDescription": "It’s all about the Lux world of Mixed Martial Arts in Mexico on this edition of Total Combat Presents.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7322861569621529074/solid/rectangle/w1920_h1080/17t2f4n3zzlg81qphy3xru2a3y.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "5702342",
+              "episodeNumber": 7,
+              "title": "Bare Knuckle Boxing | Reffell vs. Murray",
+              "shortDescription": "On this edition of Total Combat Presents, we enter the blood thirsty world of bare-knuckle boxing.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7322861595460961207/solid/rectangle/w1920_h1080/1ibgaea5qrims1doz5lnvsol2f.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "5702395",
+              "episodeNumber": 9,
+              "title": "NFC | Adas vs. Vertko",
+              "shortDescription": "On this edition of “Total Combat Presents”. We take you into the NFC world of martial arts.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7322861586226771973/solid/rectangle/w1920_h1080/17tx8zqygl73d1s8nu9pi30oqo.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "5702414",
+              "episodeNumber": 10,
+              "title": "LUX | Gonzalez vs. Arana",
+              "shortDescription": "It’s all about the Lux world of Mixed Martial Arts in Mexico on this edition of Total Combat Presents.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7322861598616506655/solid/rectangle/w1920_h1080/1qshuptghr2qc1mf70dgaveppy.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            }
+          ]
+        },
+        {
+          "seasonNumber": 4,
+          "episodes": [
+            {
+              "id": "5886717",
+              "episodeNumber": 2,
+              "title": "LUX | Alfonso vs. Leal",
+              "shortDescription": "It’s all about the Lux world of Mixed Martial Arts in Mexico on this edition of Total Combat Presents.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7340064654490607966/solid/rectangle/w1920_h1080/1fdilnmdolcoa1b079ye0vqh82.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "UNRATED"
+              }
+            },
+            {
+              "id": "5931351",
+              "episodeNumber": 4,
+              "title": "BKB Churcher vs. Connelly",
+              "shortDescription": "On this edition of Total Combat Presents, we enter the blood thirsty world of bare-knuckle boxing.",
+              "genres": [
+                "sports"
+              ],
+              "thumbnail": "https://images.frequency.com/video/7341888540577828906/solid/rectangle/w1920_h1080/8dfhmrv1cpt0zelhazak45co.jpg",
+              "rating": {
+                "ratingSource": "USA_PR",
+                "rating": "TVPG"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "shortFormVideos": [],
+  "tvSpecials": [
+    {
+      "id": "5886651",
+      "title": "BKFC 75: Mundell vs Sanchez (Prelims)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "BKFC heads back to Albuquerque for LIVE bone-shattering bare-knuckle boxing action!",
+      "thumbnail": "https://images.frequency.com/video/7340187012443412636/solid/rectangle/w1920_h1080/ocglmx88rhdd1thlfuosvdwv8.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5886647",
+      "title": "BKFC Fight Night: Mohegan Sun (Prelims)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Boxing gladiators face off LIVE inside the ring for a night of brutal bare-knuckle action!",
+      "thumbnail": "https://images.frequency.com/video/7340187009743205098/solid/rectangle/w1920_h1080/1nik10txr39jk103wv8070pkt8.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4982753",
+      "title": "Bellator Champions Series 2024: London",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Sara Collins and Leah McCourt headline Bellator London in a Women's Featherweight showdown",
+      "thumbnail": "https://images.frequency.com/video/7289538934487723977/solid/rectangle/w1920_h1080/1d51ka5upsuiv1dug9kyidr3ek.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4982678",
+      "title": "Bellator Champions Series 2024: Paris",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Patchy Mix takes on Magomed Magomedov for the Bellator Bantamweight World Title",
+      "thumbnail": "https://images.frequency.com/video/7289538935428122444/solid/rectangle/w1920_h1080/4i0n7i84h42t1djakcqne48gg.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4982667",
+      "title": "Bellator Champions Series 2024: Dublin",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Ramazan Kuramagomedov takes on Jason Jackson for the Bellator Welterweight World Championship",
+      "thumbnail": "https://images.frequency.com/video/7289538937162661814/solid/rectangle/w1920_h1080/df4a6m2vdjez19ntynyc20lif.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4982639",
+      "title": "Bellator Champions Series 2024: San Diego",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Usman Nurmagomedov takes on Alexandr Shabliy for the Bellator Lightweight World Championship",
+      "thumbnail": "https://images.frequency.com/video/7289538935149933481/solid/rectangle/w1920_h1080/la2uw8y2o46a1n4q3x1i9q5pv.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4982557",
+      "title": "Bellator Champions Series 2024: Belfast",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Brazilian Patrício Pitbull defends the Bellator world featherweight title against Canadian Jeremy Kennedy",
+      "thumbnail": "https://images.frequency.com/video/7289538917661204881/solid/rectangle/w1920_h1080/lb5kznouzihz138h7yth4njw3.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5886661",
+      "title": "Armored MMA: Canton",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Steel weapons and armor collide with the world of mixed martial arts LIVE in this brutal showdown!",
+      "thumbnail": "https://images.frequency.com/video/7340187024792818508/solid/rectangle/w1920_h1080/1fxae4rui8j661bc4omg3379o8.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "2384365",
+      "title": "101 Great Knockouts Part 2",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Witness the greatest knockouts in Boxing history! Part 2 of 2.",
+      "thumbnail": "https://images.frequency.com/video/15jfh3a8ogdv0145pyvcsq1sw/w1920_h1080/15jfh3a8ogdv0145pyvcsq1sw.jpg",
+      "rating": {
+        "ratingSource": "MPAA",
+        "rating": "Not Rated"
+      }
+    },
+    {
+      "id": "5145579",
+      "title": "Aaron Pryor vs Alexis Arguello Edit",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1983 light welterweight title bout between tactical juggernaut Arguello and gritty slugger Pryor.",
+      "thumbnail": "https://images.frequency.com/video/7298827761962924781/solid/rectangle/w1920_h1080/luiacegl1wva1xuwig5njv9xf.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5280569",
+      "title": "BKFC 51: Hart vs. Shaw",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Electric action in Salem, Virginia as boxers collide in a thrilling battle for women's strawweight gold.",
+      "thumbnail": "https://images.frequency.com/video/7303138701422311439/solid/rectangle/w1920_h1080/llbhunlpv4zj187j2e6bkboru.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4027256",
+      "title": "BKFC 29: Hart vs. Sigala",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Great Falls, Montana hosts a stacked bare-knuckle card, all leading up to Britain Hart vs Charisa Sigala.",
+      "thumbnail": "https://images.frequency.com/video/nj8lskktz39818e93wuijbzn1/w1920_h1080/nj8lskktz39818e93wuijbzn1.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4027419",
+      "title": "Combat FC 5",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "New England's premiere MMA promotion returns with five fierce fights headlined by Jake Pilla vs John Douma.",
+      "thumbnail": "https://images.frequency.com/video/xc5zhjlelwpv1ggd2po709cdz/w1280_h720/xc5zhjlelwpv1ggd2po709cdz.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4818200",
+      "title": "Bellator X Rizin",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/o2m90ryjzi5a16ci32jllijzj/w1920_h1080/o2m90ryjzi5a16ci32jllijzj.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "2712901",
+      "title": "BKFC 19: VanZant vs Ostovich",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Features Rachael Ostovich vs. Paige VanZant in bare knuckle boxing action from Tampa Bay.",
+      "thumbnail": "https://images.frequency.com/video/i2crw80rxgqi172v7n8njyg3u/w1920_h1080/i2crw80rxgqi172v7n8njyg3u.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5841067",
+      "title": "Karate Combat 48",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "KC 48 from Nashville. Sam Alvey vs Antonio Arroyo (KC Heavyweight Title) Cristian \"Puas\" Perez vs John Marquez",
+      "thumbnail": "https://images.frequency.com/video/7337856218302248708/solid/rectangle/w1920_h1080/ubhha6fbwqtm1hndsdyem570l.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "3567486",
+      "title": "101 Great Knockouts Part 3",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Witness the greatest knockouts in Boxing history!",
+      "thumbnail": "https://images.frequency.com/video/44uqcj7v5s2o1uqzmro7o3uoc/w1920_h1080/44uqcj7v5s2o1uqzmro7o3uoc.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4196127",
+      "title": "BKFC 47: Mundell vs. Richman",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Dave Mundell defends his Middleweight title for the first time against Mike 'The Marine' Richman in Lakeland.",
+      "thumbnail": "https://images.frequency.com/video/biwl6a87x7bk1soj8zp3pw9lr/w1920_h1080/biwl6a87x7bk1soj8zp3pw9lr.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4196102",
+      "title": "BKFC 45: Palomino vs. Lilley",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Fierce fights featuring the undefeated Lightweight Champion Luis Palomino taking on Wales phenom James Lilley.",
+      "thumbnail": "https://images.frequency.com/video/ee3byjygxcev18l8ej1g6gqqr/w1920_h1080/ee3byjygxcev18l8ej1g6gqqr.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4196082",
+      "title": "BKFC 44: Stewart vs. Lopez",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "#1-rated Kai Stewart takes on #2-rated Louie Lopez for the BKFC featherweight championship belt in Montana.",
+      "thumbnail": "https://images.frequency.com/video/htj9h0orz98d15guy2emp9z02/w1920_h1080/htj9h0orz98d15guy2emp9z02.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4196013",
+      "title": "BKFC 43: Alexander vs. Smith",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Legendary combat sports veteran Houston Alexander headlines against Jeremy Smith in bare knuckle boxing.",
+      "thumbnail": "https://images.frequency.com/video/1fpc76447j1pm1fqk5e214uru/w1920_h1080/1fpc76447j1pm1fqk5e214uru.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4195996",
+      "title": "BKFC 42: Soto vs. Goodjohn",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Bare-knuckle boxing arrives in South Carolina with explosive knockouts and a grueling 5-round bout.",
+      "thumbnail": "https://images.frequency.com/video/t9yys07r37911urryv4a96z5s/w1920_h1080/t9yys07r37911urryv4a96z5s.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5914023",
+      "title": "Combat FC 8",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Swerve Combat presents Combat FC 8, LIVE. Yann “the hand grenade” Oliveira takes on Chris “Cassius” Foster for Middleweight Championship.",
+      "thumbnail": "https://images.frequency.com/video/1blu5qhwozvvg1s9sgyeihza1/w1920_h1080/1blu5qhwozvvg1s9sgyeihza1.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5056713",
+      "title": "David Tua vs Ike Ibeabuchi",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1997 heavyweight title bout which set the record for punches thrown in a heavyweight fight.",
+      "thumbnail": "https://images.frequency.com/video/7293806718306199094/solid/rectangle/w1920_h1080/17mmrzzg6ujq51q45hto7ek0r3.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "2380541",
+      "title": "101 Great Knockouts Part 1",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Witness the greatest knockouts in Boxing history! Part 1 of 2.",
+      "thumbnail": "https://images.frequency.com/video/17l1j7d2a3m8z1v87ijzgh3x7/w1920_h1080/17l1j7d2a3m8z1v87ijzgh3x7.jpg",
+      "rating": {
+        "ratingSource": "MPAA",
+        "rating": "Not Rated"
+      }
+    },
+    {
+      "id": "5056911",
+      "title": "Evander Holyfield vs Dwight Muhammad Qawi",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1986 cruiserweight title bout between rising star Holyfield and defending titleholder Qawi.",
+      "thumbnail": "https://images.frequency.com/video/7293806692645044159/solid/rectangle/w1920_h1080/1l7qizi4a014y157rd7cmuizux.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5056666",
+      "title": "Pernell Whitaker vs Azumah Nelson",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1990 lightweight title bout in the midst of Whitaker's historic six-defense championship reign.",
+      "thumbnail": "https://images.frequency.com/video/7293806725064721526/solid/rectangle/w1920_h1080/s79x34803n311bec2nlokqbia.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5150317",
+      "title": "David Tua vs Ike Ibeabuchi",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1997 heavyweight title bout which set the record for punches thrown in a heavyweight fight.",
+      "thumbnail": "https://images.frequency.com/video/7293806718306199094/solid/rectangle/w1920_h1080/17mmrzzg6ujq51q45hto7ek0r3.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4977382",
+      "title": "2024 PFL 1",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The 2024 PFL season kicks off with a heavyweight bout between Valentin Moldavsky and Ante Delija",
+      "thumbnail": "https://images.frequency.com/video/7289538916156498204/solid/rectangle/w1280_h720/10ffsh6z1rjuk1r0eobp7z2ek0.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5408901",
+      "title": "2023 PFL 1: Featherweights and Light Heavyweights – Cutdown",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The 2023 PFL season kicks off with the first fights in the featherweight and light heavyweight divisions.",
+      "thumbnail": "https://images.frequency.com/video/7311437856432650776/solid/rectangle/w1920_h1080/15372i66h63cf18063wy15t4th.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5408854",
+      "title": "2022 PFL 1: Light Heavyweight and Lightweight – Cutdown",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The first 2022 regular season event featuring light heavyweight and lightweight divisions.",
+      "thumbnail": "https://images.frequency.com/video/7311437860876583513/solid/rectangle/w1920_h1080/1qvem89egigeb1jh2a47m1gq16.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5308811",
+      "title": "Combat FC 9 (Prelims)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Combat FC returns to Wilmington, MA for a thrilling night of live MMA action featuring the UFC’s future stars!",
+      "thumbnail": "https://images.frequency.com/video/7307439846311825481/solid/rectangle/w1920_h1080/18g543npv9uuf15s96fbnxe9jf.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3567529",
+      "title": "101 Great Knockouts Part 4",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Witness the greatest knockouts in Boxing history!",
+      "thumbnail": "https://images.frequency.com/video/14dzk3rq4kn981mnoqhyqcvpr/w1920_h1080/14dzk3rq4kn981mnoqhyqcvpr.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4592960",
+      "title": "BKFC 47: Mundell vs. Richman",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Dave Mundell defends his Middleweight title for the first time against Mike 'The Marine' Richman in Lakeland.",
+      "thumbnail": "https://images.frequency.com/video/biwl6a87x7bk1soj8zp3pw9lr/w1920_h1080/biwl6a87x7bk1soj8zp3pw9lr.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "28490",
+      "title": "RWS 2025 Bantamweight World Championship Eliminator",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Hard-hitting Muay Thai action, LIVE from the legendary Rajadamnern Stadium!",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28490/solid/rectangle/original.png",
+      "rating": {
+        "ratingSource": "MPAA",
+        "rating": "Everyone"
+      }
+    },
+    {
+      "id": "1862630",
+      "title": "RWS Tournament 2023 Week 8: Super Welterweights",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Enjoy the biggest Muay Thai event in Thailand, live inside Bangkok's world-famous Rajadamnern Stadium.",
+      "thumbnail": "https://images.frequency.com/video/19ymmj5yu8fdx1th3zpvaexcw/w1920_h1080/19ymmj5yu8fdx1th3zpvaexcw.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TV14"
+      }
+    },
+    {
+      "id": "28727",
+      "title": "BKFC 77: Tierney vs Christie (Prelims)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Fighters knuckle up for the latest installment in the world's most exciting sport, LIVE from Birmingham, UK!",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28727/solid/rectangle/original.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TV14"
+      }
+    },
+    {
+      "id": "28492",
+      "title": "Hitman Fight League: Top King",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Top King Europe Series debuts elite Muay Thai talent, kicking off a new era of world-class competition in 2025.",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28492/solid/rectangle/original.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4115028",
+      "title": "CES Boxing: The Brawl at Bally's",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Gary Balletto battles Laurent Humes for the vacant Jr. NABF Light Heavyweight Championship.",
+      "thumbnail": "https://images.frequency.com/video/10dt813gk4vcf14b95agek5kw/w1920_h1080/10dt813gk4vcf14b95agek5kw.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4884360",
+      "title": "Lights Out Xtreme Fighting 21",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "A thrilling showcase featuring a Main Event of BLAKE \"BULLETPROOF\" TROOP vs KELVIN \"THE BIG HIT\" FITIAL!",
+      "thumbnail": "https://images.frequency.com/video/13rxd3rv7yj1i1h5lw2ml8nfj/w1920_h1080/13rxd3rv7yj1i1h5lw2ml8nfj.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "28723",
+      "title": "Peak Fighting Championship 45",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Elite fighters clash LIVE in Texas for a night of nonstop MMA action, knockout power, and pure adrenaline!",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28723/solid/rectangle/original.png",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5604705",
+      "title": "BKFC Fight Night: Omaha (Prelims)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Fighters knuckle up for the latest installment in the world's most exciting sport, LIVE from Nebraska!",
+      "thumbnail": "https://images.frequency.com/video/7322483018866457077/solid/rectangle/w1920_h1080/1juftwzgbsln71rmhu9bl5j0xg.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5870436",
+      "title": "BKFC 38: Nguyen vs. Straus",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "An intense bare-knuckle fight card featuring Dat Nguyen vs Daniel Straus!",
+      "thumbnail": "https://images.frequency.com/video/1dzeh6ovtcwmz1cndk8zylzho/w1920_h1080/1dzeh6ovtcwmz1cndk8zylzho.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4195844",
+      "title": "BKFC 36: Adams vs. Belcher",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Experience the excitement of bare-knuckle fighting in New Orleans as fearless fighters battle in the ring!",
+      "thumbnail": "https://images.frequency.com/video/1laqd32jmofgk1kri7elgym0p/w1920_h1080/1laqd32jmofgk1kri7elgym0p.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4059672",
+      "title": "BKFC 35: Cedeno vs. Slaveski",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "An explosive card of hard-hitting bare-knuckle action headlined by Gorjan Slaveski vs Yosdenis Cedeno",
+      "thumbnail": "https://images.frequency.com/video/19yutpmoyty9x1l39j7zmnwm8/w1920_h1080/19yutpmoyty9x1l39j7zmnwm8.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4227955",
+      "title": "BKFC 34: Palomino vs. Shoaff",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Witness thrilling bare-knuckle action, capped by Luis Palomino vs Tom Shoaff.",
+      "thumbnail": "https://images.frequency.com/video/vyk3lin3yqam1kue6gnc291ws/w1920_h1080/vyk3lin3yqam1kue6gnc291ws.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "28718",
+      "title": "Clan Wars 52",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Irelands top MMA event Clan Wars is back for another action packed card - LIVE from Belfast!",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28718/solid/rectangle/original.jpg",
+      "rating": {
+        "ratingSource": "MPAA",
+        "rating": "PG"
+      }
+    },
+    {
+      "id": "28494",
+      "title": "Flex Fight Series 48",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "NY's #1 Combat Sports Promotion presents its 47th volume, LIVE from Stereo Garden on Long Island.",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28494/solid/rectangle/original.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "28495",
+      "title": "WBC's Interim Cruiserweight World Title: Cieslak v Pascal",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "A seasoned veteran and a rising contender collide in a LIVE high-stakes cruiserweight battle for global glory.",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28495/solid/rectangle/original.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5913549",
+      "title": "101 Great Knockouts Part 3",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Witness the greatest knockouts in Boxing history!",
+      "thumbnail": "https://images.frequency.com/video/44uqcj7v5s2o1uqzmro7o3uoc/w1920_h1080/44uqcj7v5s2o1uqzmro7o3uoc.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5604483",
+      "title": "Airtox Dominance Fighting Championship 3.0",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Top talent and rising stars collide in a high-energy night of MMA action, LIVE from Copenhagen",
+      "thumbnail": "https://images.frequency.com/video/7324932051910263142/solid/rectangle/w1920_h1080/1s1crpq2i1rwq1edo5wsv554wc.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5465906",
+      "title": "CES Boxing: Winter Brawl '25",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "A LIVE fight card featuring an avalanche of talent, ice-cold tempers, and a flurry of fists!",
+      "thumbnail": "https://images.frequency.com/video/7302178599760832004/solid/rectangle/w1920_h1080/m83aky26bzny1k71sdde8wqlr.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5908803",
+      "title": "MTL13 | All Aces",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Sizzlin' heat is back! Witness electrifying Muay Thai as top contenders clash in a thrilling fight card.",
+      "thumbnail": "https://images.frequency.com/video/7321321488779568228/solid/rectangle/w1920_h1080/1azx7ki9yxqn91g48c3cr539u8.png",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5734285",
+      "title": "Combat Night Pro Jacksonville",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The best in LIVE MMA returns with a stacked card, featuring fan favorites and tons of local talent!",
+      "thumbnail": "https://images.frequency.com/video/7332186044073951468/solid/rectangle/w1920_h1080/vwa67udcjcwf1ut4eue9cjoet.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5914008",
+      "title": "Callum Simpson vs Ivan Zucco: European Super-Middleweight Championship",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "British brawler Simpson eyes European glory as he faces undefeated Italian Zucco atop a stacked LIVE card!",
+      "thumbnail": "https://images.frequency.com/video/7340439472143594789/solid/rectangle/w1920_h1080/1xf7hd3lcbo931eczrbalcayqo.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4276986",
+      "title": "PFL: Battle of the Giants (Prelims)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Swerve Combat presents the undercard for the Professional Fighters League!",
+      "thumbnail": "https://images.frequency.com/video/nzddg223zp8t16iu1v1v201et/w1920_h1080/nzddg223zp8t16iu1v1v201et.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5713521",
+      "title": "Lights Out Xtreme Fighting 24",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "High-octane MMA action LIVE from Long Beach, California--don’t miss this thrilling main fight card!",
+      "thumbnail": "https://images.frequency.com/video/7331397779697207835/solid/rectangle/w1920_h1080/10gj51scfucag1grw5nijaxyn1.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5604353",
+      "title": "LFA 20: Kelly Kobold-Schmitz vs Christine Stanley",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Kelly Kobold-Schmitz and Christine Stanley in a hard-fought bout during LFA 20",
+      "thumbnail": "https://images.frequency.com/video/7314747958424621463/solid/rectangle/w1920_h1080/103dtbjh36fod1cieoqfnacxa5.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5604361",
+      "title": "LFA 21: Katy Collins vs Shannon Sinn",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Katy Collins and Shannon Sinn square off in LFA 21",
+      "thumbnail": "https://images.frequency.com/video/7314747957634744872/solid/rectangle/w1920_h1080/7ud1s02t13ra183sgnxdqn3v9.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5653884",
+      "title": "LFA 23: Sabina Mazo vs Linsey Williams",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Sabina Mazo and Linsey Williams meet in LFA 23",
+      "thumbnail": "https://images.frequency.com/video/7314747953875080737/solid/rectangle/w1920_h1080/vua2vn19t8rp1uyanr5wljis8.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5604371",
+      "title": "LFA 22: Maycee Barber vs Mallory Martin",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Maycee Barber and Mallory Martin touch gloves in LFA 22",
+      "thumbnail": "https://images.frequency.com/video/7314747959525793734/solid/rectangle/w1920_h1080/1p8ysuz7bq6bx1e6qxday25tua.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5604373",
+      "title": "LFA 23: Andrea Lee vs Jamie Thorton",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Andrea Lee and Jamie Thorton meet in the co-main event of LFA 23",
+      "thumbnail": "https://images.frequency.com/video/7314747956021875344/solid/rectangle/w1920_h1080/1itvwzcufan1512vqr7ng98v7j.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5604368",
+      "title": "LFA 14: Itzel Esquivel vs Maycee Barber",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Itzel Esquivel Vs Maycee Barber to lead off LFA 14",
+      "thumbnail": "https://images.frequency.com/video/7314747924540531015/solid/rectangle/w1920_h1080/1hg5fydwmq50c1l7agp4vw0afq.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "4027241",
+      "title": "BKFC 28: Ferea vs. Starling",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The women's flyweight title is on the line as Christine Ferea and Taylor Starling headline a fiery fight card.",
+      "thumbnail": "https://images.frequency.com/video/vsie68lrf8xs1rlhtileghvaz/w1920_h1080/vsie68lrf8xs1rlhtileghvaz.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5900873",
+      "title": "Lights Out Xtreme Fighting 25",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "High-octane MMA action LIVE from Long Beach, California--don’t miss this thrilling main fight card!",
+      "thumbnail": "https://images.frequency.com/video/7340523932813820722/solid/rectangle/w1920_h1080/17mf9ue9u9fcg1qwmzexwzrt3p.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5713505",
+      "title": "Karate Combat 54",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Explosive LIVE championship fights from Dubai as top warriors clash in high-stakes battles!",
+      "thumbnail": "https://images.frequency.com/video/7331345754821762048/solid/rectangle/w1920_h1080/1d3iuexokh3l91lxuawmxs4z87.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5914019",
+      "title": "Combat FC 7 Complete",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "An explosive night of non-stop pounding MMA action in Boston, Massachusetts",
+      "thumbnail": "https://images.frequency.com/video/rin8hiys3idn1rji5cgljr2lk/w1920_h1080/rin8hiys3idn1rji5cgljr2lk.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5734245",
+      "title": "Invicta FC 61: Ferreira vs. Palacios",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Elisandra Ferreira takes on Ana Palacios for the atomweight title",
+      "thumbnail": "https://images.frequency.com/video/7332193579273153203/solid/rectangle/w1920_h1080/1s1y2oslwirzg14bt392wpz6yn.png",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5408603",
+      "title": "Jaron Ennis vs Demian Fernandez",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "An unbeaten phenom takes on a tough test in a thrilling welterweight showdown that will leave you breathless!",
+      "thumbnail": "https://images.frequency.com/video/7306011962835400129/solid/rectangle/w1920_h1080/n0ijwirf0l4j1vq8zlijcx6uq.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4059547",
+      "title": "BKFC 31: Richman vs. Doolittle",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Mike Richmond takes on Isaac Doolittle for the light heavyweight strap atop a fight card for the ages!",
+      "thumbnail": "https://images.frequency.com/video/mjt5cdugsy2o1j6xnlindw756/w1920_h1080/mjt5cdugsy2o1j6xnlindw756.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4059610",
+      "title": "BKFC 33: Beltran vs. Alexander",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense bare-knuckle matchups in Omaha, NE with a main card of Joey Beltran and Houston Alexander!",
+      "thumbnail": "https://images.frequency.com/video/7dv2doqupvkdzk0uya7fnk8d/w1920_h1080/7dv2doqupvkdzk0uya7fnk8d.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4059565",
+      "title": "BKFC 32: Barnett vs. Herrera",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The stars come out for BKFC 32 with Reggie Barnett defending his title against Geane Herrera.",
+      "thumbnail": "https://images.frequency.com/video/13ge7vavp393j1af55ru1n6ke/w1920_h1080/13ge7vavp393j1af55ru1n6ke.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4027303",
+      "title": "BKFC 30: Hunt vs. Henry",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "A red-hot bare-knuckle fight card in Cajun country headlined by Lorenzo Hunt vs Quintin Henry.",
+      "thumbnail": "https://images.frequency.com/video/1og1ov1fg6r0i1vtc64may18u/w1920_h1080/1og1ov1fg6r0i1vtc64may18u.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3952810",
+      "title": "BKFC 27: MVP vs. Platinum",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "In an instant bare-knuckle classic, Michael 'Venom' Page vs Mike Perry headlines this fight card in London.",
+      "thumbnail": "https://images.frequency.com/video/57i3puqlzhgt1knqsstcs5q75/w1920_h1080/57i3puqlzhgt1knqsstcs5q75.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3952779",
+      "title": "BKFC 26: Brito vs. Palomino 2",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Hollywood, Florida hosts a banger of a fight card headlined by Elvin Brito vs Luis Palomino.",
+      "thumbnail": "https://images.frequency.com/video/wtnwh3ymim4m1ud4ols4zf2xc/w1920_h1080/wtnwh3ymim4m1ud4ols4zf2xc.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5331032",
+      "title": "IBA Champions' Night Moscow 2 2025",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "A talented LIVE boxing card featuring the interim WBA Super Featherweight Title fight!",
+      "thumbnail": "https://images.frequency.com/video/7310001826884653618/solid/rectangle/w1920_h1080/1960n88mf7c6g14gy3plorcqq6.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3631019",
+      "title": "LFA Showcase: Maycee Barber",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Before she was a star in the UFC, Maycee Barber quickly rose through the ranks in LFA. Witness her meteoric rise in these select bouts.",
+      "thumbnail": "https://images.frequency.com/video/1pgwyocftrncp1u2f92h9yb2r/w1920_h1080/1pgwyocftrncp1u2f92h9yb2r.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4818179",
+      "title": "Bellator 301",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/12bdrn4fhtif21um08sfgn293/w1920_h1080/12bdrn4fhtif21um08sfgn293.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4818152",
+      "title": "Bellator 300",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/1sxeu7nf8rz3j1ckg7ulbi843/w1920_h1080/1sxeu7nf8rz3j1ckg7ulbi843.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4818112",
+      "title": "Bellator 299",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/38vfi74n594w1iq7ijiwc83fk/w1920_h1080/38vfi74n594w1iq7ijiwc83fk.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4818030",
+      "title": "Bellator 298",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/w61czel5icje15iuhsxtuv2zh/w1920_h1080/w61czel5icje15iuhsxtuv2zh.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5385944",
+      "title": "Bellator 292",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/7e09q0yq054s1kbbuxf1go93w/w1920_h1080/7e09q0yq054s1kbbuxf1go93w.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5144965",
+      "title": "Combat Night Tallahassee",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Live MMA in Florida! A stacked 2025 Pro show with local stars, UFC hopefuls & Combat Night OGs.",
+      "thumbnail": "https://images.frequency.com/video/7297309309021773007/solid/rectangle/w1920_h1080/187cb61aibvu3191jxj9c22yxi.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4848591",
+      "title": "Bellator 298",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/w61czel5icje15iuhsxtuv2zh/w1920_h1080/w61czel5icje15iuhsxtuv2zh.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4724036",
+      "title": "Bellator 292",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/7e09q0yq054s1kbbuxf1go93w/w1920_h1080/7e09q0yq054s1kbbuxf1go93w.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5006435",
+      "title": "Bellator X Rizin 2",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/5lhghspkau0e1in25rcvk04xe/w1920_h1080/5lhghspkau0e1in25rcvk04xe.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5604364",
+      "title": "LFA 23: Sabina Mazo vs Linsey Williams",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Sabina Mazo and Linsey Williams meet in LFA 23",
+      "thumbnail": "https://images.frequency.com/video/7314747953875080737/solid/rectangle/w1920_h1080/vua2vn19t8rp1uyanr5wljis8.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5931661",
+      "title": "LFA 22: Maycee Barber vs Mallory Martin",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Maycee Barber and Mallory Martin touch gloves in LFA 22",
+      "thumbnail": "https://images.frequency.com/video/7314747959525793734/solid/rectangle/w1920_h1080/1p8ysuz7bq6bx1e6qxday25tua.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5914035",
+      "title": "BKFC 4: USA vs. Mexico",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "BKFC's first international event, from Beto Ávila Stadium in Cancun, Mexico.",
+      "thumbnail": "https://images.frequency.com/video/4txp3fk9l9s8zt4unzlkfbq8/w1920_h1080/4txp3fk9l9s8zt4unzlkfbq8.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4631087",
+      "title": "Invicta FC 58: Ducote (USA) vs. Ostroverkhova (RUS)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "A familiar face returns to Invicta FC as Emily Ducote (USA) vs. Yulia Ostroverkhova (RUS).",
+      "thumbnail": "https://images.frequency.com/video/1uqey8edj0u3f1je0fft8smgw/w1280_h720/1uqey8edj0u3f1je0fft8smgw.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5408781",
+      "title": "2022 PFL World Championships feat. Harrison (USA) vs. Pacheco (BRA)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The 2022 World Championship event. Each Champion takes home PFL's $1 million prize.",
+      "thumbnail": "https://images.frequency.com/video/7312575291203573089/solid/rectangle/w1920_h1080/u5n2vc9fuy7e1tv8zu7ko8fgs.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4728684",
+      "title": "BKFC 32: Barnett vs. Herrera",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The stars come out for BKFC 32 with Reggie Barnett defending his title against Geane Herrera.",
+      "thumbnail": "https://images.frequency.com/video/13ge7vavp393j1af55ru1n6ke/w1920_h1080/13ge7vavp393j1af55ru1n6ke.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3997353",
+      "title": "BKFC 27: MVP vs. Platinum",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "In an instant bare-knuckle classic, Michael 'Venom' Page vs Mike Perry headlines this fight card in London.",
+      "thumbnail": "https://images.frequency.com/video/57i3puqlzhgt1knqsstcs5q75/w1920_h1080/57i3puqlzhgt1knqsstcs5q75.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "2855863",
+      "title": "BKFC 25: Adams vs. Cleckler",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Arnold Adams and Dillon Cleckler square up in a full night of bare knuckle boxing action from Orlando, FL.",
+      "thumbnail": "https://images.frequency.com/video/1dll17aw1qcxn1q6ygrqhao03/w1920_h1080/1dll17aw1qcxn1q6ygrqhao03.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "28720",
+      "title": "RWS Muay Thai 2025 Welterweight Bout",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Hard-hitting Muay Thai action, LIVE from the legendary Rajadamnern Stadium!",
+      "thumbnail": "https://images.frequency.com/linear_livestream/28720/solid/rectangle/original.png",
+      "rating": {
+        "ratingSource": "MPAA",
+        "rating": "Everyone"
+      }
+    },
+    {
+      "id": "5057533",
+      "title": "Evander Holyfield vs Michael Dokes",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1989 heavyweight title bout between undefeated Holyfield and a hard-charging Dokes.",
+      "thumbnail": "https://images.frequency.com/video/7293806690099099077/solid/rectangle/w1920_h1080/rv9n3i9f1ph11f7lo6pw686l5.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5056925",
+      "title": "Evander Holyfield vs George Foreman",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1991 heavyweight title bout between young champion Holyfield and legendary power-puncher Foreman.",
+      "thumbnail": "https://images.frequency.com/video/7293806692277453130/solid/rectangle/w1920_h1080/1i6v2o2wwr0w1vkiwz00yt7hd.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3301015",
+      "title": "Eric Murguia vs Ali Izmailov",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Izmaylov (9-0, 6 knockouts) takes on Eric Murguia in a clash of unbeaten light heavyweights.",
+      "thumbnail": "https://images.frequency.com/video/82seca5ncmep16vkiuxbpm61l/w1920_h1080/82seca5ncmep16vkiuxbpm61l.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5099369",
+      "title": "Combat Night Orlando",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Live MMA action kicks off the year in Orlando with a stacked card featuring local talent & fan-fave fighters!",
+      "thumbnail": "https://images.frequency.com/video/7297313459392143986/solid/rectangle/w1920_h1080/1mmq93c9v0rco1tvxpapyv21om.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "3235278",
+      "title": "BKFC 3: The Takeover",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Arnold Adams takes on Sam Shewmaker in the semifinal of the inaugural 8-man Heavyweight tournament.",
+      "thumbnail": "https://images.frequency.com/video/fv708iy88xnl14kvzrm8m44d2/w1920_h1080/fv708iy88xnl14kvzrm8m44d2.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5057170",
+      "title": "Arturo Gatti vs Tracy Harris Patterson",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1995 super featherweight title bout between dogged warrior Gatti and defending champ Patterson.",
+      "thumbnail": "https://images.frequency.com/video/7293806688664539617/solid/rectangle/w1920_h1080/1o14hc7m7cc5t170t5fzvd37i2.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5056819",
+      "title": "Michael Moorer vs George Foreman",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1994 heavyweight title bout between undefeated champion Moorer and aging legend Foreman.",
+      "thumbnail": "https://images.frequency.com/video/7293806695921128873/solid/rectangle/w1920_h1080/tnngaqu1r5ts1ojbaz6l6jnoa.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5056830",
+      "title": "Michael Moorer vs Bert Cooper",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "The classic 1992 heavyweight title bout between heavy-hitting prodigy Moorer and knockout artist Cooper.",
+      "thumbnail": "https://images.frequency.com/video/7293806692707191225/solid/rectangle/w1920_h1080/hee9hld4i42d1ecpdard70j35.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "4818020",
+      "title": "Bellator 297",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Intense fights and explosive MMA action as elite fighters battle it out in the cage!",
+      "thumbnail": "https://images.frequency.com/video/13v34ulehseo71rrty5xklarb/w1920_h1080/13v34ulehseo71rrty5xklarb.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "UNRATED"
+      }
+    },
+    {
+      "id": "5931774",
+      "title": "Ring of Combat 86",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "Swerve Combat presents Ring of Combat 86 LIVE, featuring Guariglia v Rodriguez and Kurashvili v Patrocinio",
+      "thumbnail": "https://images.frequency.com/video/7342969187931254374/solid/rectangle/w1920_h1080/eghsdd5ibgip1akf9kecmsi43.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5932183",
+      "title": "Brave CF 95",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "BRAVE returns to Spain with elite LIVE MMA talent, continuing its rapid European and global expansion!",
+      "thumbnail": "https://images.frequency.com/video/7342969188243541854/solid/rectangle/w1920_h1080/1vgmql1ow69j415cshhtx7es6s.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    },
+    {
+      "id": "5932186",
+      "title": "Combat FC 10 (Prelims)",
+      "genres": [
+        "sports"
+      ],
+      "shortDescription": "LIVE MMA returns to Wilmington, MA for a thrilling night showcasing future UFC stars in regional action.",
+      "thumbnail": "https://images.frequency.com/video/7342969188367041684/solid/rectangle/w1920_h1080/1fa6l3udbyx6e17a9yk6yzc7yg.jpg",
+      "rating": {
+        "ratingSource": "USA_PR",
+        "rating": "TVPG"
+      }
+    }
+  ]
+}

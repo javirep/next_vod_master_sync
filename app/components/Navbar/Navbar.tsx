@@ -8,6 +8,7 @@ import './Navbar.scss'
 import Typography from "../Typography/Typography";
 import { Button } from "../Button/Button";
 //import { logout } from "@/app/utils/actions";
+import { useRouter } from 'next/navigation';
 
 type NavLinkType = {
     name: string;
@@ -16,23 +17,25 @@ type NavLinkType = {
 
 export default function NavBar() {
 
-    //const navigate = useNavigate();
+    const router = useRouter();
 
-    const navLinks = [] as NavLinkType[];
+    const navLinks = [
+        { name: 'Generate CSV', route: '/generateTemplate' },
+        { name: 'EPG', route: '/EPG' },
+    ] as NavLinkType[];
 
     const handleLogout = () => {
         //logout()
         //router.push('/login')
     }
 
-
   return <div className="navbar-container">
         
         <Image src={swerveLogo} alt="Swerve Logo" className='navbar-logo' />
         <div className="navbar-links">
             {navLinks.map((link, index) => {
-                return <div className='navbar-link' onClick={() =>{}} key={index}>
-                    <Typography type='navLink' >{link.name}</Typography>
+                return <div className='navbar-link' onClick={() =>router.push(link.route)} key={index}>
+                    <Typography type='navLink'>{link.name}</Typography>
                 </div>
             })}
         </div>

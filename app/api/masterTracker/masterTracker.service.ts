@@ -16,8 +16,6 @@ export const getTitles = async () => {
 
         let data: string[][] = response.data.values || [];
 
-
-
         let titles: VideoModel[] = mapDataToVideoModel(data);
     
         return titles || [];
