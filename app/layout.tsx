@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import NavBar from "@/app/components/Navbar/Navbar";
 
-import "../../globals.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Swerve VOD Management System",
@@ -15,13 +15,13 @@ export default function Layout({
 }>) {
 
   return (
-    <div className='main-layout'>
-        <NavBar />
-
-        <div className='content'>
+    <html lang="en">
+    
+        <body> 
+           
             {children}
-        </div>
-        
-    </div>
+
+        </body>
+    </html>
   );
 }
