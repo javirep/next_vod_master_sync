@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { RokuEPG, LiveFeed, Program } from '@/app/models/ProgramModel';
+import { RokuEPG, FrequencyEPG, Program, LiveFeed } from '@/app/models/ProgramModel';
 
 
 
@@ -14,31 +14,33 @@ export const getRokuEPG = async () => {
         const movies = data.movies
         const series = data.series
         const tvSpecial = data.tvSpecials
+
+        const feeds: LiveFeed[] = [];
         
-        let rokuLiveFeed = liveFeed.content.schedule.map(
+        liveFeed.content.schedule.forEach(
             (feed) => {
                 let program: Program | null = null;
                 if (!program) program = getShowFromRokuMovies(feed.id, movies)
                 if (!program) program = getShowFromRokuSeries(feed.id, series);
                 if (!program) program = getShowFromTvSpecials(feed.id, tvSpecial);
 
-                return {             
-                    id: feed.id,
-                    program: program ? program : { } ,
-                    date: feed.date,
-                    startTime: feed.times[0],
-                    duration: feed.durationInSeconds
-            }}
-        )
+                feed.times.forEach( time => {
+                    feeds.push({             
+                        id: feed.id,
+                        program: program ? program : { } as Program ,
+                        date: feed.date,
+                        startTime: time,
+                        duration: feed.durationInSeconds
+                    })
+                })
 
-        rokuLiveFeed = rokuLiveFeed.sort((a, b) => {
+        })
+
+        return feeds.sort((a, b) => {
             const dateA = new Date(a.date + 'T' + a.startTime);
             const dateB = new Date(b.date + 'T' + b.startTime);
             return dateA.getTime() - dateB.getTime();
         });
-            
-        
-        return rokuLiveFeed;
         
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -46,56 +48,95 @@ export const getRokuEPG = async () => {
     }
 }
 
-    const getShowFromRokuMovies = (id: string, rokuMovies) => {
-        
-        const rokuShow = rokuMovies.find((movie) => movie.id === id);
-        
-        if (rokuShow) {
-            return {
-                title: rokuShow.title,
-                description: rokuShow.shortDescription,
-                thumbnail: rokuShow.thumbnail,
-            };
-        }
-        
-        return null;
+const getShowFromRokuMovies = (id: string, rokuMovies) => {
+    
+    const rokuShow = rokuMovies.find((movie) => movie.id === id);
+    
+    if (rokuShow) {
+        return {
+            title: rokuShow.title,
+            description: rokuShow.shortDescription,
+            thumbnail: rokuShow.thumbnail,
+        };
     }
+    
+    return null;
+}
 
-    const getShowFromRokuSeries = (id: string, rokuSeries) => {
+const getShowFromRokuSeries = (id: string, rokuSeries) => {
+
+    let program: Program | null = null
+    
+    rokuSeries.forEach((series) => {
+        const seasons = series.seasons
         
-        rokuSeries.forEach((series) => {
-            const seasons = series.seasons
+        seasons.forEach((season) => {
+            const episodes = season.episodes;
+            
+            
+            const episode = episodes.find((ep) => ep.id == id);
 
-            seasons.forEach((season) => {
-                const episodes = season.episodes;
+            if (episode) {
 
-                const episode = episodes.find((ep) => ep.id === id);
-                
-                if (episode) {
-                    return {
-                        title: episode.title,
-                        description: episode.shortDescription,
-                        thumbnail: episode.thumbnail,
-                        season: season.seasonNumber,
-                        episode: episode.episodeNumber
-                    };
-                }
-            });
+                program = {
+                    title: episode.title,
+                    description: episode.shortDescription,
+                    thumbnail: episode.thumbnail,
+                    season: season.seasonNumber,
+                    episode: episode.episodeNumber
+                };
+            }
+        });
+    });
+
+    return program;
+}
+
+const getShowFromTvSpecials = (id: string, rokuTvSpecials) => {
+    const rokuShow = rokuTvSpecials.find((tvSpecial) => tvSpecial.id === id);
+    
+    if (rokuShow) {
+        return {
+            title: rokuShow.title,
+            description: rokuShow.shortDescription,
+            thumbnail: rokuShow.thumbnail,
+        };
+    }
+    
+    return null;
+}
+
+export const getFrequencyEPG = async () => {
+    const response = await axios.get(
+        `https://epg.frequency.com/output?id=253`
+    );
+
+    const data: FrequencyEPG = response.data
+
+    const schedule = data.schedule
+
+    let frequencyLiveFeed = schedule.map(
+        feed => {
+            return {             
+                    id: feed.programId,
+                    program:  {
+                        title: feed.title,
+                        description: feed.description,
+                        thumbnail: feed.thumbnail,
+                        season: feed.season,
+                        episode: feed.episode,
+                    },
+                    date: feed.start.split("T")[0],
+                    startTime: feed.start.split("T")[1],
+                    duration: feed.duration
+            }
+        }
+    )
+
+    return frequencyLiveFeed.sort((a, b) => {
+            const dateA = new Date(a.date + 'T' + a.startTime);
+            const dateB = new Date(b.date + 'T' + b.startTime);
+            return dateA.getTime() - dateB.getTime();
         });
 
-        return null;
-    }
-
-    const getShowFromTvSpecials = (id: string, rokuTvSpecials) => {
-        const rokuShow = rokuTvSpecials.find((tvSpecial) => tvSpecial.id === id);
-        
-        if (rokuShow) {
-            return {
-                title: rokuShow.title,
-                description: rokuShow.shortDescription,
-                thumbnail: rokuShow.thumbnail,
-            };
-        }
-        
-        return null;
-    }
+}

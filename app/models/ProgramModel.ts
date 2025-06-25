@@ -67,6 +67,61 @@ export type RokuEPG = {
     }[]
 }
 
+export type FrequencyEPG = {
+    output: {
+        type: string,
+        format: string,
+        version: string,
+        timeframe: string,
+        start: string,
+        end: string,
+        query: string,
+        queryDuration: number,
+        responseCharacters: number,
+        scheduleItems: number
+    }
+    schedule: {
+      start: string,
+      end: string,
+      duration: number,
+      programType: string,
+      programId: string,
+      videoId: string,
+      videoIdPartner: string,
+      thumbnail: string,
+      title: string,
+      titleInternal: string,
+      description: string,
+      keywords: string,
+      ratingAge: null,
+      parentalRating: string,
+      country: string,
+      countryName: string,
+      language: string,
+      languageName: string,
+      contentType: string,
+      contentFormat: string,
+      genre: string,
+      seriesId: string,
+      series: string,
+      season: number,
+      episode: number,
+      seriesMetadata: {
+        episodeTitle: string,
+        seasonTitle: string,
+        images: {
+
+        },
+        extended_metadata: null
+      },
+      adBreakPositions: string,
+      externalMetadataId: string,
+      videoPublishDate: string,
+      images: string[],
+      localizedMetadata: string[],
+    }[]
+}
+
 export type Program = {
         title: string;
         description: string;

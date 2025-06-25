@@ -1,7 +1,35 @@
+@import '../../constants';
+
 
 .epg-item{ 
     img {
         width: 100%;
         height: auto;
     }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 8px;
+
+    .epg-item__thumbnail{
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .epg-item__data{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        div {
+            margin-bottom: 8px;
+        }
+    }
+
+}
+.epg-item--error {
+    border: 1px solid $error; 
+    border-radius: 4px;
 }

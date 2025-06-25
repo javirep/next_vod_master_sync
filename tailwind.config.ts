@@ -32,7 +32,8 @@ module.exports = {
           secondary: '#C0D0EB',
         },
         white: '#D3D1D1',
-        error: '#BE3144',
+        error: '#ebc1c6',
+        backgroundError: '#',
         grey: {
           25: '#1F1F1F',
           50: "#2E2E2E",

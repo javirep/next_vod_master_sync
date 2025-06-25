@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server';
-import { getFrequencyEPG } from '../EPG.service';
 
 export async function GET() {
-  const FrequencyEPG = await getFrequencyEPG();
-  
   return NextResponse.json({
-    epg: FrequencyEPG
+    epg: {}
   }, {
     status: 200,
     headers: {
