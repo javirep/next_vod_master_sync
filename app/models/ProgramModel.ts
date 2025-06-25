@@ -109,9 +109,6 @@ export type FrequencyEPG = {
       seriesMetadata: {
         episodeTitle: string,
         seasonTitle: string,
-        images: {
-
-        },
         extended_metadata: null
       },
       adBreakPositions: string,
