@@ -38,11 +38,11 @@ export default function EPGItem({ item }: EPGItemProps) {
             return 'thumbnail';
         }
 
-        if (program.duration >= 14400) { 
+        if (duration >= 14400) { 
             return 'duration';
         }
 
-        if (program.duration < 15*60) {
+        if (duration < 15*60) {
             return 'duration';
         }
     
@@ -50,7 +50,6 @@ export default function EPGItem({ item }: EPGItemProps) {
     }
 
     const error = checkError(program);
-
 
     return (
         <div className={classNames('epg-item', {
