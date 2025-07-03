@@ -91,7 +91,7 @@ export const genresMaster: GenresMaster = {
         frequency: 'Sports/Hockey',
     },
     mixed_martial_arts: {
-        frequency: 'Sports/Mixed Martial Arts',
+        frequency: 'Sports/MMA',
     },
     motorcycle: {
         frequency: 'Auto/Motorcycle',

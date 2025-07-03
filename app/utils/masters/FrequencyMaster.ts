@@ -134,8 +134,8 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'country',
-            key: 'countryOfOrigin',
-            defaultValue: '',
+            key: '',
+            defaultValue: 'US',
         },
         {
             header: 'rating',

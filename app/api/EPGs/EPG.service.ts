@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { RokuEPG, FrequencyEPG, Program, LiveFeed } from '@/app/models/ProgramModel';
+import moment from 'moment';
 
 
 
@@ -29,11 +30,10 @@ export const getRokuEPG = async () => {
                         id: feed.id,
                         program: program ? program : { } as Program ,
                         date: feed.date,
-                        startTime: time,
+                        startTime: subtractHours(time, 4),
                         duration: feed.durationInSeconds
                     })
                 })
-
         })
 
         return feeds.sort((a, b) => {
@@ -46,6 +46,18 @@ export const getRokuEPG = async () => {
         console.error('Error fetching data:', error);
         return []
     }
+}
+
+function subtractHours(timeStr: string, hoursToSubtract: number): string {
+  const [hours, minutes, seconds] = timeStr.split(":").map(Number);
+
+  // Create a date with arbitrary date parts, just to use the time
+  const date = new Date(2000, 0, 1, hours, minutes, seconds);
+  date.setHours(date.getHours() - hoursToSubtract);
+
+  // Format back to "HH:MM:SS" with leading zeros
+  const pad = (n: number) => n.toString().padStart(2, '0');
+  return `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
 }
 
 const getShowFromRokuMovies = (id: string, rokuMovies) => {
@@ -117,6 +129,8 @@ export const getFrequencyEPG = async () => {
 
     let frequencyLiveFeed = schedule.map(
         feed => {
+            let startDate = new Date(feed.start)
+            startDate.setHours(startDate.getHours() - 4);
             return {             
                     id: feed.programId,
                     program:  {
@@ -126,8 +140,8 @@ export const getFrequencyEPG = async () => {
                         season: feed.season,
                         episode: feed.episode,
                     },
-                    date: feed.start.split("T")[0],
-                    startTime: feed.start.split("T")[1],
+                    date: startDate.toISOString().split("T")[0],
+                    startTime: startDate.toISOString().split("T")[1],
                     duration: feed.duration
             }
         }
