@@ -16,6 +16,9 @@ type FilteredLiveFeeds = {
     'roku': LiveFeed[];
     'frequency': LiveFeed[];
     'gracenote': LiveFeed[];
+    'womenRoku': LiveFeed[];
+    'womenFrequency': LiveFeed[];
+    'womenGracenote': LiveFeed[];
 }
 
 function Page() {
@@ -23,41 +26,69 @@ function Page() {
     const [frequencyLiveFeed, setFrequencyLiveFeed] = useState<LiveFeed[]>([]);
     const [gracenoteLiveFeed, setGracenoteLiveFeed] = useState<LiveFeed[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
+    const [womenRokuLiveFeed, setWomenRokuLiveFeed] = useState<LiveFeed[]>([]);
+    const [womenFrequencyLiveFeed, setWomenFrequencyLiveFeed] = useState<LiveFeed[]>([]);
+    const [womenGracenoteLiveFeed, setWomenGracenoteLiveFeed] = useState<LiveFeed[]>([]);
 
     const [filteredLiveFeeds, setFilteredLiveFeeds] = useState<FilteredLiveFeeds>({
         'roku': [],
         'frequency': [],
-        'gracenote': []
+        'gracenote': [],
+        'womenRoku': [],
+        'womenFrequency': [],
+        'womenGracenote': []
     });
     const [selectedDate, setSelectedDate] = useState<string>('');
     const [liveFeed1, setLiveFeed1] = useState<string>('frequency');
-    const [liveFeed2, setLiveFeed2] = useState<string>('roku');
+    const [liveFeed2, setLiveFeed2] = useState<string>('womenFrequency');
 
     const inputOptions = [
-        { value: 'frequency', label: 'Frequency EPG' },
-        { value: 'roku', label: 'Roku EPG' },
-        { value: 'gracenote', label: 'GraceNote EPG' },
+        { value: 'frequency', label: 'Combat Frequency EPG' },
+        { value: 'roku', label: 'Combat Roku EPG' },
+        { value: 'gracenote', label: 'Combat GraceNote EPG' },
+        { value: 'womenFrequency', label: 'Women Frequency EPG' },
+        { value: 'womenRoku', label: 'Women Roku EPG' },
+        { value: 'womenGracenote', label: 'Women GraceNote EPG' },
     ];
     
     const loadEPGs = async () => {
-        const rokuEPG = await getRokuEPG();
+        const rokuEPG = await getRokuEPG('253');
         if (rokuEPG) {
             setRokuLiveFeed(rokuEPG.epg);
         } else {
             console.error('Failed to fetch Roku EPG');
         }
 
-        const frequencyEPG = await getFrequencyEPG();
+        const frequencyEPG = await getFrequencyEPG('253');
         if (frequencyEPG) {
             setFrequencyLiveFeed(frequencyEPG.epg);
         } else {
             console.error('Failed to fetch Frequency EPG');
         }
+        
+        const womenFrequencyEPG = await getFrequencyEPG('1013');
+        console.log('womenFrequencyEPG', womenFrequencyEPG);
+        if (womenFrequencyEPG) {
+            setWomenFrequencyLiveFeed(womenFrequencyEPG.epg);
+        } else {
+            console.error('Failed to fetch Frequency EPG');
+        }
+
+        const womenRokuEPG = await getRokuEPG('1013');
+        if (womenRokuEPG) {
+            setWomenRokuLiveFeed(womenRokuEPG.epg);
+        } else {
+            console.error('Failed to fetch Roku EPG');
+        }
+                
 
         setFilteredLiveFeeds({
             'roku': rokuEPG ? rokuEPG.epg : [],
             'frequency': frequencyEPG ? frequencyEPG.epg : [],
-            'gracenote': []
+            'gracenote': [], 
+            'womenRoku': womenRokuEPG ? womenRokuEPG.epg : [],
+            'womenFrequency': womenFrequencyEPG ? womenFrequencyEPG.epg : [],
+            'womenGracenote': []
         });
 
         setLoading(false);
@@ -72,7 +103,10 @@ function Page() {
             setFilteredLiveFeeds({
                 'roku': rokuLiveFeed,
                 'frequency': frequencyLiveFeed,
-                'gracenote': gracenoteLiveFeed
+                'gracenote': gracenoteLiveFeed, 
+                'womenRoku': womenRokuLiveFeed,
+                'womenFrequency': womenFrequencyLiveFeed,
+                'womenGracenote': womenGracenoteLiveFeed
             });
             return;
         }
@@ -92,11 +126,26 @@ function Page() {
                 const feedDate = new Date(feed.date + 'T' + feed.startTime);
                 return feedDate.toISOString().startsWith(selectedDate);
             });
+            const filteredWomenRoku = womenRokuLiveFeed.filter((feed) => {
+                const feedDate = new Date(feed.date + 'T' + feed.startTime);
+                return feedDate.toISOString().startsWith(selectedDate);
+            });
+            const filteredWomenFrequency = womenFrequencyLiveFeed.filter((feed) => {
+                const feedDate = new Date(feed.date + 'T' + feed.startTime);
+                return feedDate.toISOString().startsWith(selectedDate);
+            });
+            const filteredWomenGracenote = womenGracenoteLiveFeed.filter((feed) => {
+                const feedDate = new Date(feed.date + 'T' + feed.startTime);
+                return feedDate.toISOString().startsWith(selectedDate);
+            });
 
             setFilteredLiveFeeds({
                 'roku': filteredRoku,
                 'frequency': filteredFrequency,
-                'gracenote': filteredGracenote
+                'gracenote': filteredGracenote, 
+                'womenRoku': filteredWomenRoku,
+                'womenFrequency': filteredWomenFrequency,
+                'womenGracenote': filteredWomenGracenote
             });
         }
 

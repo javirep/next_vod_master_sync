@@ -4,10 +4,10 @@ import moment from 'moment';
 
 
 
-export const getRokuEPG = async () => {
+export const getRokuEPG = async (url) => {
     try{
         const response = await axios.get(
-                `https://epg.frequency.com/output?id=253&format=roku_true_epg`
+                url
             );
 
         const data: RokuEPG = response.data
@@ -26,11 +26,14 @@ export const getRokuEPG = async () => {
                 if (!program) program = getShowFromTvSpecials(feed.id, tvSpecial);
 
                 feed.times.forEach( time => {
+                    let startDate = new Date(feed.date + 'T' + time)
+                    startDate.setHours(startDate.getHours() - 14);
+
                     feeds.push({             
                         id: feed.id,
                         program: program ? program : { } as Program ,
-                        date: feed.date,
-                        startTime: subtractHours(time, 4),
+                        date: startDate.toISOString().split("T")[0],
+                        startTime: startDate.toISOString().split("T")[1],
                         duration: feed.durationInSeconds
                     })
                 })
@@ -46,18 +49,6 @@ export const getRokuEPG = async () => {
         console.error('Error fetching data:', error);
         return []
     }
-}
-
-function subtractHours(timeStr: string, hoursToSubtract: number): string {
-  const [hours, minutes, seconds] = timeStr.split(":").map(Number);
-
-  // Create a date with arbitrary date parts, just to use the time
-  const date = new Date(2000, 0, 1, hours, minutes, seconds);
-  date.setHours(date.getHours() - hoursToSubtract);
-
-  // Format back to "HH:MM:SS" with leading zeros
-  const pad = (n: number) => n.toString().padStart(2, '0');
-  return `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
 }
 
 const getShowFromRokuMovies = (id: string, rokuMovies) => {
@@ -118,9 +109,9 @@ const getShowFromTvSpecials = (id: string, rokuTvSpecials) => {
     return null;
 }
 
-export const getFrequencyEPG = async () => {
+export const getFrequencyEPG = async (url: string) => {
     const response = await axios.get(
-        `https://epg.frequency.com/output?id=253`
+        url
     );
 
     const data: FrequencyEPG = response.data
