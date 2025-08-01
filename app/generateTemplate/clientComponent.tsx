@@ -22,6 +22,7 @@ type TableFilters = {
     distributor: string
     title: string
     guids: string
+    series_title: string
     brandedVOD: boolean
     unbrandedVOD: boolean
     thirdPartyLinear: boolean
@@ -43,6 +44,7 @@ const Page = (  ) => {
         distributor: '',
         title: '',
         guids: '',
+        series_title: '',
         brandedVOD: false,
         unbrandedVOD: false,
         thirdPartyLinear: false,
@@ -209,6 +211,7 @@ const Page = (  ) => {
     const applyFilters = (video: VideoModel) => {
         if (filters.distributor && video.licensor.toLowerCase().indexOf(filters.distributor.toLowerCase()) === -1) return false;
         if (filters.title && video.title.toLowerCase().indexOf(filters.title.toLowerCase()) === -1) return false;
+        if (filters.series_title && (!video.seriesName || video.seriesName.toLowerCase().indexOf(filters.series_title.toLowerCase()) === -1 )) return false;
         if (filters.brandedVOD && !video.brandedVOD) return false;
         if (filters.unbrandedVOD && !video.unbrandedVOD) return false;
         if (filters.thirdPartyLinear && !video.thirdPartyLinear) return false;
@@ -238,6 +241,7 @@ const Page = (  ) => {
                     <div className='filters-container'>
                         <TextInput labelText="Distributor" onChange={(e) => handleTextFilters(e, 'distributor')}/>
                         <TextInput labelText="Title" onChange={(e) => handleTextFilters(e, 'title')}/>
+                        <TextInput labelText="Series Title" onChange={(e) => handleTextFilters(e, 'series_title')}/>
                         <TextInput labelText="GUID(s)" onChange={(e) => handleTextFilters(e, 'guids')}/>
                     
                 
@@ -263,6 +267,7 @@ const Page = (  ) => {
                     {colKey: 'licensor', colText: 'Distributor', width: 120},
                     {colKey: 'type', colText: 'Type', width: 80},
                     {colKey: 'title', colText: 'Title', width: 200},
+                    {colKey: 'series', colText: 'Series Name', width: 200},
                     {colKey: 'rightsStart', colText: 'Rights Start', width: 100},
                     {colKey: 'rightsEnd', colText: 'Rights End', width: 100},
                     {colKey: 'frequency', colText: 'In Frequency', width: 150},
