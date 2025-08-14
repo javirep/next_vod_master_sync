@@ -62,6 +62,7 @@ export const FrequencyMaster: outputMasterType = {
                 type: 'type',
                 from: 'masterTracker',
                 to: 'frequencyFormat',
+                using: ['series']
             },
             validation: {
                 required: true,
@@ -89,11 +90,19 @@ export const FrequencyMaster: outputMasterType = {
             header: 'season_number',
             key: 'season',
             defaultValue: '',
+            validation: {
+                required: false,
+                requiredIfField: 'series'
+            }
         },
         {
             header: 'episode_number',
             key: 'episode',
             defaultValue: '',
+            validation: {
+                required: false,
+                requiredIfField: 'series'
+            }
         },
         {
             header: 'genre',

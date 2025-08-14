@@ -29,10 +29,19 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
                 }
             }
 
-            if (field.validation && field.validation.required) {
+            let isRequiredField = field.validation && field.validation.required
+            let isConditionallyRequiredField = field.validation && field.validation.requiredIfField && video[field.validation.requiredIfField] != ''
+
+            if ( isRequiredField || isConditionallyRequiredField ) {
                 let validationOutput: validationOutputType = isRequired( value )
                 if (!validationOutput.success) {
-                    errors.push([video.title, field.header, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
+                    let errorMessage = isConditionallyRequiredField && field.validation ? (
+                        validationOutput.errorMessage + `. This field is required because the field ${field.validation.requiredIfField} is not empty`
+                    ) : (
+                        validationOutput.errorMessage
+                    )
+
+                    errors.push([video.title, field.header, errorMessage, moment().format('YYYY-MM-DD')])
                 }
             }
 
@@ -96,7 +105,8 @@ const transform = (value: string, type: string, from: string, to: string, using:
         return transformTerritory(value, from, to)
     }
     else if (type === 'type') {
-        return transformTypeFn(value, from, to)
+        const belongsToSeries = using.length > 0 && using[0] != ''
+        return transformTypeFn(value, from, to, belongsToSeries)
     }
     else if (type === 'ratingSource') {
         return transformRatingSource(value, from, to)
@@ -212,7 +222,7 @@ const transformTerritory = (territories: string, from: string, to: string) => {
     return territories;
 }
 
-const transformTypeFn = (type: string, from: string, to: string) => {
+const transformTypeFn = (type: string, from: string, to: string, belongsToSeries: boolean = false) => {
     if (to === 'Roku') {
         if (type === 'Movies') return 'movie'
         if (type === 'Television') return 'episode'
@@ -233,8 +243,8 @@ const transformTypeFn = (type: string, from: string, to: string) => {
 
     if (to === 'frequencyFormat') {
         if (type === 'Movies') return 'Movie'
-        if (type === 'Television') return 'Show'
-        if (type === 'Sports') return 'Event'
+        if (belongsToSeries) return 'Show'
+        else return 'Event'
     }
 
     if (to === 'frequencyType') {

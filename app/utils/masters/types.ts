@@ -17,6 +17,7 @@ export type validationType = {
     futureDate?: boolean;
     maxLength?: number;
     isUnique?: boolean;
+    requiredIfField?: string;
     regex?: Regex;
 }
 
