@@ -8,11 +8,11 @@
     }
 
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 18px;
     padding: 8px;
-    min-height: 200px;
+    height: 200px;
+    overflow: scroll;
 
     .epg-item__thumbnail{
         width: 100%;

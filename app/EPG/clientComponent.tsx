@@ -50,6 +50,11 @@ function Page() {
         { value: 'womenRoku', label: 'Women Roku EPG' },
         { value: 'womenGracenote', label: 'Women GraceNote EPG' },
     ];
+
+    const filterPastFeedsFn = (feed: LiveFeed): boolean => {
+        const feedDate = new Date(feed.date + 'T' + feed.startTime);
+        return feedDate.getTime() > new Date().getTime() - 4 * 60 * 60 * 1000; // Filter out feeds older than 4 hours
+    }
     
     const loadEPGs = async () => {
         const rokuEPG = await getRokuEPG('253');
@@ -67,7 +72,7 @@ function Page() {
         }
         
         const womenFrequencyEPG = await getFrequencyEPG('1013');
-        console.log('womenFrequencyEPG', womenFrequencyEPG);
+        
         if (womenFrequencyEPG) {
             setWomenFrequencyLiveFeed(womenFrequencyEPG.epg);
         } else {
@@ -80,14 +85,15 @@ function Page() {
         } else {
             console.error('Failed to fetch Roku EPG');
         }
-                
+
+        const gracenoteEPG = await getGracenoteEPG();
 
         setFilteredLiveFeeds({
-            'roku': rokuEPG ? rokuEPG.epg : [],
-            'frequency': frequencyEPG ? frequencyEPG.epg : [],
+            'roku': rokuEPG ? rokuEPG.epg.filter(filterPastFeedsFn) : [],
+            'frequency': frequencyEPG ? frequencyEPG.epg.filter(filterPastFeedsFn) : [],
             'gracenote': [], 
-            'womenRoku': womenRokuEPG ? womenRokuEPG.epg : [],
-            'womenFrequency': womenFrequencyEPG ? womenFrequencyEPG.epg : [],
+            'womenRoku': womenRokuEPG ? womenRokuEPG.epg.filter(filterPastFeedsFn) : [],
+            'womenFrequency': womenFrequencyEPG ? womenFrequencyEPG.epg.filter(filterPastFeedsFn) : [],
             'womenGracenote': []
         });
 
@@ -99,53 +105,31 @@ function Page() {
     }, []);
 
     useEffect(() => {
+        const startsWithFn = (feed: LiveFeed): boolean => {
+            const feedDate = new Date(feed.date + 'T' + feed.startTime);
+            return feedDate.toISOString().startsWith(selectedDate);
+        }
+
         if (!selectedDate){
             setFilteredLiveFeeds({
-                'roku': rokuLiveFeed,
-                'frequency': frequencyLiveFeed,
-                'gracenote': gracenoteLiveFeed, 
-                'womenRoku': womenRokuLiveFeed,
-                'womenFrequency': womenFrequencyLiveFeed,
-                'womenGracenote': womenGracenoteLiveFeed
+                'roku': rokuLiveFeed.filter(filterPastFeedsFn),
+                'frequency': frequencyLiveFeed.filter(filterPastFeedsFn),
+                'gracenote': gracenoteLiveFeed.filter(filterPastFeedsFn), 
+                'womenRoku': womenRokuLiveFeed.filter(filterPastFeedsFn),
+                'womenFrequency': womenFrequencyLiveFeed.filter(filterPastFeedsFn),
+                'womenGracenote': womenGracenoteLiveFeed.filter(filterPastFeedsFn)
             });
             return;
         }
 
         else {
-            const filteredRoku = rokuLiveFeed.filter((feed) => {
-                const feedDate = new Date(feed.date + 'T' + feed.startTime);
-                return feedDate.toISOString().startsWith(selectedDate);
-            });
-
-            const filteredFrequency = frequencyLiveFeed.filter((feed) => {
-                const feedDate = new Date(feed.date + 'T' + feed.startTime);
-                return feedDate.toISOString().startsWith(selectedDate);
-            });
-            
-            const filteredGracenote = gracenoteLiveFeed.filter((feed) => {
-                const feedDate = new Date(feed.date + 'T' + feed.startTime);
-                return feedDate.toISOString().startsWith(selectedDate);
-            });
-            const filteredWomenRoku = womenRokuLiveFeed.filter((feed) => {
-                const feedDate = new Date(feed.date + 'T' + feed.startTime);
-                return feedDate.toISOString().startsWith(selectedDate);
-            });
-            const filteredWomenFrequency = womenFrequencyLiveFeed.filter((feed) => {
-                const feedDate = new Date(feed.date + 'T' + feed.startTime);
-                return feedDate.toISOString().startsWith(selectedDate);
-            });
-            const filteredWomenGracenote = womenGracenoteLiveFeed.filter((feed) => {
-                const feedDate = new Date(feed.date + 'T' + feed.startTime);
-                return feedDate.toISOString().startsWith(selectedDate);
-            });
-
             setFilteredLiveFeeds({
-                'roku': filteredRoku,
-                'frequency': filteredFrequency,
-                'gracenote': filteredGracenote, 
-                'womenRoku': filteredWomenRoku,
-                'womenFrequency': filteredWomenFrequency,
-                'womenGracenote': filteredWomenGracenote
+                'roku': rokuLiveFeed.filter(startsWithFn),
+                'frequency': frequencyLiveFeed.filter(startsWithFn),
+                'gracenote': gracenoteLiveFeed.filter(startsWithFn), 
+                'womenRoku': womenRokuLiveFeed.filter(startsWithFn),
+                'womenFrequency': womenFrequencyLiveFeed.filter(startsWithFn),
+                'womenGracenote': womenGracenoteLiveFeed.filter(startsWithFn)
             });
         }
 

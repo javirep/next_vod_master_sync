@@ -1,8 +1,5 @@
 import axios from 'axios'
 import { RokuEPG, FrequencyEPG, Program, LiveFeed } from '@/app/models/ProgramModel';
-import moment from 'moment';
-
-
 
 export const getRokuEPG = async (url) => {
     try{
@@ -14,7 +11,7 @@ export const getRokuEPG = async (url) => {
         const liveFeed = data.liveFeeds[0]
         const movies = data.movies
         const series = data.series
-        const tvSpecial = data.tvSpecials
+        const tvSpecials = data.tvSpecials
 
         const feeds: LiveFeed[] = [];
         
@@ -23,7 +20,7 @@ export const getRokuEPG = async (url) => {
                 let program: Program | null = null;
                 if (!program) program = getShowFromRokuMovies(feed.id, movies)
                 if (!program) program = getShowFromRokuSeries(feed.id, series);
-                if (!program) program = getShowFromTvSpecials(feed.id, tvSpecial);
+                if (!program) program = getShowFromTvSpecials(feed.id, tvSpecials);
 
                 feed.times.forEach( time => {
                     let startDate = new Date(feed.date + 'T' + time)
@@ -76,7 +73,6 @@ const getShowFromRokuSeries = (id: string, rokuSeries) => {
         seasons.forEach((season) => {
             const episodes = season.episodes;
             
-            
             const episode = episodes.find((ep) => ep.id == id);
 
             if (episode) {
@@ -85,6 +81,7 @@ const getShowFromRokuSeries = (id: string, rokuSeries) => {
                     title: episode.title,
                     description: episode.shortDescription,
                     thumbnail: episode.thumbnail,
+                    series: series.title,
                     season: season.seasonNumber,
                     episode: episode.episodeNumber
                 };
@@ -128,6 +125,7 @@ export const getFrequencyEPG = async (url: string) => {
                         title: feed.title,
                         description: feed.description,
                         thumbnail: feed.thumbnail,
+                        series: feed.series,
                         season: feed.season,
                         episode: feed.episode,
                     },

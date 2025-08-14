@@ -19,6 +19,7 @@ export const FrequencyMaster: outputMasterType = {
             defaultValue: '',
             validation: {
                 required: true,
+                maxLength: 110,
             }
         },
         {
@@ -170,5 +171,10 @@ export const FrequencyMaster: outputMasterType = {
             key: 'guid',
             defaultValue: ''
         },
+        {
+            header: 'New Video File Path', 
+            key: 'newVideoFilePath',
+            defaultValue:''
+        }
     ]
 }

@@ -123,6 +123,7 @@ export type Program = {
         title: string;
         description: string;
         thumbnail: string;
+        series?: string;
         season?: string;
         episode?: string;
     };

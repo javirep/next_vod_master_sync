@@ -11,6 +11,7 @@ type EPGItemProps = {
 
 export default function EPGItem({ item }: EPGItemProps) {
     const { program, date, startTime, duration } = item;
+    const { series = '', season = '', episode = '' } = program;
 
 
     function getDuration(duration: number): string {
@@ -30,7 +31,15 @@ export default function EPGItem({ item }: EPGItemProps) {
             return 'title';
         }
 
+        if (program.title.toLowerCase().includes('season ')) {
+            return 'title';
+        }
+
         if (!program.description) {
+            return 'description';
+        }
+
+        if (program.description.length > 110) {
             return 'description';
         }
         
@@ -38,7 +47,7 @@ export default function EPGItem({ item }: EPGItemProps) {
             return 'thumbnail';
         }
 
-        if (duration >= 14400) { 
+        if (duration > 14400) { 
             return 'duration';
         }
 
@@ -75,13 +84,21 @@ export default function EPGItem({ item }: EPGItemProps) {
                     <Typography type={error == 'duration' ? 'error' : 'body'}>
                         Duration: { getDuration(duration) } 
                     </Typography>
+
+                    {
+                        series ? (
+                            <Typography type='body'>
+                                Series: { series } { season ? `- S: ${season}` : '' } { episode ? `- E: ${episode}` : '' }
+                            </Typography>
+                        ) : null
+                    }
                 
                     <Typography type={error == 'title' ? 'error' : 'body'}>
                         Title: {program.title}
                     </Typography>
 
                     <Typography type={error == 'description' ? 'error' : 'body'}>
-                        Description: {program.description}
+                        Synopsis: {program.description}
                     </Typography>
                 </div>
             </div>

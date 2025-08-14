@@ -61,7 +61,7 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
             }
 
             if ( field.validation && field.validation.maxLength ) {
-                if ( !isShorterThan( value, field.validation.maxLength ) ) {
+                if ( !noLongerThan( value, field.validation.maxLength ) ) {
                     errors.push([video.title, field.header, `"${field.header} (value: ${value}) should be shorter than ${field.validation.maxLength}"`, moment().format('YYYY-MM-DD')])
                 }
             }
@@ -414,7 +414,7 @@ const isBeforeThan = ( value: string, threshold: string ) => {
     return { success: moment(value).isBefore(threshold) }
 }
 
-const isShorterThan = ( value: string, threshold: number ) => {
+const noLongerThan = ( value: string, threshold: number ) => {
     if (!value) return { success: true };
 
     if (value.length <= threshold) {

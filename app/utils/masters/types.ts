@@ -1,3 +1,4 @@
+import { Regex } from "aws-sdk/clients/iot";
 import { VideoModel } from "../../models/VideoModel";
 
 export type sourceMasterField = {
@@ -16,6 +17,7 @@ export type validationType = {
     futureDate?: boolean;
     maxLength?: number;
     isUnique?: boolean;
+    regex?: Regex;
 }
 
 export type transformType = {
