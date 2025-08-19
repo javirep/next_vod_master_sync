@@ -417,6 +417,7 @@ const isFormated = ( value: string, format: string ) => {
 }
 
 const isBeforeThan = ( value: string, threshold: string ) => {
+    if (!value) return { success: false }
     if ( value.charAt(0) === '"' ) {
         value = value.substring(1, value.length - 1);
     }
