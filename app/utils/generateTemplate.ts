@@ -243,7 +243,8 @@ const transformTypeFn = (type: string, from: string, to: string, belongsToSeries
 
     if (to === 'frequencyFormat') {
         if (type === 'Movies') return 'Movie'
-        if (belongsToSeries) return 'Show'
+        if (type === 'Television') return 'Show'
+        if (type === 'Sports') return 'Event'
         else return 'Event'
     }
 
