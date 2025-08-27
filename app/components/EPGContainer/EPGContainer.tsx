@@ -31,16 +31,6 @@ function EPGContainer( props: EPGProps ) {
         }
     };
 
-    const timeCheck = new Date(liveFeeds[0].date + 'T' + liveFeeds[0].startTime);
-
-    const checkLiveFeedGaps = (liveFeeds: LiveFeed[]): boolean => {
-
-        if (liveFeeds.length === 0) return false;   
-
-
-        return false;
-    } 
-
     return (
         <div className='epg-container'>
             <Typography type='subtitle' className='epg-container__title'>
@@ -58,14 +48,9 @@ function EPGContainer( props: EPGProps ) {
                     }
                     
                     return (
-                        < >
-                            { 
-                                gap && <div className='epg-item epg-item--error'>
-                                    <Typography type='error'>GAP BIGGER THAN 30 SECONDS DETECTED</Typography>
-                                </div> 
-                            }
-                            <EPGItem item={feed}/> 
-                        </>
+                        <div key={index}>
+                            <EPGItem item={feed} gapError = {gap}/> 
+                        </div>
                     )
 
                 })
