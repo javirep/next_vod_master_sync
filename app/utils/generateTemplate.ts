@@ -218,6 +218,15 @@ const transformTerritory = (territories: string, from: string, to: string) => {
         return result
     }
         
+    if (to == 'plutoAvails') { 
+        if (territories.includes('ww')) return 'Worldwide'
+
+        let result = '';
+
+        if (territories.includes('US')) result += 'US & Territories & Possessions, '
+        if (territories.includes('CA')) result += "Canada, "
+        if (territories.includes('UK')) result += "UK, "
+    }
 
     return territories;
 }
@@ -252,6 +261,10 @@ const transformTypeFn = (type: string, from: string, to: string, belongsToSeries
         if (type === 'Movies') return 'Film'
         if (type === 'Television') return 'Episode'
         if (type === 'Sports') return 'Competitive Match'
+    }
+    if (to === 'plutoAvails') { 
+        if (type === 'Movies') return 'Film'
+        else return "TV-Season"
     }
 
 
