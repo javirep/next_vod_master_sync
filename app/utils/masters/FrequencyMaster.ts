@@ -181,8 +181,12 @@ export const FrequencyMaster: outputMasterType = {
             defaultValue: ''
         },
         {
-            header: 'New Video File Path', 
-            key: 'newVideoFilePath',
+            header: 'File Path',
+            key: 'filePath'
+        },
+        {
+            header: 'Updated File Path', 
+            key: 'updatedFileName',
             defaultValue:''
         }
     ]

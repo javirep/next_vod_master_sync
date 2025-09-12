@@ -55,4 +55,6 @@ export type VideoModel = {
     rsc: string;
     selected: boolean;
     convenctionPath?: string;
-  };
+    updatedFileName: string;
+    filePath: string;
+}

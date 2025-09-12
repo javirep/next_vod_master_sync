@@ -139,7 +139,7 @@ export const MasterTrackerTitles: MasterType = {
         key: 'RSC',
     },
     videoPath: {
-        key: 'Video File Path',
+        key: 'Video Filename',
     },
     captionsFileName: {
         key: 'Captions Filename',
@@ -147,6 +147,12 @@ export const MasterTrackerTitles: MasterType = {
     artFileName: {
         key: 'Art Filename',
     },
+    updatedFileName: {
+        key: 'Updated Filename'
+    },
+    filePath: {
+        key: 'File Path'
+    }
 }
 
 export const MasterTrackerSeries: MasterType = {
