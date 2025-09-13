@@ -4,10 +4,13 @@ import { getTitles, getSeries } from './masterTracker.service';
 export async function GET() {
   const titles = await getTitles();
   const series = await getSeries();
+
+  titles.forEach( title => {
+    title.series = series[title.seriesTitle]
+  })
   
   return NextResponse.json({
-    titles: titles,
-    series: series
+    titles: titles
   }, {
     status: 200,
     headers: {

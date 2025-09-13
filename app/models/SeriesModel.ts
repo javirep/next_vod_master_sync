@@ -5,5 +5,5 @@ export type SeriesModel = {
     seriesSlingId: string;
     seriesSynopsis: string;
     seriesShortSynopsis: string;
-    seriesArtFileName: string;
+    seriesArtFilename: string;
 }

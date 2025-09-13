@@ -1,12 +1,13 @@
 import axios from "axios";
 import { VideoModel } from "../../models/VideoModel";
-import { MasterTrackerTitles, MasterTrackerSeries } from "../../utils/masters/MasterTracker";
+import { MasterTrackerTitles, MasterTrackerSeries } from "../utils/MasterTracker";
 import { SeriesModel } from "../../models/SeriesModel";
+import { MasterFiledTransformObj } from "../utils/MasterTracker";
 
 export const getTitles = async () => {
     const apiKey = process.env.NEXT_API_KEY;
     const spreadsheetId = process.env.NEXT_MASTER_TRACKER_ID;
-    const range = 'Titles'; // Adjust if neededimport React from 'react';
+    const range = 'Active Titles'; 
 
     try {
         
@@ -66,6 +67,9 @@ const mapDataToVideoModel = (data: string[][]): VideoModel[] => {
 
         Object.keys(template).forEach(key => {
             title[key] = row[template[key]];
+            if (MasterTrackerTitles[key].transform){
+                title[key] = transform(row[template[key]], MasterTrackerTitles[key].transform)
+            }
         });
 
         titles.push(title);
@@ -99,4 +103,11 @@ const mapDataToSeriesModel = (data: string[][]): SeriesMapType => {
     });
 
     return series;
+}
+
+
+function transform ( value: string, transformObj: MasterFiledTransformObj) {
+    if (transformObj.add) {
+        return value + transformObj.add
+    }
 }

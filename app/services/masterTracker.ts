@@ -1,9 +1,7 @@
 import { VideoModel } from "../models/VideoModel";
-import { SeriesModel } from "../models/SeriesModel";
 
 type masterTrackerResponse = {
-    titles: VideoModel[],
-    series: SeriesModel[]
+    titles: VideoModel[]
 }
 
 export const getMasterTrackerData = async () => {
@@ -37,7 +35,7 @@ export const getNewFilePath = (title: VideoModel) => {
 
     newFilePath += title.type + '/'
 
-    let titleFileName = title.seriesName ? toCamelCase(title.seriesName) : toCamelCase(title.title)
+    let titleFileName = title.seriesTitle ? toCamelCase(title.seriesTitle) : toCamelCase(title.title)
 
     newFilePath += titleFileName + "/" + titleFileName
 

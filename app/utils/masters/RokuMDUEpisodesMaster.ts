@@ -40,7 +40,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "series_id",
-            key: 'seriesId',
+            key: 'series_id',
             defaultValue: '',
             validation: {
                 required: true,
@@ -49,7 +49,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "series_title",
-            key: 'seriesTitle',
+            key: 'series_seriesName',
             defaultValue: '',
             validation: {
                 required: true,
@@ -63,7 +63,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "series_release_date",
-            key: 'seriesReleaseDate',
+            key: 'series_seriesReleaseDate',
             defaultValue: '',
             validation: {
                 required: true,
@@ -72,7 +72,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "series_genres",
-            key: 'seriesGenre',
+            key: 'series_seriesGenre',
             defaultValue: '',
             validation: {
                 required: true,
@@ -80,7 +80,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "series_tags",
-            key: 'seriesTags',
+            key: 'series_seriesTags',
             defaultValue: '',
         },
         {
@@ -95,7 +95,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "series_short_synopsis",
-            key: 'seriesShortSynopsis',
+            key: 'series_seriesShortSynopsis',
             validation: {
                 required: true,
                 maxLength: 250,
@@ -103,12 +103,12 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "series_long_synopsis",
-            key: 'seriesSynopsis',
+            key: 'series_seriesSynopsis',
             defaultValue: '',
         },
         {
             header: "season_id",
-            key: 'seriesId',
+            key: 'series_id',
             defaultValue: '',
             transform: {
                 type: 'uuid',
@@ -309,7 +309,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Closed_Caption_File_Name",
-            key: 'captionsFileName',
+            key: 'captionsFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -323,7 +323,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Series_KeyArt_File_Name",
-            key: 'seriesArtFileName',
+            key: 'series_seriesArtFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -337,7 +337,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Series_BoxCover_File_Name",
-            key: 'seriesArtFileName',
+            key: 'series_seriesArtFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -351,7 +351,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Series_Background_File_Name",
-            key: 'seriesArtFileName',
+            key: 'series_seriesArtFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -365,7 +365,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Episode_Background_File_Name",
-            key: 'artFileName',
+            key: 'artFileame',
             defaultValue: '',
             transform: {
                 type: 'string',

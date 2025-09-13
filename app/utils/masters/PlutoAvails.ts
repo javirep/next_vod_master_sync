@@ -83,7 +83,7 @@ export const PlutoAvailsMaster: outputMasterType = {
         },
         {
             header: 'Series Name',
-            key: 'seriesName',
+            key: 'series_seriesName',
             defaultValue: '',
         },
         {

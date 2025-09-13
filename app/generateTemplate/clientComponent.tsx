@@ -54,31 +54,9 @@ const Page = (  ) => {
     const initContent = async () => {
         const response = await getMasterTrackerData();
 
-
-        console.log('Videos Init:', response);
-
-        const { titles, series } = response ? response : { titles: [], series: [] }
         
-        for (let i = 0; i < titles.length; i++) {
-            const title = titles[i];
-            if (title.series) {
-                const seriesTitle = series[title.series];
-                if (seriesTitle) {
-                    title.seriesName = seriesTitle.seriesName;
-                    title.seriesLicensor = seriesTitle.seriesLicensor;
-                    title.seriesSlingId = seriesTitle.seriesSlingId;
-                    title.seriesSynopsis = seriesTitle.seriesSynopsis;
-                    title.seriesShortSynopsis = seriesTitle.seriesShortSynopsis;
-                    title.seriesArtFileName = seriesTitle.seriesArtFileName;
-                    title.seriesReleaseDate = seriesTitle.seriesReleaseDate;
-                    title.seriesGenre = seriesTitle.seriesGenre;
-                    title.seriesTags = seriesTitle.seriesTags;
-                }
-            }
-
-            title.newVideoFilePath = getNewFilePath(title)
-        }
-
+        const { titles } = response ? response : { titles: [] }
+        
         const videosInit = {} as VideoModelObj;
         
         titles.forEach(title => {
@@ -86,7 +64,8 @@ const Page = (  ) => {
                 videosInit[title.guid] = title;
             }
         })
-
+        console.log('Videos Init:', response);
+        
         setFilteredVideos(getVideosAsVideoModel(videosInit));
         setVideos(videosInit);
     }
@@ -211,7 +190,7 @@ const Page = (  ) => {
     const applyFilters = (video: VideoModel) => {
         if (filters.distributor && video.licensor.toLowerCase().indexOf(filters.distributor.toLowerCase()) === -1) return false;
         if (filters.title && video.title.toLowerCase().indexOf(filters.title.toLowerCase()) === -1) return false;
-        if (filters.series_title && (!video.seriesName || video.seriesName.toLowerCase().indexOf(filters.series_title.toLowerCase()) === -1 )) return false;
+        if (filters.series_title && (!video.seriesTitle || video.seriesTitle.toLowerCase().indexOf(filters.series_title.toLowerCase()) === -1 )) return false;
         if (filters.brandedVOD && !video.brandedVOD) return false;
         if (filters.unbrandedVOD && !video.unbrandedVOD) return false;
         if (filters.thirdPartyLinear && !video.thirdPartyLinear) return false;

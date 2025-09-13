@@ -1,4 +1,5 @@
 //import { VideoTypes } from "@/database/models/definitions/Video";
+import { SeriesModel } from "./SeriesModel";
 
 export type VideoModel = {
     guid: string;
@@ -7,34 +8,25 @@ export type VideoModel = {
     type: string;
     synopsis: string;
     shortSynopsis: string;
-    series?: string;
-    seriesName?: string;
-    seriesLicensor?: string;
-    seriesSlingId?: string;
-    seriesSynopsis?: string;
-    seriesShortSynopsis?: string;
-    seriesArtFileName?: string;
-    seriesReleaseDate?: string;
-    seriesGenre?: string;
-    seriesTags?: string;
+    seriesTitle: string;
+    series?: SeriesModel;
     season?: number;
     episode?: number;
-    ratingSource: string;
-    ratingValue: string;
+    rating: string;
     duration: number;
     releaseDate: string;
     countryOfOrigin: string;
     genre: string;
     tags: string;
     mainCast: string;
-    videoFilePath: string;
-    newVideoFilePath: string;
-    captionsFileName: string;
-    artFileName: string;
+    filePath: string;
+    originalVideoFilename: string;
+    videoFilename: string;
+    captionsFilename: string;
+    artFilename: string;
     women: boolean;
     TMSID: string;
     adBreaks: string;
-    seriesID: string;
     slingCategory: string;
     slingId: string;
     rightsStart: string;
@@ -54,7 +46,4 @@ export type VideoModel = {
     fsn: string;
     rsc: string;
     selected: boolean;
-    convenctionPath?: string;
-    updatedFileName: string;
-    filePath: string;
 }

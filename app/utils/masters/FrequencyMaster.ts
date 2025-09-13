@@ -24,7 +24,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'video_file',
-            key: 'videoPath',
+            key: 'videoFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -38,7 +38,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'thumbnail_file',
-            key: 'artFileName',
+            key: 'artFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -83,7 +83,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'series_name',
-            key: 'series',
+            key: 'series_seriesName',
             defaultValue: '',
         },
         {
@@ -139,7 +139,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'publish_date',
-            key: '',
+            key: 'releaseDate',
             defaultValue: '',
         },
         {
@@ -149,7 +149,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'rating',
-            key: 'ratingValue',
+            key: 'rating',
             defaultValue: '',
             validation: {
                 required: true,
@@ -167,7 +167,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'captions_file',
-            key: 'captionsFileName',
+            key: 'captionsFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -186,7 +186,7 @@ export const FrequencyMaster: outputMasterType = {
         },
         {
             header: 'Updated File Path', 
-            key: 'updatedFileName',
+            key: 'updatedFilename',
             defaultValue:''
         }
     ]

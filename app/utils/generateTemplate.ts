@@ -19,13 +19,22 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
 
         masterObj.master.forEach(field => {
             let value = field.defaultValue
+            let data = video
+            let subFieldsArray = field.key.split("_") 
 
-            if (field.key && video[field.key] && video[field.key] != '') {
+
+            while ( subFieldsArray.length > 1 && data){
+                data = data[subFieldsArray[0]]
+                subFieldsArray.shift()
+                field.key = subFieldsArray[0]
+            }
+
+            if (field.key && data[field.key] && data[field.key] != '') {
                 if (field.transform) {
-                    value = transform(video[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => video[useField]))
+                    value = transform(data[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => data[useField]))
                 }
                 else {
-                    value = video[field.key]
+                    value = data[field.key]
                 }
             }
 

@@ -1,6 +1,11 @@
 type MasterField = {
     key: string;
     defaultValue?: any;
+    transform?: MasterFiledTransformObj
+}
+
+export type MasterFiledTransformObj = {
+    add?: string;
 }
 
 type MasterType = {
@@ -12,17 +17,14 @@ export const MasterTrackerTitles: MasterType = {
     id: {
         key: 'Title GUID',
     },
+    title: {
+        key: 'Title',
+    },
     licensor: {
         key: 'Distributor',
     },
     type: {
         key: 'Type',
-    },
-    title: {
-        key: 'Title',
-    },
-    fileName: {
-        key: 'File Name',
     },
     synopsis: {
         key: 'Synopsis',
@@ -39,23 +41,11 @@ export const MasterTrackerTitles: MasterType = {
     episode: {
         key: 'E#',
     },
-    ratingSource: {
-        key: 'Rating Source',
-    },
-    ratingValue: {
-        key: 'Official Rating',
+    rating: {
+        key: 'Rating',
     },
     duration: {
         key: 'Duration',
-    },
-    rightsStart: {
-        key: 'Window Start',
-    },
-    rightsEnd: {
-        key: 'Window End',
-    },
-    rightsTerritory: {
-        key: 'Territory Rights',
     },
     releaseDate: {
         key: 'Release Date',
@@ -72,23 +62,32 @@ export const MasterTrackerTitles: MasterType = {
     mainCast: {
         key: 'Main Cast',
     },
+    filePath: {
+        key: 'File Path'
+    },
+    originalVideoFilename: {
+        key: 'Original Video Filename'
+    },
+    videoFilename: {
+        key: 'Assets Filename',
+        transform: {
+            add: '.mp4'
+        }
+    },
+    captionsFilename: {
+        key: 'Captions Filename',
+    },
+    artFilename: {
+        key: 'Art Filename',
+    },
     women: {
         key: 'Women',
     },
+    TMSID: {
+        key: 'TMS ID',
+    },
     adBreaks: {
         key: 'Ad Breaks Frames',
-    },
-    guid: {
-        key: 'Title GUID',
-    },
-    seriesTitle: {
-        key: 'Series Title',
-    },
-    seriesDescription: {
-        key: 'Series Title',
-    },
-    seriesId: {
-        key: 'Series GUID',
     },
     slingId: {
         key: 'Sling ID',
@@ -96,11 +95,23 @@ export const MasterTrackerTitles: MasterType = {
     slingCategory: {
         key: 'Sling Category',
     },
-    TMSID: {
-        key: 'TMS ID',
-    },
     frequency: {
         key: 'In Frequency',
+    },
+    rightsStart: {
+        key: 'Window Start',
+    },
+    rightsEnd: {
+        key: 'Window End',
+    },
+    rightsTerritory: {
+        key: 'Territory Rights',
+    },
+    guid: {
+        key: 'Title GUID',
+    },
+    seriesTitle: {
+        key: 'Series Title',
     },
     brandedVOD: {
         key: `Branded VOD Rights`,
@@ -138,21 +149,6 @@ export const MasterTrackerTitles: MasterType = {
     rsc: {
         key: 'RSC',
     },
-    videoPath: {
-        key: 'Video Filename',
-    },
-    captionsFileName: {
-        key: 'Captions Filename',
-    },
-    artFileName: {
-        key: 'Art Filename',
-    },
-    updatedFileName: {
-        key: 'Updated Filename'
-    },
-    filePath: {
-        key: 'File Path'
-    }
 }
 
 export const MasterTrackerSeries: MasterType = {
@@ -183,7 +179,7 @@ export const MasterTrackerSeries: MasterType = {
     seriesTags: {
         key: 'Tags',
     },
-    seriesArtFileName: {
+    seriesArtFilename: {
         key: 'Art Filename',
     },
 }
