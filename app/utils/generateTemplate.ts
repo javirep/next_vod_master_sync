@@ -1,6 +1,6 @@
 
 import { VideoModel } from "../models/VideoModel";
-import { outputMasterType, transformType, validationType } from "./masters/types";
+import { outputMasterType, outputMasterField, transformType, validationType } from "./masters/types";
 import moment from "moment";
 import { genresMaster } from "./masters/genresMaster";
 
@@ -17,11 +17,11 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
     let content = videos.map((video, index) => {
         let row: any[] = [];
 
-        masterObj.master.forEach(field => {
+        masterObj.master.forEach(originalField => {
+            let field: outputMasterField = JSON.parse(JSON.stringify(originalField))
             let value = field.defaultValue
             let data = video
             let subFieldsArray = field.key.split("_") 
-
 
             while ( subFieldsArray.length > 1 && data){
                 data = data[subFieldsArray[0]]
@@ -29,15 +29,17 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
                 field.key = subFieldsArray[0]
             }
 
+            // Here the value gets assigned
             if (field.key && data[field.key] && data[field.key] != '') {
                 if (field.transform) {
-                    value = transform(data[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => data[useField]))
+                    value = transform(data[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => video[useField]))
                 }
                 else {
                     value = data[field.key]
                 }
             }
 
+            // Here we validate for errors
             let isRequiredField = field.validation && field.validation.required
             let isConditionallyRequiredField = field.validation && field.validation.requiredIfField && video[field.validation.requiredIfField] != ''
 
@@ -117,8 +119,8 @@ const transform = (value: string, type: string, from: string, to: string, using:
         const belongsToSeries = using.length > 0 && using[0] != ''
         return transformTypeFn(value, from, to, belongsToSeries)
     }
-    else if (type === 'ratingSource') {
-        return transformRatingSource(value, from, to)
+    else if (type === 'rating') {
+        return transformRating(value, from, to)
     }
     else if (type === 'adBreaks') {
         return transformAdBreaks(value, from, to)
@@ -276,24 +278,18 @@ const transformTypeFn = (type: string, from: string, to: string, belongsToSeries
         else return "TV-Season"
     }
 
-
     return type;
 }
 
-const transformRatingSource = (rating: string, from: string, to: string) => {
-    if ( rating === 'Self-Rated') return 'USA_PR'
-
-    if (to = "FutureToday") {
-        if ( 
-            rating == 'Self-Rated' || 
-            rating == 'TV-MA' || 
-            rating == 'NR' ||
-            rating == ''
-        ) return "13+"
-        if ( rating.includes("TV") ) return rating.split("TV-")[1]
+const transformRating = (ratingValue: string, from: string, to: string) => {
+    if (to == "ratingSource") { 
+        let MPAARatings = [ 'G', 'PG', 'PG13', 'PG-13', 'R', 'NC-17', 'NC17', 'NR'];
+        let USA_PRRatings = ['TV-Y','TVY','TV-Y7','TVY7','TV-G','TVG','TV-PG','TVPG','TV-14','TV14','TV-MA','TVMA','NR']
+        if ( MPAARatings.includes(ratingValue)) return "MPAA"
+        if (USA_PRRatings.includes(ratingValue)) return "USA_PR"
     }
     
-    return rating;
+    return ratingValue;
 }
 
 const transformAdBreaks = (adBreaks: string, from: string, to: string) => {

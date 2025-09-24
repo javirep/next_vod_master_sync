@@ -202,12 +202,12 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "ratingSystem",
-            key: 'ratingSource',
+            key: 'rating',
             defaultValue: '',
             transform: {
-                type: 'ratingSource',
+                type: 'rating',
                 from: 'masterTracker',
-                to: 'Roku',
+                to: 'ratingSource',
             },
             validation: {
                 required: true,
@@ -216,7 +216,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "episode_ratings",
-            key: 'ratingValue',
+            key: 'rating',
             defaultValue: '',
             validation: {
                 required: true,
@@ -274,7 +274,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Video_File_Name",
-            key: 'videoPath',
+            key: 'videoFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -365,7 +365,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "Episode_Background_File_Name",
-            key: 'artFileame',
+            key: 'artFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -394,7 +394,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
         },
         {
             header: "episode_startDate",
-            key: '',
+            key: 'rightsStart',
             defaultValue: '',
             validation: {
                 required: true,

@@ -7,7 +7,7 @@ import { MasterFiledTransformObj } from "../utils/MasterTracker";
 export const getTitles = async () => {
     const apiKey = process.env.NEXT_API_KEY;
     const spreadsheetId = process.env.NEXT_MASTER_TRACKER_ID;
-    const range = 'Active Titles'; 
+    const range = 'Dev'; 
 
     try {
         
