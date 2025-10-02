@@ -69,7 +69,7 @@ export const MasterTrackerTitles: MasterType = {
         key: 'Original Video Filename'
     },
     videoFilename: {
-        key: 'Assets Filename Formula',
+        key: 'Asset Filename Formula',
         transform: {
             add: '.mp4'
         }

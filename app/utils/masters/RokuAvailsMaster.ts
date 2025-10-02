@@ -52,6 +52,7 @@ const headers = [
 export const RokuAvailsMaster: outputMasterType = {
     name: 'Roku Avails',
     id: 'rokuAvails',
+    outputName: 'Swerve-Roku-Avails',
     master: [
         {
             header: headers[0],
@@ -148,7 +149,7 @@ export const RokuAvailsMaster: outputMasterType = {
         }, 
         {
             header: headers[14],
-            key: 'series',
+            key: 'series_seriesName',
             defaultValue: '',
             validation: {
                 required: false,
@@ -157,7 +158,7 @@ export const RokuAvailsMaster: outputMasterType = {
         },
         {
             header: headers[15],
-            key: 'seriesId',
+            key: 'series_id',
             defaultValue: '',
             validation: {
                 required: false,
@@ -261,13 +262,13 @@ export const RokuAvailsMaster: outputMasterType = {
             defaultValue: ''
         },
         {
-            header: headers[30],
-            key: 'ratingSource',
+            header: "ratingSystem",
+            key: 'rating',
             defaultValue: '',
             transform: {
-                type: 'ratingSource',
+                type: 'rating',
                 from: 'masterTracker',
-                to: 'Roku',
+                to: 'ratingSource',
             },
             validation: {
                 required: true,
@@ -276,7 +277,7 @@ export const RokuAvailsMaster: outputMasterType = {
         },
         {
             header: headers[31],
-            key: 'ratingValue',
+            key: 'rating',
             defaultValue: '',
             validation: {
                 required: true,

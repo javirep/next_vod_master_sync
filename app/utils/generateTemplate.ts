@@ -30,7 +30,7 @@ export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel
             }
 
             // Here the value gets assigned
-            if (field.key && data[field.key] && data[field.key] != '') {
+            if (field.key && data && data[field.key] && data[field.key] != '') {
                 if (field.transform) {
                     value = transform(data[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => video[useField]))
                 }

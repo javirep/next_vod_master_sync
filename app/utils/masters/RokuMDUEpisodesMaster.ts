@@ -3,6 +3,7 @@ import { outputMasterType } from "./types";
 export const RokuMDUEpisodesMaster: outputMasterType = {
     name: 'Roku MDU episodes',
     id: 'rokuMDUEpisodes',
+    outputName: 'Swerve-Roku-MDU',
     master: [
         {
             header: "Instructions",
