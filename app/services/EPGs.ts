@@ -23,9 +23,9 @@ export const getRokuEPG = async ( channelId: string = '253' ) => {
     }
 }
 
-export const getFrequencyEPG = async ( channelId: string = '253' ) => {
+export const getPlutoEPG = async ( channelId: string = '253' ) => {
     try{ 
-        const response = await fetch('/api/EPGs/Frequency/' + channelId, {
+        const response = await fetch('/api/EPGs/Pluto/' + channelId, {
             method: 'GET',
             headers: {
             'Content-Type': 'application/json',

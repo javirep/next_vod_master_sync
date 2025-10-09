@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getFrequencyEPG } from '../../EPG.service';
+import { getPlutoEPG } from '../../EPG.service';
 
 export const dynamicParams = true;
 
@@ -7,7 +7,7 @@ export async function GET( _req, {params} ) {
   let { channel } = await params;
   const url = `https://epg.frequency.com/output?id=${channel}`
 
-  const FrequencyEPG = await getFrequencyEPG( url );
+  const FrequencyEPG = await getPlutoEPG( url );
   
   return NextResponse.json({
     epg: FrequencyEPG

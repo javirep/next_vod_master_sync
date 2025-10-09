@@ -20,14 +20,14 @@ function EPGContainer( props: EPGProps ) {
 
     const getTitle = (): string => {
         switch (liveFeedId) {
-            case 'frequency':
-                return 'Frequency EPG:';
-            case 'roku':
-                return 'Roku EPG';
-            case 'gracenote':
-                return 'GraceNote EPG:';
+            case 'combatRoku':
+                return 'Swerve Combat Roku:';
+            case 'sportsRoku':
+                return 'Swerve Sports Roku:';
+            case 'sportsPluto':
+                return 'Swerve Sports Pluto:';
             default:
-                return 'Live EPG:';
+                return 'Error Name - Contact Javi';
         }
     };
 

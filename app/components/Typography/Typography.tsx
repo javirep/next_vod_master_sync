@@ -7,7 +7,7 @@ import './Typography.scss';
 
 type TypographyProps = {
     children: string | React.ReactNode;
-    type: 'title' | 'subtitle' | 'body' | 'error' | 'input-label' | 'navLink';
+    type: 'title' | 'subtitle' | 'body' | 'error' | 'input-label' | 'navLink' | 'epg-title' | 'epg-subtitle' | 'epg-body';
     className?: string;
     style?: React.CSSProperties;
 }
@@ -23,6 +23,8 @@ export const Typography = (props: TypographyProps) => {
             'error': type === 'error',
             'input-label': type === 'input-label',
             'navLink': type === 'navLink',
+            'epg-title': type === 'epg-title',
+            'epg-subtitle': type === 'epg-subtitle',
         })} style={style}>{children}</p>
     );
 }

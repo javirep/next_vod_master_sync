@@ -12,7 +12,7 @@ type EPGItemProps = {
 
 export default function EPGItem({ item, gapError }: EPGItemProps) {
     const { program, date, startTime, duration } = item;
-    const { series = '', season = '', episode = '' } = program;
+    const [displayMeta, setDisplayMeta] = react.useState(false);
 
 
     function getDuration(duration: number): string {
@@ -33,6 +33,9 @@ export default function EPGItem({ item, gapError }: EPGItemProps) {
         }
 
         if (program.title.toLowerCase().includes('season ')) {
+            return 'title';
+        }
+        if (program.title.toLowerCase().includes('  ')) {
             return 'title';
         }
 
@@ -72,44 +75,46 @@ export default function EPGItem({ item, gapError }: EPGItemProps) {
             <div className={classNames('epg-item', {
                 'epg-item--error': error
             })}>
-                <div className='epg-item__thumbnail'>
-                    {program.thumbnail ? (
-                        <img src={program.thumbnail} alt={program.title} />
-                    ) : (
-                        <div className='epg-item__thumbnail-placeholder'>
-                            <Typography type='body'>No Image</Typography>
+                <div className='epg-item__main'>
+                    <div className='epg-item__thumbnail'>
+                        {program.thumbnail ? (
+                            <img src={program.thumbnail} alt={program.title} />
+                        ) : (
+                            <div className='epg-item__thumbnail-placeholder'>
+                                <Typography type='body'>No Image</Typography>
+                            </div>
+                        )}
+                    </div>
+                    <div>
+                        <div className='epg-item__data'>
+                            <Typography type={error == 'title' ? 'error' : 'epg-title'}>
+                                {program.title}
+                            </Typography>
+                            <Typography type={error == 'title' ? 'error' : 'epg-subtitle'}>
+                                {program.subtitle}
+                            </Typography>
+                            <Typography type={error == 'description' ? 'error' : 'body'}>
+                                {program.description}
+                            </Typography>
                         </div>
-                    )}
-                </div>
-                <div>
-                    <div className='epg-item__data'>
-                        <Typography type='body' >
-                            Frequency id: {item.id}
-                        </Typography>
-                        <Typography type='body'>
-                            Streaming on: { date } { startTime }
-                        </Typography>
-                        <Typography type={error == 'duration' ? 'error' : 'body'}>
-                            Duration: { getDuration(duration) } 
-                        </Typography>
-
-                        {
-                            series ? (
-                                <Typography type='body'>
-                                    Series: { series } { season ? `- S: ${season}` : '' } { episode ? `- E: ${episode}` : '' }
-                                </Typography>
-                            ) : null
-                        }
-                    
-                        <Typography type={error == 'title' ? 'error' : 'body'}>
-                            Title: {program.title}
-                        </Typography>
-
-                        <Typography type={error == 'description' ? 'error' : 'body'}>
-                            Synopsis: {program.description}
-                        </Typography>
                     </div>
                 </div>
+                <div className='epg-item__grid' >
+                    <Typography type='body'>{program.title}</Typography>
+                </div>
+                 
+                <div className='epg-item__meta' onClick={() => setDisplayMeta(!displayMeta)}>
+                    <Typography type='body' >
+                        Frequency id: {item.id}
+                    </Typography>
+                    <Typography type='body'>
+                        Streaming on: { date } { startTime }
+                    </Typography>
+                    <Typography type={error == 'duration' ? 'error' : 'body'}>
+                        Duration: { getDuration(duration) } 
+                    </Typography>
+                </div>
+                
             </div>
         </>
     )

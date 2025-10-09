@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { RokuEPG, FrequencyEPG, Program, LiveFeed } from '@/app/models/ProgramModel';
 
+const placeholderImage = "https://www.magtrol.com/india/wp-content/uploads/placeholder-16-9-ratio.png";
+
 export const getRokuEPG = async (url) => {
     try{
         const response = await axios.get(
@@ -24,7 +26,7 @@ export const getRokuEPG = async (url) => {
 
                 feed.times.forEach( time => {
                     let startDate = new Date(feed.date + 'T' + time)
-                    startDate.setHours(startDate.getHours() - 4);
+                    startDate.setHours(startDate.getHours() - 11);
 
                     feeds.push({             
                         id: feed.id,
@@ -55,6 +57,7 @@ const getShowFromRokuMovies = (id: string, rokuMovies) => {
     if (rokuShow) {
         return {
             title: rokuShow.title,
+            subtitle: "",
             description: rokuShow.shortDescription,
             thumbnail: rokuShow.thumbnail,
         };
@@ -78,12 +81,10 @@ const getShowFromRokuSeries = (id: string, rokuSeries) => {
             if (episode) {
 
                 program = {
-                    title: episode.title,
+                    title: series.title,
+                    subtitle: `S${season.seasonNumber} E${episode.episodeNumber} - ${episode.title}`,
                     description: episode.shortDescription,
-                    thumbnail: episode.thumbnail,
-                    series: series.title,
-                    season: season.seasonNumber,
-                    episode: episode.episodeNumber
+                    thumbnail: series.thumbnail,
                 };
             }
         });
@@ -98,6 +99,7 @@ const getShowFromTvSpecials = (id: string, rokuTvSpecials) => {
     if (rokuShow) {
         return {
             title: rokuShow.title,
+            subtitle: "",
             description: rokuShow.shortDescription,
             thumbnail: rokuShow.thumbnail,
         };
@@ -106,7 +108,7 @@ const getShowFromTvSpecials = (id: string, rokuTvSpecials) => {
     return null;
 }
 
-export const getFrequencyEPG = async (url: string) => {
+export const getPlutoEPG = async (url: string) => {
     const response = await axios.get(
         url
     );
@@ -119,15 +121,22 @@ export const getFrequencyEPG = async (url: string) => {
         feed => {
             let startDate = new Date(feed.start)
             startDate.setHours(startDate.getHours() - 4);
+
+            const getTitle = (series, title) =>  series || title
+
+            const getSubtitle = ( title, season, episode) => {
+                let seasonNum = season ? season : 1
+                let episodeNum = episode ? episode : 1
+                return "S" + seasonNum + " E" + episodeNum + " " + title
+            }
+
             return {             
                     id: feed.programId,
                     program:  {
-                        title: feed.title,
+                        title: getTitle(feed.series, feed.title),
+                        subtitle: getSubtitle( feed.title, feed.season, feed.episode),
                         description: feed.description,
-                        thumbnail: feed.thumbnail,
-                        series: feed.series,
-                        season: feed.season,
-                        episode: feed.episode,
+                        thumbnail: feed.seriesMetadata.images?.landscape ? feed.seriesMetadata.images.landscape : placeholderImage,
                     },
                     date: startDate.toISOString().split("T")[0],
                     startTime: startDate.toISOString().split("T")[1],

@@ -8,47 +8,34 @@ import Layout from "../components/Layout/Layout";
 import EPGContainer from "../components/EPGContainer/EPGContainer";
 import { LiveFeed } from "../models/ProgramModel";
 import { DateInput } from "../components/Inputs/DateInput/DateInput";
-import { getRokuEPG, getFrequencyEPG, getGracenoteEPG} from "../services/EPGs";
+import { getRokuEPG, getPlutoEPG } from "../services/EPGs";
 import { SelectInput } from "../components/Inputs/SelectInput/SelectInput";
-import CSVUpload from "../components/CSVUpload/CSVUpload";
 
 type FilteredLiveFeeds = {
-    'roku': LiveFeed[];
-    'frequency': LiveFeed[];
-    'gracenote': LiveFeed[];
-    'womenRoku': LiveFeed[];
-    'womenFrequency': LiveFeed[];
-    'womenGracenote': LiveFeed[];
+    'combatRoku': LiveFeed[];
+    'sportsRoku': LiveFeed[];
+    'sportsPluto': LiveFeed[];
 }
 
 function Page() {
-    const [rokuLiveFeed, setRokuLiveFeed] = useState<LiveFeed[]>([]);
-    const [frequencyLiveFeed, setFrequencyLiveFeed] = useState<LiveFeed[]>([]);
-    const [gracenoteLiveFeed, setGracenoteLiveFeed] = useState<LiveFeed[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [womenRokuLiveFeed, setWomenRokuLiveFeed] = useState<LiveFeed[]>([]);
-    const [womenFrequencyLiveFeed, setWomenFrequencyLiveFeed] = useState<LiveFeed[]>([]);
-    const [womenGracenoteLiveFeed, setWomenGracenoteLiveFeed] = useState<LiveFeed[]>([]);
+    const [combatRokuLiveFeed, setRokuLiveFeed] = useState<LiveFeed[]>([]);
+    const [sportsRokuLiveFeed, setSportsRokuLiveFeed] = useState<LiveFeed[]>([]);
+    const [sportsPlutoLiveFeed, setSportsPlutoLiveFeed] = useState<LiveFeed[]>([]);
 
     const [filteredLiveFeeds, setFilteredLiveFeeds] = useState<FilteredLiveFeeds>({
-        'roku': [],
-        'frequency': [],
-        'gracenote': [],
-        'womenRoku': [],
-        'womenFrequency': [],
-        'womenGracenote': []
+        'combatRoku': [],
+        'sportsRoku': [],
+        'sportsPluto': []
     });
     const [selectedDate, setSelectedDate] = useState<string>('');
-    const [liveFeed1, setLiveFeed1] = useState<string>('frequency');
-    const [liveFeed2, setLiveFeed2] = useState<string>('womenFrequency');
+    const [liveFeed1, setLiveFeed1] = useState<string>('sportsPluto');
+    const [liveFeed2, setLiveFeed2] = useState<string>('sportsRoku');
 
     const inputOptions = [
-        { value: 'frequency', label: 'Combat Frequency EPG' },
-        { value: 'roku', label: 'Combat Roku EPG' },
-        { value: 'gracenote', label: 'Combat GraceNote EPG' },
-        { value: 'womenFrequency', label: 'Women Frequency EPG' },
-        { value: 'womenRoku', label: 'Women Roku EPG' },
-        { value: 'womenGracenote', label: 'Women GraceNote EPG' },
+        { value: 'combatRoku', label: 'Combat Roku EPG' },
+        { value: 'sportsRoku', label: 'Sports Roku EPG' },
+        { value: 'sportsPluto', label: 'Sports Pluto EPG' },
     ];
 
     const filterPastFeedsFn = (feed: LiveFeed): boolean => {
@@ -57,45 +44,33 @@ function Page() {
     }
     
     const loadEPGs = async () => {
-        const rokuEPG = await getRokuEPG('253');
-        if (rokuEPG) {
-            setRokuLiveFeed(rokuEPG.epg);
+        const combatRokuEPG = await getRokuEPG('253');
+        if (combatRokuEPG) {
+            setRokuLiveFeed(combatRokuEPG.epg);
+        } else {
+            console.error('Failed to fetch Roku EPG');
+        }
+        
+        const sportsRokuEPG = await getRokuEPG('1013');
+        if (sportsRokuEPG) {
+            setSportsRokuLiveFeed(sportsRokuEPG.epg);
         } else {
             console.error('Failed to fetch Roku EPG');
         }
 
-        const frequencyEPG = await getFrequencyEPG('253');
-        if (frequencyEPG) {
-            setFrequencyLiveFeed(frequencyEPG.epg);
+        const sportsPlutoEPG = await getPlutoEPG('1013');
+        if (sportsPlutoEPG) {
+            setSportsPlutoLiveFeed(sportsPlutoEPG.epg);
         } else {
             console.error('Failed to fetch Frequency EPG');
         }
-        
-        const womenFrequencyEPG = await getFrequencyEPG('1013');
-        
-        if (womenFrequencyEPG) {
-            setWomenFrequencyLiveFeed(womenFrequencyEPG.epg);
-        } else {
-            console.error('Failed to fetch Frequency EPG');
-        }
-
-        const womenRokuEPG = await getRokuEPG('1013');
-        if (womenRokuEPG) {
-            setWomenRokuLiveFeed(womenRokuEPG.epg);
-        } else {
-            console.error('Failed to fetch Roku EPG');
-        }
-
-        const gracenoteEPG = await getGracenoteEPG();
 
         setFilteredLiveFeeds({
-            'roku': rokuEPG ? rokuEPG.epg.filter(filterPastFeedsFn) : [],
-            'frequency': frequencyEPG ? frequencyEPG.epg.filter(filterPastFeedsFn) : [],
-            'gracenote': [], 
-            'womenRoku': womenRokuEPG ? womenRokuEPG.epg.filter(filterPastFeedsFn) : [],
-            'womenFrequency': womenFrequencyEPG ? womenFrequencyEPG.epg.filter(filterPastFeedsFn) : [],
-            'womenGracenote': []
+            'combatRoku': combatRokuEPG ? combatRokuEPG.epg.filter(filterPastFeedsFn) : [],
+            'sportsRoku': sportsRokuEPG ? sportsRokuEPG.epg.filter(filterPastFeedsFn) : [],
+            'sportsPluto': sportsPlutoEPG ? sportsPlutoEPG.epg.filter(filterPastFeedsFn): []
         });
+
 
         setLoading(false);
     }
@@ -112,28 +87,22 @@ function Page() {
 
         if (!selectedDate){
             setFilteredLiveFeeds({
-                'roku': rokuLiveFeed.filter(filterPastFeedsFn),
-                'frequency': frequencyLiveFeed.filter(filterPastFeedsFn),
-                'gracenote': gracenoteLiveFeed.filter(filterPastFeedsFn), 
-                'womenRoku': womenRokuLiveFeed.filter(filterPastFeedsFn),
-                'womenFrequency': womenFrequencyLiveFeed.filter(filterPastFeedsFn),
-                'womenGracenote': womenGracenoteLiveFeed.filter(filterPastFeedsFn)
+                'combatRoku': combatRokuLiveFeed.filter(filterPastFeedsFn),
+                'sportsRoku': sportsRokuLiveFeed.filter(filterPastFeedsFn),
+                'sportsPluto': sportsPlutoLiveFeed.filter(filterPastFeedsFn)
             });
             return;
         }
 
         else {
             setFilteredLiveFeeds({
-                'roku': rokuLiveFeed.filter(startsWithFn),
-                'frequency': frequencyLiveFeed.filter(startsWithFn),
-                'gracenote': gracenoteLiveFeed.filter(startsWithFn), 
-                'womenRoku': womenRokuLiveFeed.filter(startsWithFn),
-                'womenFrequency': womenFrequencyLiveFeed.filter(startsWithFn),
-                'womenGracenote': womenGracenoteLiveFeed.filter(startsWithFn)
+                'combatRoku': combatRokuLiveFeed.filter(startsWithFn),
+                'sportsRoku': sportsRokuLiveFeed.filter(startsWithFn),
+                'sportsPluto': sportsPlutoLiveFeed.filter(startsWithFn)
             });
         }
 
-    }, [selectedDate, gracenoteLiveFeed]);
+    }, [selectedDate]);
 
     const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newDate = e.target.value;
@@ -151,30 +120,7 @@ function Page() {
     const filteredLiveFeed1 = filteredLiveFeeds[liveFeed1 as keyof FilteredLiveFeeds];
     const filteredLiveFeed2 = filteredLiveFeeds[liveFeed2 as keyof FilteredLiveFeeds];
 
-    const handleCSVUpload = (data: any[]) => {
-        const liveFeed = data.map(epgItem => {
-            const {tmsid, title, start_time, start_date, season_number, episode_number , episode_title, end_time, description} = epgItem
-            const finalTitle = title + episode_title ? ` > ${episode_title}` : ''; 
-            const duration = getTimeDifference(start_time, end_time);
-            return {
-                id: tmsid,
-                date: start_date,
-                startTime: start_time,
-                duration: duration,
-                program: {
-                    title: finalTitle,
-                    description: description,
-                    thumbnail: '',
-                    season: season_number,
-                    episode: episode_number
-                }
-            } as LiveFeed;
-        })
-
-       setGracenoteLiveFeed(liveFeed);
-    }
-
-    function getTimeDifference(start_time: string, end_time: string): number {
+    /* function getTimeDifference(start_time: string, end_time: string): number {
         function parseTimeToDate(timeStr: string): Date {
             const [time, modifier] = timeStr.split(" ");
             let [hours, minutes] = time.split(":").map(Number);
@@ -196,7 +142,7 @@ function Page() {
 
         const diffMs: number = endDate.getTime() - startDate.getTime();
         return Math.round(diffMs / 1000); // Convert milliseconds to minutes
-    }
+    } */
     
     return (
         <div>
@@ -216,7 +162,6 @@ function Page() {
                                     <SelectInput labelText="Select EPG" options={inputOptions} onChange={(o) => handleOption(o, 2)}/>
                                 </div>
                             </div>
-                            <CSVUpload handleData={handleCSVUpload} />
 
                         </div>
 

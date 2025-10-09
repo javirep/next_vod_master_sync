@@ -6,14 +6,17 @@
         width: 100%;
         height: auto;
     }
-
-    display: flex;
-    align-items: center;
-    gap: 18px;
+    
     padding: 8px;
-    height: 200px;
+    height: 280px;
     overflow: scroll;
 
+    .epg-item__main{
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+    
     .epg-item__thumbnail{
         width: 100%;
         max-width: 200px;
@@ -27,6 +30,19 @@
         div {
             margin-bottom: 8px;
         }
+    }
+
+    .epg-item__grid{
+        width:100%;
+        border: 2px solid $white;
+        border-radius: 4px;
+        padding: 8px;
+        margin-top: 12px;
+        background-color: $grey-100;
+    }
+
+    .epg-item__meta{
+        margin-top: 12px;
     }
 
 }
