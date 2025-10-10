@@ -26,7 +26,7 @@ export const getRokuEPG = async (url) => {
 
                 feed.times.forEach( time => {
                     let startDate = new Date(feed.date + 'T' + time)
-                    startDate.setHours(startDate.getHours() - 5);
+                    startDate.setHours(startDate.getHours() - 3);
 
                     feeds.push({             
                         id: feed.id,
