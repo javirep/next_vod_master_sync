@@ -2,6 +2,7 @@ import axios from 'axios'
 import { RokuEPG, FrequencyEPG, Program, LiveFeed } from '@/app/models/ProgramModel';
 
 export const getRokuEPG = async (url) => {
+    const RokuTimeDif = Number(process.env.NEXT_ROKU_TIME_DIF) || 5
     try{
         const response = await axios.get(
                 url
@@ -32,7 +33,7 @@ export const getRokuEPG = async (url) => {
 
                 feed.times.forEach( time => {
                     let startDate = new Date(feed.date + 'T' + time)
-                    startDate.setHours(startDate.getHours() - 13);
+                    startDate.setHours(startDate.getHours() - RokuTimeDif );
 
                     feeds.push({             
                         id: feed.id,
