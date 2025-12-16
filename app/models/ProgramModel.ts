@@ -126,7 +126,11 @@ export type Program = {
         title: string;
         subtitle: string;
         description: string;
-        thumbnail: string;
+        thumbnails: {
+            default: string,
+            textless: string, 
+            texted: string
+        };
     };
 
 export type LiveFeed = {

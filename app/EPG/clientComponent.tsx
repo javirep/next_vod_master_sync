@@ -8,10 +8,11 @@ import Layout from "../components/Layout/Layout";
 import EPGContainer from "../components/EPGContainer/EPGContainer";
 import { LiveFeed } from "../models/ProgramModel";
 import { DateInput } from "../components/Inputs/DateInput/DateInput";
-import { getRokuEPG, getPlutoEPG } from "../services/EPGs";
+import { getRokuEPG, getPlutoEPG, getAmazonEPG } from "../services/EPGs";
 import { SelectInput } from "../components/Inputs/SelectInput/SelectInput";
 
 type FilteredLiveFeeds = {
+    'combatAmazon': LiveFeed[];
     'combatRoku': LiveFeed[];
     'sportsRoku': LiveFeed[];
     'sportsPluto': LiveFeed[];
@@ -24,15 +25,17 @@ function Page() {
     const [sportsPlutoLiveFeed, setSportsPlutoLiveFeed] = useState<LiveFeed[]>([]);
 
     const [filteredLiveFeeds, setFilteredLiveFeeds] = useState<FilteredLiveFeeds>({
+        'combatAmazon': [],
         'combatRoku': [],
         'sportsRoku': [],
         'sportsPluto': []
     });
     const [selectedDate, setSelectedDate] = useState<string>('');
-    const [liveFeed1, setLiveFeed1] = useState<string>('sportsPluto');
+    const [liveFeed1, setLiveFeed1] = useState<string>('combatRoku');
     const [liveFeed2, setLiveFeed2] = useState<string>('sportsRoku');
 
     const inputOptions = [
+        { value: 'combatAmazon', label: 'Combat Amazon EPG' },
         { value: 'combatRoku', label: 'Combat Roku EPG' },
         { value: 'sportsRoku', label: 'Sports Roku EPG' },
         { value: 'sportsPluto', label: 'Sports Pluto EPG' },
@@ -40,10 +43,18 @@ function Page() {
 
     const filterPastFeedsFn = (feed: LiveFeed): boolean => {
         const feedDate = new Date(feed.date + 'T' + feed.startTime);
-        return feedDate.getTime() > new Date().getTime() - 4 * 60 * 60 * 1000; // Filter out feeds older than 4 hours
+        return feedDate.getTime() > new Date().getTime() - 5 * 60 * 60 * 1000; // Filter out feeds older than 4 hours
     }
     
     const loadEPGs = async () => {
+        const combatAmazonEPG = await getAmazonEPG('253');
+        if (combatAmazonEPG) {
+            setRokuLiveFeed(combatAmazonEPG.epg);
+            console.log('Combat Amazon EPG loaded:', combatAmazonEPG.epg);
+        } else {
+            console.error('Failed to fetch Frequency EPG');
+        }
+
         const combatRokuEPG = await getRokuEPG('253');
         if (combatRokuEPG) {
             setRokuLiveFeed(combatRokuEPG.epg);
@@ -66,6 +77,7 @@ function Page() {
         }
 
         setFilteredLiveFeeds({
+            'combatAmazon': combatAmazonEPG ? combatAmazonEPG.epg.filter(filterPastFeedsFn) : [],
             'combatRoku': combatRokuEPG ? combatRokuEPG.epg.filter(filterPastFeedsFn) : [],
             'sportsRoku': sportsRokuEPG ? sportsRokuEPG.epg.filter(filterPastFeedsFn) : [],
             'sportsPluto': sportsPlutoEPG ? sportsPlutoEPG.epg.filter(filterPastFeedsFn): []
@@ -87,6 +99,7 @@ function Page() {
 
         if (!selectedDate){
             setFilteredLiveFeeds({
+                'combatAmazon': combatRokuLiveFeed.filter(filterPastFeedsFn),
                 'combatRoku': combatRokuLiveFeed.filter(filterPastFeedsFn),
                 'sportsRoku': sportsRokuLiveFeed.filter(filterPastFeedsFn),
                 'sportsPluto': sportsPlutoLiveFeed.filter(filterPastFeedsFn)
@@ -96,6 +109,7 @@ function Page() {
 
         else {
             setFilteredLiveFeeds({
+                'combatAmazon': combatRokuLiveFeed.filter(startsWithFn),
                 'combatRoku': combatRokuLiveFeed.filter(startsWithFn),
                 'sportsRoku': sportsRokuLiveFeed.filter(startsWithFn),
                 'sportsPluto': sportsPlutoLiveFeed.filter(startsWithFn)
@@ -119,30 +133,6 @@ function Page() {
 
     const filteredLiveFeed1 = filteredLiveFeeds[liveFeed1 as keyof FilteredLiveFeeds];
     const filteredLiveFeed2 = filteredLiveFeeds[liveFeed2 as keyof FilteredLiveFeeds];
-
-    /* function getTimeDifference(start_time: string, end_time: string): number {
-        function parseTimeToDate(timeStr: string): Date {
-            const [time, modifier] = timeStr.split(" ");
-            let [hours, minutes] = time.split(":").map(Number);
-
-            if (modifier === "PM" && hours !== 12) hours += 12;
-            if (modifier === "AM" && hours === 12) hours = 0;
-
-            // Use a fixed date to avoid date-based edge cases
-            return new Date(2000, 0, 1, hours, minutes);
-        }
-
-        const startDate: Date = parseTimeToDate(start_time);
-        const endDate: Date = parseTimeToDate(end_time);
-
-        // Handle overnight wraparound
-        if (endDate < startDate) {
-            endDate.setDate(endDate.getDate() + 1);
-        }
-
-        const diffMs: number = endDate.getTime() - startDate.getTime();
-        return Math.round(diffMs / 1000); // Convert milliseconds to minutes
-    } */
     
     return (
         <div>

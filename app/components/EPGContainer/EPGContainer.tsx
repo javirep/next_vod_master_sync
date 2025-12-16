@@ -5,8 +5,6 @@ import './EPGContainer.scss';
 import EPGItem from './EPGItem';
 import { LiveFeed } from '@/app/models/ProgramModel'; 
 import Typography from '../Typography/Typography';
-import { duration } from 'moment';
-import { difference } from 'next/dist/build/utils';
 
 type EPGProps = {
     liveFeeds: LiveFeed[];
@@ -20,12 +18,14 @@ function EPGContainer( props: EPGProps ) {
 
     const getTitle = (): string => {
         switch (liveFeedId) {
+            case 'combatAmazon':
+                return 'Swerve Combat on Amazon:';
             case 'combatRoku':
-                return 'Swerve Combat Roku:';
+                return 'Swerve Combat on Roku:';
             case 'sportsRoku':
-                return 'Swerve Sports Roku:';
+                return 'Swerve Sports on Roku:';
             case 'sportsPluto':
-                return 'Swerve Sports Pluto:';
+                return 'Swerve Sports on Pluto:';
             default:
                 return 'Error Name - Contact Javi';
         }
@@ -49,7 +49,7 @@ function EPGContainer( props: EPGProps ) {
                     
                     return (
                         <div key={index}>
-                            <EPGItem item={feed} gapError = {gap}/> 
+                            <EPGItem item={feed} gapError = {gap} minImagesLen = {liveFeedId == 'combatAmazon' ? 3 : 1}/> 
                         </div>
                     )
 

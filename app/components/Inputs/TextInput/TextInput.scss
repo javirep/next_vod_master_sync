@@ -5,6 +5,11 @@
     gap: 12px;
 
     .text-input{
+        background-color: transparent;  
+        outline: none;
+        border: 0;
+        color: $white;
+
         &-container{
             display: flex;
             align-items: center;
@@ -17,11 +22,6 @@
                 stroke: $white;
             }
         }
-        
-        background-color: transparent;  
-        outline: none;
-        border: 0;
-        color: $white;
     
         &::placeholder{
             color: $white;
