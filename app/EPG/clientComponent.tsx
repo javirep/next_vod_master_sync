@@ -72,6 +72,7 @@ function Page() {
         const sportsPlutoEPG = await getPlutoEPG('1013');
         if (sportsPlutoEPG) {
             setSportsPlutoLiveFeed(sportsPlutoEPG.epg);
+            console.log('Sports Pluto EPG loaded:', sportsPlutoEPG.epg);
         } else {
             console.error('Failed to fetch Frequency EPG');
         }

@@ -5,7 +5,7 @@ export const dynamicParams = true;
 
 export async function GET( _req, {params} ) {
   let { channel } = await params;
-  const url = `https://epg.frequency.com/output?id=${channel}`
+  const url = `https://static.frequency.com/studio/epg/amazon/${channel}.xml`
 
   const FrequencyEPG = await getAmazonEPG( url );
   

@@ -122,6 +122,35 @@ export type FrequencyEPG = {
     }[]
 }
 
+export type AmazonEPGSchedule = {
+    attributes: xmlAttribute, 
+    elements: {
+        name: string
+        type: string
+        elements: {
+            name: string
+            type: string
+            attributes: {
+                programRef: string
+            }
+            elements: {
+                name: string
+                type: string
+            }
+        }[]
+    }[]
+}
+
+
+
+type xmlAttribute = {
+    id?: string, 
+    version?: string, 
+    default?: string, 
+    locale?: string
+
+}
+
 export type Program = {
         title: string;
         subtitle: string;
@@ -131,6 +160,8 @@ export type Program = {
             textless: string, 
             texted: string
         };
+        season?: string, 
+        episode?: string,
     };
 
 export type LiveFeed = {
