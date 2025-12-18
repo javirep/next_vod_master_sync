@@ -313,7 +313,3 @@ export const getAmazonEPG = async (url: string) => {
             return dateA.getTime() - dateB.getTime();
         });
 }
-
- function getAmazonDuration (duration: string) {
-    let hours= duration.split
- }
