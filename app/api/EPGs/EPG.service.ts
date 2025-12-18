@@ -296,6 +296,7 @@ export const getAmazonEPG = async (url: string) => {
 
             let startDate = new Date(scheduledAiring.elements[0].elements[0].text)
             startDate.setHours(startDate.getHours() - 5);
+            
 
             liveFeed.date = startDate.toISOString().split("T")[0],
             liveFeed.startTime = startDate.toISOString().split("T")[1],
@@ -303,6 +304,7 @@ export const getAmazonEPG = async (url: string) => {
 
             amazonLiveFeed.push(liveFeed)
 
+            return liveFeed
         })
 
     })
