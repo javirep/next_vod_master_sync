@@ -74,11 +74,23 @@ export const MasterTrackerTitles: MasterType = {
             add: '.mp4'
         }
     },
+    originalCaptionsFilename: {
+        key: 'Original Captions Filename'
+    },
     captionsFilename: {
-        key: 'Captions Filename',
+        key: 'Asset Filename Formula',
+        transform: {
+            add: '.scc'
+        }
+    },
+    originalArtFilename: {
+        key: 'Original Art Filename',
     },
     artFilename: {
-        key: 'Art Filename',
+        key: 'Asset Filename Formula',
+        transform: {
+            add: '.jpg'
+        }
     },
     women: {
         key: 'Women',
@@ -112,6 +124,9 @@ export const MasterTrackerTitles: MasterType = {
     },
     seriesTitle: {
         key: 'Series Title',
+    },
+    dealId: {
+        key: 'Deal ID'
     },
     brandedVOD: {
         key: `Branded VOD Rights`,

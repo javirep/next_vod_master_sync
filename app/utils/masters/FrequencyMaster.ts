@@ -1,30 +1,33 @@
 import { outputMasterType } from "./types";
+import moment from 'moment'
 
 export const FrequencyMaster: outputMasterType = {
-    name: 'Frequency Manifest',
+    name: 'New Frequency Manifest',
     id: 'frequencyManifest',
     outputName: 'Swerve-Metadata-Manifest',
     master: [
         {
-            header: 'title',
-            key: 'title',
-            defaultValue: '',
-            validation: {
-                required: true,
-            }
-        },
-        {
-            header: 'description',
-            key: 'shortSynopsis',
-            defaultValue: '',
-            validation: {
-                required: true,
-                maxLength: 110,
-            }
+            header: 'guid',
+            key: 'guid',
+            defaultValue: ''
         },
         {
             header: 'video_file',
             key: 'videoFilename',
+            defaultValue: '',
+            transform: {
+                type: 'string',
+                from: 'filePath',
+                to: 'fileName',
+            }, 
+            validation: {
+                required: true,
+                isUnique: true,
+            }
+        },
+        {
+            header: 'original_video',
+            key: 'originalVideoFilename',
             defaultValue: '',
             transform: {
                 type: 'string',
@@ -50,9 +53,77 @@ export const FrequencyMaster: outputMasterType = {
             }
         },
         {
-            header: 'keywords',
-            key: 'tags',
+            header: 'original_thumbnail',
+            key: 'originalArtFilename',
             defaultValue: '',
+            transform: {
+                type: 'string',
+                from: 'filePath',
+                to: 'fileName',
+            },
+            validation: {
+                required: true,
+            }
+        },
+        {
+            header: 'captions_file',
+            key: 'captionsFilename',
+            defaultValue: '',
+            transform: {
+                type: 'string',
+                from: 'filePath',
+                to: 'fileName',
+            },
+            validation: {
+                required: true,
+            }
+        },
+        {
+            header: 'original_captions',
+            key: 'originalCaptionsFilename',
+            defaultValue: '',
+            transform: {
+                type: 'string',
+                from: 'filePath',
+                to: 'fileName',
+            },
+            validation: {
+                required: true,
+            }
+        },
+        {
+            header: 'File Path',
+            key: 'filePath'
+        },
+        {
+            header: 'title',
+            key: 'title',
+            defaultValue: '',
+            validation: {
+                required: true,
+            }
+        },
+        {
+            header: 'description',
+            key: 'shortSynopsis',
+            defaultValue: '',
+            validation: {
+                required: true,
+                maxLength: 110,
+            }
+        },
+        {
+            header: 'genre',
+            key: 'genre',
+            defaultValue: '',
+            transform: {
+                type: 'genre',
+                from: 'masterTracker',
+                to: 'frequency',
+            },
+            validation: {
+                required: true,
+            }
         },
         {
             header: 'content_format',
@@ -82,6 +153,29 @@ export const FrequencyMaster: outputMasterType = {
             }
         },
         {
+            header: 'country',
+            key: '',
+            defaultValue: 'US',
+        },
+        {
+            header: 'rating',
+            key: 'rating',
+            defaultValue: '',
+            validation: {
+                required: true,
+            }
+        },
+        {
+            header: 'audio_language',
+            key: '',
+            defaultValue: 'en',
+        },
+        {
+            header: 'keywords',
+            key: 'tags',
+            defaultValue: '',
+        },
+        {
             header: 'series_name',
             key: 'series_seriesName',
             defaultValue: '',
@@ -105,29 +199,6 @@ export const FrequencyMaster: outputMasterType = {
             }
         },
         {
-            header: 'genre',
-            key: 'genre',
-            defaultValue: '',
-            transform: {
-                type: 'genre',
-                from: 'masterTracker',
-                to: 'frequency',
-            },
-            validation: {
-                required: true,
-            }
-        },
-        {
-            header: 'duration_seconds',
-            key: 'duration',
-            defaultValue: '',
-            transform: {
-                type: 'duration',
-                from: 'min',
-                to: 'seconds',
-            },
-        },
-        {
             header: 'cue_points',
             key: 'adBreaks',
             defaultValue: '',
@@ -138,56 +209,32 @@ export const FrequencyMaster: outputMasterType = {
             },
         },
         {
+            header: 'tms_id',
+            key: 'TMSID',
+            defaultValue: '',
+        },
+        {
             header: 'publish_date',
             key: 'releaseDate',
             defaultValue: '',
         },
         {
-            header: 'country',
-            key: '',
-            defaultValue: 'US',
+            header: 'expiration_date',
+            key: 'rightsEnd',
+            defaultValue: '',
         },
         {
-            header: 'rating',
-            key: 'rating',
+            header: 'deal_id',
+            key: 'dealId',
             defaultValue: '',
             validation: {
-                required: true,
+                required: true
             }
         },
         {
-            header: 'audio_language',
-            key: '',
-            defaultValue: 'en',
-        },
-        {
-            header: 'captions_language',
-            key: '',
-            defaultValue: 'en'
-        },
-        {
-            header: 'captions_file',
-            key: 'captionsFilename',
-            defaultValue: '',
-            transform: {
-                type: 'string',
-                from: 'filePath',
-                to: 'fileName',
-            }
-        },
-        {
-            header: 'guid',
-            key: 'guid',
-            defaultValue: ''
-        },
-        {
-            header: 'File Path',
-            key: 'filePath'
-        },
-        {
-            header: 'Updated File Path', 
-            key: 'updatedFilename',
-            defaultValue:''
+            header: 'metadata_update_date',
+            key:'',
+            defaultValue: moment().format('YYYY-MM-DDTHH:mm:ss')
         }
     ]
 }
