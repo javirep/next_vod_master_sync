@@ -1,5 +1,4 @@
 import { Regex } from "aws-sdk/clients/iot";
-import { VideoModel } from "../../models/VideoModel";
 
 export type sourceMasterField = {
     key: string;

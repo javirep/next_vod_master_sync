@@ -9,14 +9,14 @@ import { VideoModel } from "../models/VideoModel";
 import moment from "moment";
 import { generateTemplate } from "../utils/generateTemplate";
 import TextInput from "../components/Inputs/TextInput/TextInput";
-import { Checkbox } from "../components/Inputs/Checkbox/Checkbox";
 import outputMasters from "../utils/masters/outputMasters";
 
 import './generateTemplate.scss';
 import { SelectInput, SelectOption } from "../components/Inputs/SelectInput/SelectInput";
 import selectPlatformsOptions from "./utils/selectPlatformOptions";
-import { getMasterTrackerData, getNewFilePath } from "../services/masterTracker";
+import { getMasterTrackerData } from "../services/masterTracker";
 import Layout from "../components/Layout/Layout";
+import { downloadFile } from "../services/generateFile";
 
 type TableFilters = {
     distributor: string
@@ -39,6 +39,7 @@ const Page = (  ) => {
     const [ currentPage, setCurrentPage ] = React.useState<number>(0);
     const [ platformFilter, setPlatformFilter ] = React.useState<string>('');
     const [ masterId, setMasterId ] = useState('')
+    const [ loadingTable, setLoadingTable ] = useState(true)
 
     const [filters, setFilters] = useState<TableFilters>({
         distributor: '',
@@ -68,6 +69,7 @@ const Page = (  ) => {
         
         setFilteredVideos(getVideosAsVideoModel(videosInit));
         setVideos(videosInit);
+        setLoadingTable(false);
     }
 
     useEffect(() => {
@@ -121,31 +123,26 @@ const Page = (  ) => {
         return rows;
     }
 
-    const handleGenerateTemplate = () => {
+    const handleGenerateTemplate = async () => {
 
         if (!masterId || masterId == '') {
             alert('Please select an export type');
             return
         };
 
-        const master = outputMasters.find(master => master.id === masterId);
+        const selectedVideosGuids = Object.values(videos).filter(video => video.selected).map(video => { return video.guid; });
 
-        if (!master) return;
+        const response = await downloadFile(masterId, selectedVideosGuids);
 
-        const selectedVideos = Object.values(videos).filter(video => video.selected)
-
-        const tables = generateTemplate(master, selectedVideos);
-
-        const now = moment().format('YYYY-MM-DD-HH-mm-ss');
-
-        const ouputFileName = master.outputName ? `${master.outputName}-${now}.csv` : `data-${now}.csv`;
-
-        downloadCsv(tables.content, ouputFileName);
-
-        if (tables.errors.length > 1) {
-            alert('There are errors in the template. Please check the errors file');
-            downloadCsv(tables.errors, `errors-${now}.csv`);
-        }
+        const csvContent = response.file.csvContent;
+        const fileName = response.file.fileName;
+        
+        const blob = new Blob([csvContent], {type: 'text/csv'})
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        a.click();
     }
 
     const downloadCsv = (tableContent: any[], fileName) => {
@@ -158,6 +155,11 @@ const Page = (  ) => {
         a.href = url
         a.download = fileName
         a.click()
+    }
+
+    const downloadXlsx = (tableContent: any[], fileName: string) => {
+        console.log('Downloading XLSX:', tableContent, fileName);
+        // Using xlsx library to generate xlsx file
     }
 
     const handleTextFilters = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
@@ -215,30 +217,35 @@ const Page = (  ) => {
     <div>
         <Typography type='title' className="mb-4">Generate Avails Template</Typography>
 
-        <div className='top-container'>
-                <div>
-                    <div className='filters-container'>
-                        <TextInput labelText="Distributor" onChange={(e) => handleTextFilters(e, 'distributor')}/>
-                        <TextInput labelText="Title" onChange={(e) => handleTextFilters(e, 'title')}/>
-                        <TextInput labelText="Series Title" onChange={(e) => handleTextFilters(e, 'series_title')}/>
-                        <TextInput labelText="GUID(s)" onChange={(e) => handleTextFilters(e, 'guids')}/>
-                    
-                
-                        {/* <Checkbox label="Branded VOD" onChange={(value) => handleCheckboxFilters(value, 'brandedVOD')} checked={filters.brandedVOD}/>
-                        <Checkbox label="Unbranded VOD" onChange={(value) => handleCheckboxFilters(value, 'unbrandedVOD')} checked={filters.unbrandedVOD}/>
-                        <Checkbox label="3rd Party Linear" onChange={(value) => handleCheckboxFilters(value, 'thirdPartyLinear')} checked={filters.thirdPartyLinear}/> */}
-                    </div>
-                </div>
+        {
+        
+        loadingTable ? <Typography type="body">Loading table data...</Typography> : (
 
-                <div className='filters-container'>
-                    <Typography type="input-label"> Filter by Platform Status</Typography>
-                    <SelectInput labelText="Platform:" options={getSelectPlatformOptions()} onChange={(o) => setPlatformFilter(o.value as string)} />
-                    <SelectInput labelText="Status:" options={getSelectPlatformStatusOptions()} onChange={(o) => handleSelectFilters(o.value as string, 'platformStatus')}/>
-                </div>
-                <div className='filters-container'>
-                    <SelectInput options={outputMasters.map(master => {return { value: master.id, label: master.name}})} onChange={handleSelectMaster} />
-                    <Button type='primary' text='Generate Template' onClick={() => handleGenerateTemplate()}/>
-                </div>
+        <>
+            <div className='top-container'>
+                    <div>
+                        <div className='filters-container'>
+                            <TextInput labelText="Distributor" onChange={(e) => handleTextFilters(e, 'distributor')}/>
+                            <TextInput labelText="Title" onChange={(e) => handleTextFilters(e, 'title')}/>
+                            <TextInput labelText="Series Title" onChange={(e) => handleTextFilters(e, 'series_title')}/>
+                            <TextInput labelText="GUID(s)" onChange={(e) => handleTextFilters(e, 'guids')}/>
+                        
+                    
+                            {/* <Checkbox label="Branded VOD" onChange={(value) => handleCheckboxFilters(value, 'brandedVOD')} checked={filters.brandedVOD}/>
+                            <Checkbox label="Unbranded VOD" onChange={(value) => handleCheckboxFilters(value, 'unbrandedVOD')} checked={filters.unbrandedVOD}/>
+                            <Checkbox label="3rd Party Linear" onChange={(value) => handleCheckboxFilters(value, 'thirdPartyLinear')} checked={filters.thirdPartyLinear}/> */}
+                        </div>
+                    </div>
+
+                    <div className='filters-container'>
+                        <Typography type="input-label"> Filter by Platform Status</Typography>
+                        <SelectInput labelText="Platform:" options={getSelectPlatformOptions()} onChange={(o) => setPlatformFilter(o.value as string)} />
+                        <SelectInput labelText="Status:" options={getSelectPlatformStatusOptions()} onChange={(o) => handleSelectFilters(o.value as string, 'platformStatus')}/>
+                    </div>
+                    <div className='filters-container'>
+                        <SelectInput options={outputMasters.map(master => {return { value: master.id, label: master.name}})} onChange={handleSelectMaster} />
+                        <Button type='primary' text='Generate Template' onClick={() => handleGenerateTemplate()}/>
+                    </div>
             </div>
 
             <Table
@@ -266,8 +273,13 @@ const Page = (  ) => {
                 }}
                 
             />
+        </>
+        
+        )}
         
     </div>
+
+    
     )
 }
 

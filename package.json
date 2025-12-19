@@ -35,7 +35,7 @@
     "react-router-dom": "^7.3.0",
     "react-scripts": "5.0.1",
     "sass": "^1.85.1",
-    "xlsx": "^0.18.5",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "xml-js": "^1.6.11",
     "xml2json": "^0.12.0"
   },

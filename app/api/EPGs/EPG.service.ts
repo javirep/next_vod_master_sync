@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { RokuEPG, FrequencyEPG, AmazonEPGSchedule, Program, LiveFeed } from '@/app/models/ProgramModel';
 import convert from 'xml-js'
-import { parse, end, toSeconds, pattern } from "iso8601-duration"
+import { parse, toSeconds } from "iso8601-duration"
 
 export const getRokuEPG = async (url) => {
     const RokuTimeDif = Number(process.env.NEXT_ROKU_TIME_DIF) || 5
