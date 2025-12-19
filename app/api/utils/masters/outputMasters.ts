@@ -8,11 +8,10 @@ import { PlutoAvailsMaster } from "./PlutoAvails";
 
 
 export default [
+    FrequencyMaster,
     RokuAvailsMaster, 
     RokuMDUEpisodesMaster,
     FutureTodayMovieMaster,
     VizioMaster,
-    FrequencyMaster,
-    OldFrequencyMaster,
     PlutoAvailsMaster
 ]

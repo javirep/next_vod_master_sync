@@ -14,11 +14,6 @@ export async function POST( _req ) {
     const masterId = body.masterId
     const guids = body.uuids
 
-    console.log(
-        masterId, 
-        guids, 
-    )
-
     let selectedMaster = masters.find( master => master.id == masterId)
 
     if (!selectedMaster) return NextResponse.json({
@@ -35,24 +30,36 @@ export async function POST( _req ) {
     let allTitles = await getTitles()
     let allSeries = await getSeries()
 
+    allTitles.forEach( title => {
+        title.series = allSeries[title.seriesTitle]
+    })
+
     let selectedVideos = guids.map(guid => {
         return allTitles.find( title => guid == title.guid)
     })
 
-    const tables = generateTemplate(selectedMaster, selectedVideos);
+    const {content, errors} = generateTemplate(selectedMaster, selectedVideos);
 
     const now = moment().format('YYYY-MM-DD-HH-mm-ss');
     
     const ouputFileName = selectedMaster.outputName ? `${selectedMaster.outputName}-${now}.csv` : `data-${now}.csv`;
 
-    const csvContent = tables.content.map(row => row.join(',')).join('\n')
-
-    return NextResponse.json({
+    let response = {
+        success: true,
         file: {
             fileName: ouputFileName,
-            fileContent: csvContent
+            fileContent: content.map(row => row.join(',')).join('\n'),
+            fileFormat: 'csv'
         }
-    }, {
+    }
+    
+    if (errors.length > 1) response['errorFile'] = {
+        fileName: 'errors.csv',
+        fileContent: errors.map(row => row.join(',')).join('\n'),
+        fileFormat: 'csv'
+    }
+
+    return NextResponse.json( response, {
         status: 200,
         headers: {
             'Content-Type': 'text/csv',

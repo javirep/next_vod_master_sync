@@ -80,7 +80,7 @@ export const MasterTrackerTitles: MasterType = {
     captionsFilename: {
         key: 'Asset Filename Formula',
         transform: {
-            add: '.scc'
+            add: '.srt'
         }
     },
     originalArtFilename: {

@@ -134,21 +134,27 @@ const Page = (  ) => {
 
         const response = await downloadFile(masterId, selectedVideosGuids);
 
-        const csvContent = response.file.csvContent;
+        const fileContent = response.file.fileContent;
         const fileName = response.file.fileName;
-        
-        const blob = new Blob([csvContent], {type: 'text/csv'})
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = fileName;
-        a.click();
+
+        if (response.file.fileFormat == 'xlsx') {
+            downloadXlsx(fileContent, fileName);
+        }
+
+        if (response.file.fileFormat == 'csv') {
+            downloadCsv(fileContent, fileName);
+        }
+
+        if (response.errorFile) {
+            const errorFileContent = response.errorFile.fileContent;
+            const errorFileName = response.errorFile.fileName;
+
+            downloadCsv(errorFileContent, errorFileName);
+            alert ('Template generated with errors. Please check the error file.' );
+        }
     }
 
-    const downloadCsv = (tableContent: any[], fileName) => {
-
-        const csvContent = tableContent.map(row => row.join(',')).join('\n')
-
+    const downloadCsv = (csvContent: string, fileName) => {
         const blob = new Blob([csvContent], {type: 'text/csv'})
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
@@ -164,10 +170,6 @@ const Page = (  ) => {
 
     const handleTextFilters = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
         setFilters({...filters, [key]: e.target.value})
-    }
-
-    const handleCheckboxFilters = (value: boolean, key: string) => {
-        setFilters({...filters, [key]: value})
     }
 
     const handleSelectMaster = (o: SelectOption) => {

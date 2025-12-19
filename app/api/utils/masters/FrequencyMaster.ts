@@ -93,7 +93,7 @@ export const FrequencyMaster: outputMasterType = {
             }
         },
         {
-            header: 'path',
+            header: 'file_path',
             key: 'filePath',
             defaultValue:''
         },
@@ -173,6 +173,11 @@ export const FrequencyMaster: outputMasterType = {
             defaultValue: 'en',
         },
         {
+            header: 'captions_language',
+            key: '',
+            defaultValue: 'en'
+        },
+        {
             header: 'keywords',
             key: 'tags',
             defaultValue: '',
@@ -233,10 +238,5 @@ export const FrequencyMaster: outputMasterType = {
                 required: true
             }
         },
-        {
-            header: 'metadata_update_date',
-            key:'',
-            defaultValue: moment().format('YYYY-MM-DDTHH:mm:ss')
-        }
     ]
 }
