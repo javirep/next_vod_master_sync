@@ -20,8 +20,8 @@ export default function NavBar() {
     const router = useRouter();
 
     const navLinks = [
-        { name: 'Generate CSV', route: '/generateTemplate' },
-        { name: 'EPG', route: '/EPG' },
+        { name: 'File Generating', route: '/generateTemplate' },
+        { name: 'EPG Monitoring', route: '/EPG' },
     ] as NavLinkType[];
 
     const handleLogout = () => {

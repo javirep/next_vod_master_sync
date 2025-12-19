@@ -39,9 +39,15 @@ export type outputMasterField = {
 export type outputMasterType = {
     name: string;
     id: string;
-    master: outputMasterField[]
+    outputFormat: string;
     outputName?: string;
-    outputFormat?: string;
+
+    tabs: outputTabType[]
+}
+
+export type outputTabType = {
+    tabName: string,
+    content: outputMasterField[]
 }
 
 export enum AvailsType {

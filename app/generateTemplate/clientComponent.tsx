@@ -7,9 +7,8 @@ import { Button } from "../components/Button/Button";
 import { RowType, Table } from "../components/Table/Table";
 import { VideoModel } from "../models/VideoModel";
 import moment from "moment";
-import { generateTemplate } from "../utils/generateTemplate";
 import TextInput from "../components/Inputs/TextInput/TextInput";
-import outputMasters from "../utils/masters/outputMasters";
+import outputMasters from "../api/utils/masters/outputMasters";
 
 import './generateTemplate.scss';
 import { SelectInput, SelectOption } from "../components/Inputs/SelectInput/SelectInput";
@@ -133,15 +132,17 @@ const Page = (  ) => {
         const selectedVideosGuids = Object.values(videos).filter(video => video.selected).map(video => { return video.guid; });
 
         const response = await downloadFile(masterId, selectedVideosGuids);
+        console.log('Generate Template Response:', response.file);
 
-        const fileContent = response.file.fileContent;
         const fileName = response.file.fileName;
-
+        
         if (response.file.fileFormat == 'xlsx') {
+            const fileContent = response.file.fileContent;
             downloadXlsx(fileContent, fileName);
         }
-
+        
         if (response.file.fileFormat == 'csv') {
+            const fileContent = response.file.fileContent;
             downloadCsv(fileContent, fileName);
         }
 

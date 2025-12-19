@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import masters from './../utils/masters/outputMasters'
-import { generateTemplate } from '../utils/generateTemplate';
+import { generateTab } from '../utils/generateTemplate';
 import { getSeries, getTitles } from '../masterTracker/masterTracker.service';
 import moment from 'moment';
 
@@ -38,26 +38,53 @@ export async function POST( _req ) {
         return allTitles.find( title => guid == title.guid)
     })
 
-    const {content, errors} = generateTemplate(selectedMaster, selectedVideos);
+    let fileContent = {
+        main: [[]]
+    }
+    let errorsContent = [['title', 'error_field', 'error_message', 'date']]
+
+    selectedMaster.tabs.forEach( tab => {
+            const {content, errors} = generateTab(tab.content, selectedVideos)
+            fileContent[tab.tabName] = content
+            if (errors.length) errors.forEach( error => errorsContent.push(error))
+        }
+    );
 
     const now = moment().format('YYYY-MM-DD-HH-mm-ss');
+
+    console.log({errorsContent, fileContent})
     
     const ouputFileName = selectedMaster.outputName ? `${selectedMaster.outputName}-${now}.csv` : `data-${now}.csv`;
 
     let response = {
         success: true,
         file: {
-            fileName: ouputFileName,
-            fileContent: content.map(row => row.join(',')).join('\n'),
-            fileFormat: 'csv'
+            fileName: ouputFileName, 
+            fileFormat: selectedMaster.outputFormat
         }
     }
     
-    if (errors.length > 1) response['errorFile'] = {
+    if (errorsContent.length > 1) response['errorFile'] = {
         fileName: 'errors.csv',
-        fileContent: errors.map(row => row.join(',')).join('\n'),
+        fileContent: errorsContent.map(row => row.join(',')).join('\n'),
         fileFormat: 'csv'
     }
+
+    if (selectedMaster.outputFormat == 'xlsx') {
+        response.file['fileContent'] = fileContent.main.map(row => row.join(',')).join('\n');
+    
+        return NextResponse.json( response, {
+            status: 200,
+            headers: {
+                'Content-Type': 'text/csv',
+                'Content-Disposition': `attachment; filename="${ouputFileName}.csv"`,
+                'Cache-Control': 'no-store'
+            }
+        });
+    }
+
+    // Regular CSV
+    response.file['fileContent'] = fileContent.main.map(row => row.join(',')).join('\n');
 
     return NextResponse.json( response, {
         status: 200,
@@ -67,4 +94,5 @@ export async function POST( _req ) {
             'Cache-Control': 'no-store'
         }
     });
+
 }

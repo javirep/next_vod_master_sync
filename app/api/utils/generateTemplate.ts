@@ -9,15 +9,15 @@ type validationOutputType = {
     errorMessage?: string;
 }
 
-export const generateTemplate = (masterObj: outputMasterType, videos: VideoModel[]) => {
+export const generateTab = (masterField: outputMasterField[], videos: VideoModel[]) => {
 
-    let header = masterObj.master.map(field => field.header);
-    let errors: any[][] = [['title', 'error_field', 'error_message', 'date']];
+    let header = masterField.map(field => field.header);
+    let errors: any[][] = [];
 
     let content = videos.map((video, index) => {
         let row: any[] = [];
 
-        masterObj.master.forEach(originalField => {
+        masterField.forEach(originalField => {
             let field: outputMasterField = JSON.parse(JSON.stringify(originalField))
             let value = field.defaultValue
             let data = video
