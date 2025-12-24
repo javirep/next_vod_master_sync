@@ -1,10 +1,13 @@
+
 import { NextResponse } from 'next/server';
 import masters from './../utils/masters/outputMasters'
 import { generateTab } from '../utils/generateTemplate';
 import { getSeries, getTitles } from '../masterTracker/masterTracker.service';
 import moment from 'moment';
+import * as XLSX from 'xlsx'
+import { generateArtworkTab } from '../utils/generateArtworkTab';
 
-export const dynamicParams = true;
+export const runtime = "nodejs"; 
 
 export async function POST( _req ) {
   
@@ -38,9 +41,8 @@ export async function POST( _req ) {
         return allTitles.find( title => guid == title.guid)
     })
 
-    let fileContent = {
-        main: [[]]
-    }
+    let fileContent = {} as {[key:string]: string[][]}
+
     let errorsContent = [['title', 'error_field', 'error_message', 'date']]
 
     selectedMaster.tabs.forEach( tab => {
@@ -50,11 +52,17 @@ export async function POST( _req ) {
         }
     );
 
-    const now = moment().format('YYYY-MM-DD-HH-mm-ss');
+    if (masterId == 'frequencyManifestXlsx') {
+        const {content, errors} = generateArtworkTab(selectedVideos)
+        fileContent['Artwork'] = content
 
-    console.log({errorsContent, fileContent})
+        if (errors.length) errors.forEach( error => errorsContent.push(error))
+    }
+
+    const now = moment().format('YYYY-MM-DD-HH-mm-ss');
     
-    const ouputFileName = selectedMaster.outputName ? `${selectedMaster.outputName}-${now}.csv` : `data-${now}.csv`;
+    const baseName = selectedMaster.outputName || "export";
+    const ouputFileName = `${baseName}-${now}.${selectedMaster.outputFormat || selectedMaster.outputFormat}`;
 
     let response = {
         success: true,
@@ -70,21 +78,36 @@ export async function POST( _req ) {
         fileFormat: 'csv'
     }
 
+
     if (selectedMaster.outputFormat == 'xlsx') {
-        response.file['fileContent'] = fileContent.main.map(row => row.join(',')).join('\n');
-    
-        return NextResponse.json( response, {
-            status: 200,
-            headers: {
-                'Content-Type': 'text/csv',
-                'Content-Disposition': `attachment; filename="${ouputFileName}.csv"`,
-                'Cache-Control': 'no-store'
-            }
+
+        const wb = XLSX.utils.book_new();
+
+        for (const [tabName, rows] of Object.entries(fileContent)) {
+            const ws = XLSX.utils.aoa_to_sheet(rows as any[][]); // AOA = array of arrays
+            XLSX.utils.book_append_sheet(wb, ws, tabName.slice(0, 31)); // Excel tab name limit
+        }
+        
+        const excelBuffer = XLSX.write(wb, {
+            type: "buffer",
+            bookType: "xlsx",
+            compression: true
         });
+        response.file['fileContent'] = excelBuffer.toString("base64");
+
+        return NextResponse.json(response, {
+             headers: {
+               "Content-Type": "application/json",
+               "Cache-Control": "no-store"
+             }
+         });
+
     }
 
     // Regular CSV
-    response.file['fileContent'] = fileContent.main.map(row => row.join(',')).join('\n');
+    response.file['fileContent'] = fileContent.main.map(row => {
+        return row.map(cell=> typeof cell === 'string' ? `"${cell.replace(/"/g, '""')}"` : cell ).join(',') // Escape double quotes in strings
+    }).join('\n')
 
     return NextResponse.json( response, {
         status: 200,

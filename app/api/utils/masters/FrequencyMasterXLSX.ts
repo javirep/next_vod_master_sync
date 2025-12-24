@@ -2,7 +2,7 @@ import { outputMasterType } from "./types";
 
 export const FrequencyMasterXLSX: outputMasterType = {
     name: 'Frequency Manifest (.xlsx)',
-    id: 'frequencyManifest',
+    id: 'frequencyManifestXlsx',
     outputName: 'Swerve-Metadata-Manifest',
     outputFormat: 'xlsx',
     tabs: [
@@ -241,10 +241,6 @@ export const FrequencyMasterXLSX: outputMasterType = {
                     }
                 },
             ]
-        },
-        {
-            tabName: 'Artwork',
-            content: []
         }
     ]
 }

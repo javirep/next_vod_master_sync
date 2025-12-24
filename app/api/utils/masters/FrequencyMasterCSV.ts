@@ -2,7 +2,7 @@ import { outputMasterType } from "./types";
 
 export const FrequencyMasterCSV: outputMasterType = {
     name: 'Frequency Manifest (.csv)',
-    id: 'frequencyManifest',
+    id: 'frequencyManifestCSV',
     outputName: 'Swerve-Metadata-Manifest',
     outputFormat: 'csv',
     tabs: [

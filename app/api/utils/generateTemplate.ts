@@ -93,14 +93,12 @@ export const generateTab = (masterField: outputMasterField[], videos: VideoModel
                 }
             }
             
-            if (typeof value === 'string') value = `"${value.replace(/"/g, '""')}"` // Escape double quotes in strings
             row.push(value)
         })
 
         return row;
         
     })
-
 
     return {
         content: [header, ...content], 

@@ -22,8 +22,12 @@ export type VideoModel = {
     filePath: string;
     originalVideoFilename: string;
     videoFilename: string;
+    originalCaptionsFilename: string;
     captionsFilename: string;
+    originalArtFilename: string;
     artFilename: string;
+    textlessArtFilename: string;
+    verticalArtFilename: string;
     women: boolean;
     TMSID: string;
     adBreaks: string;

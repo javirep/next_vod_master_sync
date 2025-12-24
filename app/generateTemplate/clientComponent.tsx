@@ -39,6 +39,7 @@ const Page = (  ) => {
     const [ platformFilter, setPlatformFilter ] = React.useState<string>('');
     const [ masterId, setMasterId ] = useState('')
     const [ loadingTable, setLoadingTable ] = useState(true)
+    const [ isGenerating, setIsGenerating ] = useState(false)
 
     const [filters, setFilters] = useState<TableFilters>({
         distributor: '',
@@ -129,6 +130,8 @@ const Page = (  ) => {
             return
         };
 
+        isGenerating ? null : setIsGenerating(true);
+
         const selectedVideosGuids = Object.values(videos).filter(video => video.selected).map(video => { return video.guid; });
 
         const response = await downloadFile(masterId, selectedVideosGuids);
@@ -153,6 +156,8 @@ const Page = (  ) => {
             downloadCsv(errorFileContent, errorFileName);
             alert ('Template generated with errors. Please check the error file.' );
         }
+
+        setIsGenerating(false);
     }
 
     const downloadCsv = (csvContent: string, fileName) => {
@@ -164,9 +169,33 @@ const Page = (  ) => {
         a.click()
     }
 
-    const downloadXlsx = (tableContent: any[], fileName: string) => {
-        console.log('Downloading XLSX:', tableContent, fileName);
-        // Using xlsx library to generate xlsx file
+    function base64ToUint8Array(base64: string) {
+        const bin = atob(base64);
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        return bytes;
+    }
+
+    const downloadXlsx = (tableContent: string, fileName: string) => {
+        
+        const bytes = new Uint8Array(base64ToUint8Array(tableContent));
+
+        const blob = new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+
+        // Make sure extension matches format
+        const safeName = `${fileName}`;
+
+        a.download = safeName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        URL.revokeObjectURL(url);
+                // Using xlsx library to generate xlsx file
     }
 
     const handleTextFilters = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
@@ -247,7 +276,7 @@ const Page = (  ) => {
                     </div>
                     <div className='filters-container'>
                         <SelectInput options={outputMasters.map(master => {return { value: master.id, label: master.name}})} onChange={handleSelectMaster} />
-                        <Button type='primary' text='Generate Template' onClick={() => handleGenerateTemplate()}/>
+                        <Button type='primary' text={isGenerating ? 'Generating ...' : 'Generate Template' } onClick={() => handleGenerateTemplate()}/>
                     </div>
             </div>
 

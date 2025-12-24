@@ -92,6 +92,12 @@ export const MasterTrackerTitles: MasterType = {
             add: '.jpg'
         }
     },
+    textlessArtFilename: {
+        key: 'Textless Art Filename'
+    },
+    verticalArtFilename: {
+        key: 'Vertical Art Filename'
+    },
     women: {
         key: 'Women',
     },
