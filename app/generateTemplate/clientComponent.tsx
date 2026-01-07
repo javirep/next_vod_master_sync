@@ -130,7 +130,7 @@ const Page = (  ) => {
             return
         };
 
-        isGenerating ? null : setIsGenerating(true);
+        if (!isGenerating) setIsGenerating(true);
 
         const selectedVideosGuids = Object.values(videos).filter(video => video.selected).map(video => { return video.guid; });
 
