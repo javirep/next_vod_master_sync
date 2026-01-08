@@ -272,6 +272,7 @@ export const getAmazonEPG = async (url: string) => {
         else if (catalogElement.name === "TVSeason") addSeason(catalogElement)
         else if (catalogElement.name === "TVEpisode") addProgram(catalogElement, true) 
         else if (catalogElement.name === "Other") addProgram(catalogElement, false)
+        else if (catalogElement.name === "Movie") addProgram(catalogElement, false)
     })
 
     scheduleObj.forEach ( scheduledDay => {
