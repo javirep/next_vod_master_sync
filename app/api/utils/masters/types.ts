@@ -34,6 +34,7 @@ export type outputMasterField = {
     description?: string;
     transform?: transformType;
     validation?: validationType;
+    skipOutput?: boolean;
 }
 
 export type outputMasterType = {

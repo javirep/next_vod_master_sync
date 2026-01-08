@@ -226,6 +226,9 @@ export const FrequencyMasterXLSX: outputMasterType = {
                     header: 'publish_date',
                     key: 'releaseDate',
                     defaultValue: '',
+                    validation: {
+                        required: true
+                    }
                 },
                 {
                     header: 'expiration_date',
@@ -236,6 +239,23 @@ export const FrequencyMasterXLSX: outputMasterType = {
                     header: 'deal_id',
                     key: 'dealId',
                     defaultValue: '',
+                    skipOutput: true,
+                    validation: {
+                        required: true
+                    }
+                },
+                {
+                    header: 'Duration',
+                    key: 'duration',
+                    skipOutput: true,
+                    validation: {
+                        required: true
+                    }
+                },
+                {
+                    header: 'Country Of Origin',
+                    key: 'countryOfOrigin',
+                    skipOutput: true,
                     validation: {
                         required: true
                     }

@@ -11,7 +11,7 @@ type validationOutputType = {
 
 export const generateTab = (masterField: outputMasterField[], videos: VideoModel[]) => {
 
-    let header = masterField.map(field => field.header);
+    let header = masterField.map(field => field.skipOutput? null : field.header);
     let errors: any[][] = [];
 
     let content = videos.map((video, index) => {
@@ -92,6 +92,8 @@ export const generateTab = (masterField: outputMasterField[], videos: VideoModel
                     errors.push([video.title, field.header, isUniqueResult.errorMessage, moment().format('YYYY-MM-DD')])
                 }
             }
+
+            if (field.skipOutput) return
             
             row.push(value)
         })
