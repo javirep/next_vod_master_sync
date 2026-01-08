@@ -244,6 +244,7 @@ export const getAmazonEPG = async (url: string) => {
 
     const addProgram = (program, hasParenElement=false) => {
         const id = program.attributes.id
+
         const title = program.elements[0].elements[0].elements[0].cdata
         const description = program.elements[1].elements[0].elements[0].cdata
         const defaultImage = program.elements[2].elements[0] ? program.elements[2].elements[0].elements[0].text : ""
@@ -253,7 +254,6 @@ export const getAmazonEPG = async (url: string) => {
 
 
         if (hasParenElement) parentSeason = program.elements[8].elements[0].attributes.parentRef as string
-
 
         programs[id] = {
             title, 
@@ -280,6 +280,8 @@ export const getAmazonEPG = async (url: string) => {
             let liveFeed: LiveFeed = { } as LiveFeed
 
             let programId = scheduledAiring.elements[2].attributes?.programRef
+            if (!programId) programId = scheduledAiring.elements[3].attributes?.programRef
+            
             let program = programs[programId]
 
             if ( !program ) return 
