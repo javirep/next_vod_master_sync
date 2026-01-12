@@ -26,8 +26,6 @@ export const generateArtworkTab = (videos: VideoModel[]) => {
         if (video.artFilename) {
             let row = [video.guid, video.artFilename, "", ""];
             content.push(row)
-            let additionalRow = [video.guid, video.artFilename, "Texted", ""];
-            content.push(additionalRow)
         }
         else {
             errors.push([video.title, 'Art Filename', 'No Art File found', moment().format('YYYY-MM-DD')])
