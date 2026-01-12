@@ -48,7 +48,7 @@ export const MasterTrackerTitles: MasterType = {
         key: 'Duration',
     },
     releaseDate: {
-        key: 'Release Date',
+        key: 'Release Date YYYY-MM-DD',
     },
     countryOfOrigin: {
         key: 'Country of Origin',
@@ -192,7 +192,7 @@ export const MasterTrackerSeries: MasterType = {
         key: `Synopsis Short (<110 Char)`,
     },
     seriesReleaseDate: {
-        key: 'Release Date',
+        key: 'Release Date YYYY-MM-DD',
     },
     seriesGenre: {
         key: 'Genre',
