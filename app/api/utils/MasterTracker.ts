@@ -189,7 +189,7 @@ export const MasterTrackerSeries: MasterType = {
         key: 'Synopsis Long',
     }, 
     seriesShortSynopsis: {
-        key: `Synopsis Short (<110 Char)`,
+        key: `Short Synopsis (<110 Char)`,
     },
     seriesReleaseDate: {
         key: 'Release Date YYYY-MM-DD',
@@ -201,6 +201,6 @@ export const MasterTrackerSeries: MasterType = {
         key: 'Tags',
     },
     seriesArtFilename: {
-        key: 'Art Filename',
+        key: 'Default Art Filename',
     },
 }

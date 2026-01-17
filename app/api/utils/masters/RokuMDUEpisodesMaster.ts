@@ -4,7 +4,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
     name: 'Roku MDU episodes',
     id: 'rokuMDUEpisodes',
     outputName: 'Swerve-Roku-MDU',
-    outputFormat: 'csv',
+    outputFormat: 'xlsx',
     
     tabs : [
         {
