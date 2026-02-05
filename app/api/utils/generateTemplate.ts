@@ -238,6 +238,17 @@ const transformTerritory = (territories: string, from: string, to: string) => {
         if (territories.includes('UK')) result += "UK, "
     }
 
+    if (to == 'rokuAvails'){
+        let territoriesArr = territories.split(", ")
+        if (territoriesArr.includes('WW')) return 'US, CA, GB'
+        console.log(territoriesArr)
+        
+        return territoriesArr.filter(ter => ter != "MX" && ter != "BR").map(ter => {
+            if (ter == "UK") return "GB"
+            return ter
+        }).join(', ')
+    }
+
     return territories;
 }
 

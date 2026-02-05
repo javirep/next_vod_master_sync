@@ -53,7 +53,7 @@ export const RokuAvailsMaster: outputMasterType = {
     name: 'Roku Avails',
     id: 'rokuAvails',
     outputName: 'Swerve-Roku-Avails',
-    outputFormat: 'csv',
+    outputFormat: 'xlsx',
     
     tabs : [
         {
@@ -144,6 +144,11 @@ export const RokuAvailsMaster: outputMasterType = {
                     validation: {
                         required: true,
                         format: 'countryCodes',
+                    },
+                    transform : {
+                        type: "territory",
+                        from: "MasterTracker",
+                        to: "rokuAvails"
                     }
                 
                 },
