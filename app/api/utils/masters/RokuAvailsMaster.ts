@@ -311,7 +311,7 @@ export const RokuAvailsMaster: outputMasterType = {
                 },
                 {
                     header: headers[35],
-                    key: 'synopsis',
+                    key: 'shortSynopsis',
                     defaultValue: '',
                     validation: {
                         required: true,

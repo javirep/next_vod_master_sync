@@ -135,8 +135,6 @@ const Page = (  ) => {
         const selectedVideosGuids = Object.values(videos).filter(video => video.selected).map(video => { return video.guid; });
 
         const response = await downloadFile(masterId, selectedVideosGuids);
-        console.log('Generate Template Response:', response.file);
-
         const fileName = response.file.fileName;
         
         if (response.file.fileFormat == 'xlsx') {
