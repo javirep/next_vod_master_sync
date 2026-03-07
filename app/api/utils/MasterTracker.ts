@@ -186,7 +186,7 @@ export const MasterTrackerSeries: MasterType = {
         key: 'Sling ID',
     },
     seriesSynopsis: {
-        key: 'Synopsis Long',
+        key: 'Synopsis',
     }, 
     seriesShortSynopsis: {
         key: `Short Synopsis (<110 Char)`,
@@ -203,4 +203,7 @@ export const MasterTrackerSeries: MasterType = {
     seriesArtFilename: {
         key: 'Default Art Filename',
     },
+    seriesTMSID:{
+        key: 'TMS ID'
+    }
 }

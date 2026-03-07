@@ -63,6 +63,9 @@ export const genresMaster: GenresMaster = {
     boxing: {
         frequency: 'Sports/Boxing',
     },
+    "bus./financial":{
+        frequency: 'Business/Finance',
+    },
     cricket: {
         frequency: 'Sports/Cricket',
     },

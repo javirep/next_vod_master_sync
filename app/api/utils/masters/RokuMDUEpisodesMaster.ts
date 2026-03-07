@@ -64,7 +64,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                 },
                 {
                     header: "series_tmsId",
-                    key: '',
+                    key: 'series_seriesTMSID',
                     defaultValue: '',
                 },
                 {
@@ -265,7 +265,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                 },
                 {
                     header: "episode_tmsId",
-                    key: '',
+                    key: 'TMSID',
                     defaultValue: '',
                 },
                 {
