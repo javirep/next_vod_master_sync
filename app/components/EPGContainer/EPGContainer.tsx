@@ -26,6 +26,10 @@ function EPGContainer( props: EPGProps ) {
                 return 'Swerve Sports on Roku:';
             case 'sportsPluto':
                 return 'Swerve Sports on Pluto:';
+            case 'profGRoku':
+                return 'Prof G Channel on Roku:';
+            case 'profGAmazon':
+                return 'Prof G Channel on Amazon:';
             default:
                 return 'Error Name - Contact Javi';
         }
