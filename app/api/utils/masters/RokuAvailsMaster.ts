@@ -96,7 +96,13 @@ export const RokuAvailsMaster: outputMasterType = {
                 {
                     header: headers[5],
                     key: '',
-                    defaultValue: moment().add(60, 'day').format('YYYY-MM-DD') // Start Date
+                    defaultValue: moment().add(60, 'day').format('YYYY-MM-DD'), // Start Date in 2 months by default
+                    transform: {
+                        type: 'startDate', 
+                        from: '',
+                        to: 'rokuStartDate',
+                        using: ['type']
+                    }
                 },
                 {
                     header: headers[6],
@@ -273,10 +279,10 @@ export const RokuAvailsMaster: outputMasterType = {
                 },
                 {
                     header: "ratingSystem",
-                    key: 'rating',
+                    key: 'ratingSource',
                     defaultValue: '',
                     transform: {
-                        type: 'rating',
+                        type: 'ratingSource',
                         from: 'masterTracker',
                         to: 'ratingSource',
                     },
@@ -289,6 +295,11 @@ export const RokuAvailsMaster: outputMasterType = {
                     header: headers[31],
                     key: 'rating',
                     defaultValue: '',
+                    transform: {
+                        type: 'ratingValue',
+                        from: '',
+                        to: 'noNR',
+                    },
                     validation: {
                         required: true,
                         format: 'ratingValue',

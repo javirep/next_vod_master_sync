@@ -147,8 +147,8 @@ export const PlutoMDUSeriesMaster: outputMasterType = {
                     key: 'rating',
                     defaultValue: '',
                     transform: {
-                        type: 'rating',
-                        from: "MasterTracekr", 
+                        type: 'ratingValue',
+                        from: "MasterTracker", 
                         to: "NoNR"
                     }
                 },

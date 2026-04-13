@@ -211,7 +211,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                     key: 'rating',
                     defaultValue: '',
                     transform: {
-                        type: 'rating',
+                        type: 'ratingSource',
                         from: 'masterTracker',
                         to: 'ratingSource',
                     },
@@ -224,6 +224,11 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                     header: "episode_ratings",
                     key: 'rating',
                     defaultValue: '',
+                    transform: {
+                        type: 'ratingValue',
+                        from: 'masterTracker',
+                        to: 'noNR',
+                    },
                     validation: {
                         required: true,
                         format: 'ratingValue',
@@ -396,6 +401,11 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                     validation: {
                         required: true,
                         format: 'countryCodes',
+                    },
+                    transform : {
+                        type: "territory",
+                        from: "MasterTracker",
+                        to: "rokuAvails"
                     }
                 },
                 {

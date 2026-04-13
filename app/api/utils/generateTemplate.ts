@@ -119,8 +119,11 @@ const transform = (value: string, type: string, from: string, to: string, using:
         const belongsToSeries = using.length > 0 && using[0] != ''
         return transformTypeFn(value, from, to, belongsToSeries)
     }
-    else if (type === 'rating') {
-        return transformRating(value, from, to)
+    else if (type === 'ratingSource') {
+        return transformRatingSource(value, from, to)
+    }
+    else if (type == 'ratingValue'){
+        return transformRatingValue(value, from, to)
     }
     else if (type === 'adBreaks') {
         return transformAdBreaks(value, from, to)
@@ -136,6 +139,9 @@ const transform = (value: string, type: string, from: string, to: string, using:
     }
     else if (type === 'genre') {
         return transformGenre(value, from, to)
+    }
+    else if (type == 'startDate') {
+        return transformStartDate(value, from, to, using)
     }
 
     return value;
@@ -255,7 +261,7 @@ const transformTerritory = (territories: string, from: string, to: string) => {
 const transformTypeFn = (type: string, from: string, to: string, belongsToSeries: boolean = false) => {
     if (to === 'Roku') {
         if (type === 'Movies') return 'movie'
-        if (type === 'Television') return 'episode'
+        if (type === 'Television' || type === 'Podcast') return 'episode'
         if (type === 'Sports') return 'episode'
     }
 
@@ -266,21 +272,21 @@ const transformTypeFn = (type: string, from: string, to: string, belongsToSeries
 
     if (to === 'Xumo') {
         if (type === 'Movies') return 'Movie'
-        if (type === 'Television') return 'Series'
+        if (type === 'Television' || type === 'Podcast') return 'Series'
         if (type === 'Sports') return 'Series'
         else return 'Movies'
     }
 
     if (to === 'frequencyFormat') {
         if (type === 'Movies') return 'Movie'
-        if (type === 'Television') return 'Show'
+        if (type === 'Television' || type === 'Podcast') return 'Show'
         if (type === 'Sports') return 'Event'
         else return 'Event'
     }
 
     if (to === 'frequencyType') {
         if (type === 'Movies') return 'Film'
-        if (type === 'Television') return 'Episode'
+        if (type === 'Television' || type === 'Podcast') return 'Episode'
         if (type === 'Sports') return 'Competitive Match'
     }
     if (to === 'plutoAvails') { 
@@ -291,15 +297,21 @@ const transformTypeFn = (type: string, from: string, to: string, belongsToSeries
     return type;
 }
 
-const transformRating = (ratingValue: string, from: string, to: string) => {
+const transformRatingSource = (ratingValue: string, from: string, to: string) => {
     if (to == "ratingSource") { 
-        let MPAARatings = [ 'G', 'PG', 'PG13', 'PG-13', 'R', 'NC-17', 'NC17', 'NR'];
+        let MPAARatings = [ 'G', 'PG', 'PG13', 'PG-13', 'R', 'NC-17', 'NC17'];
         let USA_PRRatings = ['TV-Y','TVY','TV-Y7','TVY7','TV-G','TVG','TV-PG','TVPG','TV-14','TV14','TV-MA','TVMA','NR']
         if ( MPAARatings.includes(ratingValue)) return "MPAA"
         if (USA_PRRatings.includes(ratingValue)) return "USA_PR"
     }
     
     return ratingValue;
+}
+
+const transformRatingValue = (ratingValue: string, from: string, to: string) => {
+    if ( to == "noNR") { 
+        if ( ratingValue == "NR") return "TV-PG"
+    }
 }
 
 const transformAdBreaks = (adBreaks: string, from: string, to: string) => {
@@ -379,6 +391,15 @@ const transformGenre = (value: string, from: string, to: string) => {
     }
 
     return value
+}
+
+const transformStartDate = (value: string, from:string, to: string, using:string[]) => {
+    console.log({value})
+    if (to == 'rokuStartDate') {
+        if (using[0] == "Podcast") return moment().format('YYYY-MM-DD')
+
+        return moment().add(60, 'day').format('YYYY-MM-DD')
+    }
 }
 
 const isRequired = ( value: string ) => {
