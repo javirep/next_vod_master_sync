@@ -41,6 +41,8 @@ export const Table: React.FC<TableProps> = (props: TableProps) => {
 
     const tableRef = useRef<HTMLTableElement>(null);
 
+    console.log(rows[1])
+
     useEffect(() => {
         setLoading(true);
         const newColsToShow = header.reduce((acc, col) => {

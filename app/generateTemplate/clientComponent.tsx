@@ -259,11 +259,6 @@ const Page = (  ) => {
                             <TextInput labelText="Title" onChange={(e) => handleTextFilters(e, 'title')}/>
                             <TextInput labelText="Series Title" onChange={(e) => handleTextFilters(e, 'series_title')}/>
                             <TextInput labelText="GUID(s)" onChange={(e) => handleTextFilters(e, 'guids')}/>
-                        
-                    
-                            {/* <Checkbox label="Branded VOD" onChange={(value) => handleCheckboxFilters(value, 'brandedVOD')} checked={filters.brandedVOD}/>
-                            <Checkbox label="Unbranded VOD" onChange={(value) => handleCheckboxFilters(value, 'unbrandedVOD')} checked={filters.unbrandedVOD}/>
-                            <Checkbox label="3rd Party Linear" onChange={(value) => handleCheckboxFilters(value, 'thirdPartyLinear')} checked={filters.thirdPartyLinear}/> */}
                         </div>
                     </div>
 
@@ -283,7 +278,9 @@ const Page = (  ) => {
                     {colKey: 'licensor', colText: 'Distributor', width: 120},
                     {colKey: 'type', colText: 'Type', width: 80},
                     {colKey: 'title', colText: 'Title', width: 200},
-                    {colKey: 'series', colText: 'Series Name', width: 200},
+                    {colKey: 'seriesTitle', colText: 'Series Name', width: 200},
+                    {colKey: 'season', colText: 'S#', width: 150},
+                    {colKey: 'episode', colText: 'E#', width: 150},
                     {colKey: 'rightsStart', colText: 'Rights Start', width: 100},
                     {colKey: 'rightsEnd', colText: 'Rights End', width: 100},
                     {colKey: 'frequency', colText: 'In Frequency', width: 150},
@@ -291,9 +288,10 @@ const Page = (  ) => {
                     {colKey: 'unbrandedVOD', colText: 'Unbranded VOD', width: 50},
                     {colKey: 'thirdPartyLinear', colText: '3rd Party Linear', width: 100},
                 ]}
+
                 rows={getRows()}
                 onRowsPerPageChange={(num) => setRowsPerPage(num)}
-                onSelectRows={ handleSelectRows}
+                onSelectRows={ handleSelectRows }
 
                 indexatorInfo={{
                     totalItems: filteredVideos.length,
