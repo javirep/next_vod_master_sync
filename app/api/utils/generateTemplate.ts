@@ -312,6 +312,7 @@ const transformRatingValue = (ratingValue: string, from: string, to: string) => 
     if ( to == "noNR") { 
         if ( ratingValue == "NR") return "TV-PG"
     }
+    return ratingValue
 }
 
 const transformAdBreaks = (adBreaks: string, from: string, to: string) => {
