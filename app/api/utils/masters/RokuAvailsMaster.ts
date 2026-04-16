@@ -279,7 +279,7 @@ export const RokuAvailsMaster: outputMasterType = {
                 },
                 {
                     header: "ratingSystem",
-                    key: 'ratingSource',
+                    key: 'rating',
                     defaultValue: '',
                     transform: {
                         type: 'ratingSource',
