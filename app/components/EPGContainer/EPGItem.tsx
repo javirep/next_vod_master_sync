@@ -4,6 +4,7 @@ import './EPGItem.scss';
 import Typography from '@/app/components/Typography/Typography';
 import { LiveFeed } from '@/app/models/ProgramModel';
 import classNames from 'classnames';
+import programDurations from '@/app/utils/programDurations.json';
 
 type EPGItemProps = {
     item: LiveFeed
@@ -70,6 +71,13 @@ export default function EPGItem({ item, gapError, minImagesLen = 1 }: EPGItemPro
 
         if (duration < 15*60) {
             return 'duration';
+        }
+
+        if (program.title == program.subtitle.split(" - ")[1] && programDurations[program.title]) {
+            const validDurations = programDurations[program.title];
+            if (!validDurations.includes(duration / 60)) {
+                return 'duration';
+            }
         }
     
         return ''; 
