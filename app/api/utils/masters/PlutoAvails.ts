@@ -138,7 +138,7 @@ export const PlutoAvailsMaster: outputMasterType = {
                 },
                 {
                     header: 'Content Rating',
-                    key: 'ratingValue',
+                    key: 'rating',
                     defaultValue: '',
                     validation: {
                         required: true,
