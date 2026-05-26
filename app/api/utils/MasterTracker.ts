@@ -203,6 +203,12 @@ export const MasterTrackerSeries: MasterType = {
     seriesArtFilename: {
         key: 'Default Art Filename',
     },
+    seriesVerticalArtFilename: {
+        key: 'Vertical Art Filename',
+    },
+    seriesTextlessArtFilename: {
+        key: 'Textless Art Filename',
+    },
     seriesTMSID:{
         key: 'TMS ID'
     }

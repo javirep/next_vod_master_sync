@@ -348,7 +348,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                 },
                 {
                     header: "Series_BoxCover_File_Name",
-                    key: 'series_seriesArtFilename',
+                    key: 'series_seriesVerticalArtFilename',
                     defaultValue: '',
                     transform: {
                         type: 'string',
@@ -362,7 +362,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                 },
                 {
                     header: "Series_Background_File_Name",
-                    key: 'series_seriesArtFilename',
+                    key: 'series_seriesTextlessArtFilename',
                     defaultValue: '',
                     transform: {
                         type: 'string',
