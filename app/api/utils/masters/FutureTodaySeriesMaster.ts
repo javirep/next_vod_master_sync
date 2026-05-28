@@ -1,4 +1,5 @@
 import { outputMasterType } from "./types";
+import moment from "moment";
 
 export const FutureTodaySeriesMaster: outputMasterType = {
     name: 'Future Today Series',
@@ -45,7 +46,27 @@ export const FutureTodaySeriesMaster: outputMasterType = {
                     }
                 },
                 {
-                    header: 'PERMIT US/CS/UK/AUS/GE/FR/IT',
+                    header: 'PERMIT US',
+                    key: 'rightsTerritory',
+                    defaultValue: '',
+                    transform: {
+                        type: "territory",
+                        from: "MasterTracker",
+                        to: "FutureTodayUS",
+                    }
+                },
+                {
+                    header: 'PERMIT CA',
+                    key: 'rightsTerritory',
+                    defaultValue: '',
+                    transform: {
+                        type: "territory",
+                        from: "MasterTracker",
+                        to: "FutureTodayCA",
+                    }
+                },
+                {
+                    header: 'PERMIT UK/AUS/GE/FR/IT',
                     key: 'rightsTerritory',
                     defaultValue: '',
                     transform: {
@@ -55,8 +76,13 @@ export const FutureTodaySeriesMaster: outputMasterType = {
                     }
                 },
                 {
-                    header: 'Description',
-                    key: 'synopsis',
+                    header: 'Short Description',
+                    key: 'shortSynopsis',
+                    defaultValue: '',
+                },
+                {
+                    header: 'Long Description',
+                    key: 'Synopsis',
                     defaultValue: '',
                 },
                 {
@@ -85,7 +111,7 @@ export const FutureTodaySeriesMaster: outputMasterType = {
                     defaultValue: '',
                 },
                 {
-                    header: 'ORIGINAL RELEASE DATE',
+                    header: 'Original Release Date (MM/DD/YYYY) (Mandatory)',
                     key: 'releaseDate',
                     defaultValue: '',
                     transform: {
@@ -125,16 +151,6 @@ export const FutureTodaySeriesMaster: outputMasterType = {
                     }
                 },
                 {
-                    header: "Ad breaks (separated by a comma and space", 
-                    key: "adBreaks", 
-                    defaultValue: "",
-                    transform:  {
-                        type: "adBreaks",
-                        from: "HH:mm:ss;ff", 
-                        to: "seconds"
-                    }
-                },
-                {
                     header: 'IMDB Link',
                     key: '',
                     defaultValue: '',
@@ -145,31 +161,25 @@ export const FutureTodaySeriesMaster: outputMasterType = {
                     defaultValue: '',
                 },
                 {
-                    header: 'Skip Credits (If Available)',
+                    header: 'Audio/Video Language',
                     key: '',
-                    defaultValue: '',
+                    defaultValue: 'EN',
                 },
                 {
-                    header: 'Live Date (ASAP/Future)',
-                    key: '',
-                    defaultValue: 'ASAP',
-                },
-                {
-                    header: 'Future Start Date',
-                    key: '',
-                    defaultValue: '',
-                },
-                {
-                    header: 'Live Date',
-                    key: '',
-                    defaultValue: '',
+                    header: 'License Start Date',
+                    key: 'rightsStart',
+                    defaultValue: moment().format('YYYY-MM-DD'),
                 },
                 {
                     header: 'End Date',
                     key: 'rightsEnd',
                     defaultValue: '',
                 },
-
+                {
+                    header: 'Internal Mapping ID',
+                    key: 'guid',
+                    defaultValue: '',
+                },
             ]
         }
     ]
