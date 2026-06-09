@@ -29,11 +29,12 @@ type TableProps = {
     onRowsPerPageChange: (rowsPerPage: number) => void;
     indexatorInfo: TableIndexatorProps;
     onSelectRows: (selectedRowIds: string, selected: boolean) => void;
+    showSelect?: boolean
 };
 
 export const Table: React.FC<TableProps> = (props: TableProps) => {
 
-    const { rows, header, onSelectRows, indexatorInfo, onRowsPerPageChange } = props; 
+    const { rows, header, onSelectRows, indexatorInfo, onRowsPerPageChange, showSelect=true } = props; 
     const [ colsToShow, setColsToShow ] = React.useState<{[key: string]: boolean}>({});
     const [ allBoxesChecked, setAllBoxesChecked ] = React.useState<boolean>(false);
     const [ rowsToShow, setRowsToShow ] = React.useState<RowType[]>([]);
@@ -121,6 +122,7 @@ export const Table: React.FC<TableProps> = (props: TableProps) => {
                                 forceSelected={allBoxesChecked}
                                 colsToShow={colsToShow}
                                 onSelectRow={(selected: boolean) => handleSelectRow(row['id'], selected)}
+                                showSelect={showSelect}
                             />
                         ))}
                     </tbody>

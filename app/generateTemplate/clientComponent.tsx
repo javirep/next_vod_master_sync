@@ -10,12 +10,12 @@ import moment from "moment";
 import TextInput from "../components/Inputs/TextInput/TextInput";
 import outputMasters from "../api/utils/masters/outputMasters";
 
-import './generateTemplate.scss';
 import { SelectInput, SelectOption } from "../components/Inputs/SelectInput/SelectInput";
 import selectPlatformsOptions from "./utils/selectPlatformOptions";
 import { getMasterTrackerData } from "../services/masterTracker";
 import Layout from "../components/Layout/Layout";
 import { downloadFile } from "../services/generateFile";
+import './generateTemplate.scss';
 
 type TableFilters = {
     distributor: string
@@ -245,7 +245,7 @@ const Page = (  ) => {
 
     return (
     <div>
-        <Typography type='title' className="mb-4">Generate Avails Template</Typography>
+        <Typography type='title' className="mb-4">Generate Master Tracker Files</Typography>
 
         {
         

@@ -9,9 +9,10 @@ type RowProps = {
   onSelectRow: (selected: boolean) => void;
   forceSelected?: boolean;
   className?: string;
+  showSelect?: boolean;
 };
 
-export const TableRow = ( {rowData, className, colsToShow, onSelectRow}: RowProps ) => {
+export const TableRow = ( {rowData, className, colsToShow, onSelectRow, showSelect}: RowProps ) => {
 
 
   const handleSelect = (selected: boolean) => {
@@ -22,7 +23,7 @@ export const TableRow = ( {rowData, className, colsToShow, onSelectRow}: RowProp
     <tr className={className}  >
         {
             <th>
-                <Checkbox label="" checked={rowData.selected} onChange={(selected) => {handleSelect(selected)}}/>
+                { showSelect ? (<Checkbox label="" checked={rowData.selected} onChange={(selected) => {handleSelect(selected)}}/>) : <></> }
             </th>
         }
         {

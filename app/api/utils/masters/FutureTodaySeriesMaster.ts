@@ -168,12 +168,22 @@ export const FutureTodaySeriesMaster: outputMasterType = {
                 {
                     header: 'License Start Date',
                     key: 'rightsStart',
-                    defaultValue: moment().format('YYYY-MM-DD'),
+                    defaultValue: moment().format('MM/DD/YYYY'),
+                    transform: {
+                        type: "date",
+                        from: "YYYY-MM-DD",
+                        to: "MM/DD/YYYY"
+                    }
                 },
                 {
                     header: 'End Date',
                     key: 'rightsEnd',
                     defaultValue: '',
+                    transform: {
+                        type: "date",
+                        from: "YYYY-MM-DD",
+                        to: "MM/DD/YYYY"
+                    }
                 },
                 {
                     header: 'Internal Mapping ID',

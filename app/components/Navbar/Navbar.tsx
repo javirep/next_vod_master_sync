@@ -22,6 +22,7 @@ export default function NavBar() {
     const navLinks = [
         { name: 'File Generating', route: '/generateTemplate' },
         { name: 'EPG Monitoring', route: '/EPG' },
+        { name: 'Download Airings', route: '/airings'}
     ] as NavLinkType[];
 
     const handleLogout = () => {
