@@ -35,12 +35,12 @@ const parseCsvRow = (row: string): string[] => {
 export const POST = async ( _req ) => {
     try{ 
         
-        var {tokenAccess, deviceId, from, to} = await _req.json()
+        let {tokenAccess, deviceId, from, to} = await _req.json()
         
         if (!from) from = moment().subtract(1, "week").format("YYYY-MM-DD")
             if (!to) to = moment().format("YYYY-MM-DD")
 
-        var url = `https://prd-freq.frequency.com/api/2.3/reports/program/schedules?from=${from}&to=${to}`
+        const url = `https://prd-freq.frequency.com/api/2.3/reports/program/schedules?from=${from}&to=${to}`
 
         const response = await fetch(url, {
             method: 'GET',
