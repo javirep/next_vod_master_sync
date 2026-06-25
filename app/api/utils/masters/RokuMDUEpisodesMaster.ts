@@ -227,7 +227,7 @@ export const RokuMDUEpisodesMaster: outputMasterType = {
                     transform: {
                         type: 'ratingValue',
                         from: 'masterTracker',
-                        to: 'noNR',
+                        to: 'TV-Rating',
                     },
                     validation: {
                         required: true,

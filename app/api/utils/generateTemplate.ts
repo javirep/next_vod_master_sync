@@ -123,7 +123,7 @@ const transform = (value: string, type: string, from: string, to: string, using:
         return transformRatingSource(value, from, to)
     }
     else if (type == 'ratingValue'){
-        return transformRatingValue(value, from, to)
+        return transformRatingValue(value, from, to, using)
     }
     else if (type === 'adBreaks') {
         return transformAdBreaks(value, from, to)
@@ -255,6 +255,10 @@ const transformTerritory = (territories: string, from: string, to: string) => {
         }).join(', ')
     }
 
+    if (to == 'tubi'){
+        if (territories.includes("WW")) return ""
+    }
+
     return territories;
 }
 
@@ -308,9 +312,18 @@ const transformRatingSource = (ratingValue: string, from: string, to: string) =>
     return ratingValue;
 }
 
-const transformRatingValue = (ratingValue: string, from: string, to: string) => {
-    if ( to == "noNR") { 
+const transformRatingValue = (ratingValue: string, from: string, to: string, using: string[]) => {
+    if ( to == "TVRating") { 
+        if ( ratingValue == "G" ) return "TV-G" 
+        if ( ratingValue == "PG" ) return "TV-PG" 
+        if ( ratingValue == "PG13" ) return "TV-14" 
         if ( ratingValue == "NR") return "TV-PG"
+    }
+    if (to == "movieRating") {
+        if ( ratingValue == "TV-G" ) return "G" 
+        if ( ratingValue == "TV-PG" ) return "PG" 
+        if ( ratingValue == "TV-14" ) return "PG13" 
+        if ( ratingValue == "NR") return "PG"
     }
     return ratingValue
 }
