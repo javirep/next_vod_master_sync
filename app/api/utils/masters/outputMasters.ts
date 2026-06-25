@@ -21,5 +21,6 @@ export default [
     PlutoAvailsMaster,
     PlutoMDUSeriesMaster,
     TubiAvailsMaster,
-    TubiMDUMoviesMaster
+    TubiMDUMoviesMaster,
+    TubiMDUEpisodesMaster
 ]
