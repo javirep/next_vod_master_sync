@@ -7,6 +7,7 @@ import { FutureTodaySeriesMaster } from "./FutureTodaySeriesMaster";
 import { PlutoAvailsMaster } from "./PlutoAvails";
 import { PlutoMDUSeriesMaster } from "./PlutoMDUSeries";
 import { TubiAvailsMaster } from "./TubiAvails";
+import { TubiMDUMoviesMaster } from "./TubiMDUMovies"
 
 
 export default [
@@ -19,4 +20,5 @@ export default [
     PlutoAvailsMaster,
     PlutoMDUSeriesMaster,
     TubiAvailsMaster,
+    TubiMDUMoviesMaster
 ]
