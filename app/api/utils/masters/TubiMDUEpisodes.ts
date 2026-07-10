@@ -45,7 +45,7 @@ export const TubiMDUEpisodesMaster: outputMasterType = {
                 },
                 {
                     header: 'episode number',
-                    key: 'episode_number',
+                    key: 'episode',
                     defaultValue: '',
                     validation: {
                         required: true,
@@ -54,7 +54,7 @@ export const TubiMDUEpisodesMaster: outputMasterType = {
                 },
                 {
                     header: "description",
-                    key: 'series_seriesShortSynopsis',
+                    key: 'shortSynopsis',
                     validation: {
                         required: true,
                         maxLength: 180,
@@ -218,14 +218,8 @@ export const TubiMDUEpisodesMaster: outputMasterType = {
                     header: 'cue points',
                     key: 'adBreaks',
                     defaultValue: '',
-                    transform: {
-                        type: 'adBreaks',
-                        from: 'HH:mm:ss;ff',
-                        to: 'seconds',
-                    },
                     validation: {
                         required: false,
-                        format: 'seconds',
                     }
                 },
                 {
