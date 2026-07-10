@@ -18,6 +18,7 @@ export type validationType = {
     isUnique?: boolean;
     requiredIfField?: string;
     regex?: Regex;
+    allowedValues?: string[];
 }
 
 export type transformType = {

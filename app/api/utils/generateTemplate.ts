@@ -93,6 +93,12 @@ export const generateTab = (masterField: outputMasterField[], videos: VideoModel
                 }
             }
 
+            if (field.validation && field.validation.allowedValues){
+                if (! field.validation.allowedValues.includes( value ) ) {
+                    errors.push([video.title, field.header, `"${field.key} (value: ${value}) is not allowed"`, moment().format('YYYY-MM-DD')])
+                }
+            }
+
             if (field.skipOutput) return
             
             row.push(value)

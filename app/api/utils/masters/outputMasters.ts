@@ -8,6 +8,7 @@ import { PlutoAvailsMaster } from "./PlutoAvails";
 import { PlutoMDUSeriesMaster } from "./PlutoMDUSeries";
 import { TubiAvailsMaster } from "./TubiAvails";
 import { TubiMDUMoviesMaster } from "./TubiMDUMovies";
+import { TubiMDUSeriesMaster } from "./TubiMDUSeries";
 import { TubiMDUEpisodesMaster } from "./TubiMDUEpisodes";
 
 
@@ -22,5 +23,6 @@ export default [
     PlutoMDUSeriesMaster,
     TubiAvailsMaster,
     TubiMDUMoviesMaster,
+    TubiMDUSeriesMaster,
     TubiMDUEpisodesMaster
 ]

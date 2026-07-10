@@ -194,6 +194,9 @@ export const MasterTrackerSeries: MasterType = {
     seriesReleaseDate: {
         key: 'Release Date YYYY-MM-DD',
     },
+    seriesRating: {
+        key: 'Rating',
+    },
     seriesGenre: {
         key: 'Genre',
     },
