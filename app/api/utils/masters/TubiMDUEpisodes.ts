@@ -118,7 +118,7 @@ export const TubiMDUEpisodesMaster: outputMasterType = {
                     key: 'rightsTerritory',
                     defaultValue: '',
                     validation: {
-                        required: true,
+                        required: false,
                         format: 'countryCodes',
                     },
                     transform : {
