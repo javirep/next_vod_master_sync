@@ -8,7 +8,7 @@ export const generateArtworkTab = (videos: VideoModel[]) => {
 
     videos.forEach(video => {
         if (video.textlessArtFilename) {
-            let row = [video.guid, video.textlessArtFilename, "Textless", ""];
+            let row = [video.guid, video.textlessArtFilename, "Textless", moment().format('YYYY-MM-DDTHH:mm:ssZ')];
             content.push(row)
         }
         else {
@@ -16,7 +16,7 @@ export const generateArtworkTab = (videos: VideoModel[]) => {
         }
 
         if ( video.verticalArtFilename){
-            let row = [video.guid, video.verticalArtFilename, "Texted", ""];
+            let row = [video.guid, video.verticalArtFilename, "Texted", moment().format('YYYY-MM-DDTHH:mm:ssZ')];
             content.push(row)
         }
         else {
@@ -24,7 +24,7 @@ export const generateArtworkTab = (videos: VideoModel[]) => {
         }
 
         if (video.artFilename) {
-            let row = [video.guid, video.artFilename, "", ""];
+            let row = [video.guid, video.artFilename, "",  moment().format('YYYY-MM-DDTHH:mm:ssZ')];
             content.push(row)
         }
         else {

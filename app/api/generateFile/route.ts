@@ -1,11 +1,12 @@
 
 import { NextResponse } from 'next/server';
 import masters from './../utils/masters/outputMasters'
-import { generateTab } from '../utils/generateTemplate';
+import { generateTab, generateXML } from '../utils/generateTemplate';
 import { getSeries, getTitles } from '../masterTracker/masterTracker.service';
 import moment from 'moment';
 import * as XLSX from 'xlsx'
 import { generateArtworkTab } from '../utils/generateArtworkTab';
+import { TabularOutputDefinition, XmlOutputDefinition } from '../utils/masters/types';
 
 export const runtime = "nodejs"; 
 
@@ -17,7 +18,7 @@ export async function POST( _req ) {
     const masterId = body.masterId
     const guids = body.uuids
 
-    let selectedMaster = masters.find( master => master.id == masterId)
+    let selectedMaster: TabularOutputDefinition | XmlOutputDefinition | undefined = masters.find( master => master.id == masterId)
 
     if (!selectedMaster) return NextResponse.json({
         success: false,
@@ -33,7 +34,8 @@ export async function POST( _req ) {
     let allTitles = await getTitles()
     let allSeries = await getSeries()
 
-    allTitles.forEach( title => {
+    
+    allTitles.forEach( async (title) => {
         title.series = allSeries[title.seriesTitle]
     })
 
@@ -42,20 +44,29 @@ export async function POST( _req ) {
     })
 
     let fileContent = {} as {[key:string]: string[][]}
+    let xmlContent = "" as string
 
     let errorsContent = [['title', 'error_field', 'error_message', 'date']]
 
-    selectedMaster.tabs.forEach( tab => {
-            const {content, errors} = generateTab(tab.content, selectedVideos)
-            fileContent[tab.tabName] = content
-            if (errors.length) errors.forEach( error => errorsContent.push(error))
-        }
-    );
+    if ("tabs" in selectedMaster) {
+        selectedMaster.tabs.forEach( tab => {
+                const {content, errors} = generateTab(tab.content, selectedVideos)
+                fileContent[tab.tabName] = content
+                if (errors.length) errors.forEach( error => errorsContent.push(error))
+            }
+        );
+    }
 
     if (masterId == 'frequencyManifestXlsx') {
         const {content, errors} = generateArtworkTab(selectedVideos)
         fileContent['Artwork'] = content
 
+        if (errors.length) errors.forEach( error => errorsContent.push(error))
+    }
+
+    if ('namespaces' in selectedMaster) {
+        const {content, errors} = generateXML(selectedMaster, selectedVideos)
+        xmlContent = content
         if (errors.length) errors.forEach( error => errorsContent.push(error))
     }
 
@@ -78,7 +89,7 @@ export async function POST( _req ) {
         fileFormat: 'csv'
     }
 
-
+    // If xslxs format
     if (selectedMaster.outputFormat == 'xlsx') {
 
         const wb = XLSX.utils.book_new();
@@ -102,6 +113,21 @@ export async function POST( _req ) {
              }
          });
 
+    }
+
+    // If XML format
+
+    if (selectedMaster.outputFormat == 'xml') {
+
+        response.file["fileContent"] = xmlContent;
+
+        return NextResponse.json(response, {
+            status: 200,
+            headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "no-store",
+            },
+        });
     }
 
     // Regular CSV

@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const FutureTodayMovieMaster: outputMasterType = {
+export const FutureTodayMovieMaster: TabularOutputDefinition = {
     name: 'Future Today Movies',
     id: 'FutureTodayMovieMDU',
     outputFormat: 'csv',

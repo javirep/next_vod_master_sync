@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const PlutoAvailsMaster: outputMasterType = {
+export const PlutoAvailsMaster: TabularOutputDefinition = {
     name: 'Pluto Avails Manifest',
     id: 'plutoAvailsManifest',
     outputName: 'Pluto-Avails',

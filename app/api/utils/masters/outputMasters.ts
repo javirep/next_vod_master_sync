@@ -1,7 +1,8 @@
-import { FrequencyMasterXLSX } from "./FrequencyMasterXLSX";
+import { FrequencyMasterXLSX } from "./FrequencyMaster";
 import { RokuAvailsMaster } from "./RokuAvailsMaster";
 import { RokuMDUEpisodesMaster } from "./RokuMDUEpisodesMaster";
 import { RokuMDUMoviesMaster } from "./RokuMDUMoviesMaster";
+import { AmazonPVSeries } from "./AmazonPVSeries";
 import { FutureTodayMovieMaster } from "./FutureTodayMovieMaster";
 import { FutureTodaySeriesMaster } from "./FutureTodaySeriesMaster";
 import { PlutoAvailsMaster } from "./PlutoAvails";
@@ -17,6 +18,7 @@ export default [
     RokuAvailsMaster, 
     RokuMDUMoviesMaster,
     RokuMDUEpisodesMaster,
+    AmazonPVSeries,
     FutureTodayMovieMaster,
     FutureTodaySeriesMaster,
     PlutoAvailsMaster,

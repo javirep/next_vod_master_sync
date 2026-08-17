@@ -1,4 +1,4 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 import moment from "moment";
 
 const headers = [
@@ -49,7 +49,7 @@ const headers = [
   ];
   
 
-export const RokuAvailsMaster: outputMasterType = {
+export const RokuAvailsMaster: TabularOutputDefinition = {
     name: 'Roku Avails',
     id: 'rokuAvails',
     outputName: 'Swerve-Roku-Avails',

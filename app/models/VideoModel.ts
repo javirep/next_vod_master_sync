@@ -20,12 +20,15 @@ export type VideoModel = {
     tags: string;
     mainCast: string;
     filePath: string;
-    originalVideoFilename: string;
     videoFilename: string;
+    originalVideoFilename: string;
+    videoDownloadLink?: string;
     originalCaptionsFilename: string;
     captionsFilename: string;
+    captionsDownloadLink?: string;
     originalArtFilename: string;
     artFilename: string;
+    artDownloadLink?: string;
     textlessArtFilename: string;
     verticalArtFilename: string;
     women: boolean;

@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const VizioMaster: outputMasterType = {
+export const VizioMaster: TabularOutputDefinition = {
     name: 'Vizio Avails',
     id: 'vizioAvails',
     outputFormat: 'csv',

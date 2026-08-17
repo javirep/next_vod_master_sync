@@ -1,10 +1,11 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 import moment from "moment";
 
-export const FutureTodaySeriesMaster: outputMasterType = {
+export const FutureTodaySeriesMaster: TabularOutputDefinition = {
     name: 'Future Today Series',
     id: 'FutureTodaySeriesMDU',
     outputFormat: 'xlsx',
+    requiresDownloadLink: true,
 
     tabs: [
         {

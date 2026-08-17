@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const TubiMDUMoviesMaster: outputMasterType = {
+export const TubiMDUMoviesMaster: TabularOutputDefinition = {
     name: 'Tubi MDU Movies',
     id: 'tubiMDUMovies',
     outputName: 'Tubi-MDU-Movies',

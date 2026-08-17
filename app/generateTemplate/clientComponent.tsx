@@ -136,6 +136,8 @@ const Page = (  ) => {
 
         const response = await downloadFile(masterId, selectedVideosGuids);
         const fileName = response.file.fileName;
+
+        console.log({response})
         
         if (response.file.fileFormat == 'xlsx') {
             const fileContent = response.file.fileContent;
@@ -145,6 +147,12 @@ const Page = (  ) => {
         if (response.file.fileFormat == 'csv') {
             const fileContent = response.file.fileContent;
             downloadCsv(fileContent, fileName);
+        }
+
+        if (response.file.fileFormat == 'xml') {
+            console.log("file is xlm")
+            const fileContent = response.file.fileContent;
+            downloadXml(fileContent, fileName)
         }
 
         if (response.errorFile) {
@@ -195,6 +203,23 @@ const Page = (  ) => {
         URL.revokeObjectURL(url);
                 // Using xlsx library to generate xlsx file
     }
+
+    const downloadXml = (xmlContent: string, fileName: string) => {
+        console.log({xmlContent})
+        const blob = new Blob([xmlContent], { type: "application/xml" });
+
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName.endsWith(".xml") ? fileName : `${fileName}.xml`;
+
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        URL.revokeObjectURL(url);
+    };
 
     const handleTextFilters = (e: React.ChangeEvent<HTMLInputElement>, key: string) => {
         setFilters({...filters, [key]: e.target.value})

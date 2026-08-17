@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const TubiAvailsMaster: outputMasterType = {
+export const TubiAvailsMaster: TabularOutputDefinition = {
     name: 'Tubi Avails Master',
     id: 'TubiAvails',
     outputName: 'Swerve_Avails_For_Tubi',

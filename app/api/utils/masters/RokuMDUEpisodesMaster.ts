@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const RokuMDUEpisodesMaster: outputMasterType = {
+export const RokuMDUEpisodesMaster: TabularOutputDefinition = {
     name: 'Roku MDU episodes',
     id: 'rokuMDUEpisodes',
     outputName: 'Swerve-Roku-MDU',

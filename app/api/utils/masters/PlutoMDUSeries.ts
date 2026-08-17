@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const PlutoMDUSeriesMaster: outputMasterType = {
+export const PlutoMDUSeriesMaster: TabularOutputDefinition = {
     name: 'Pluto MDU Series',
     id: 'plutoMDUSeriesManifest',
     outputName: 'Pluto-MDU-Series',

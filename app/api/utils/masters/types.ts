@@ -28,7 +28,7 @@ export type transformType = {
     using?: string[];
 }
 
-export type outputMasterField = {
+export type ValueDefinition = {
     key: string;
     defaultValue?: any;
     header?: string;
@@ -38,18 +38,38 @@ export type outputMasterField = {
     skipOutput?: boolean;
 }
 
-export type outputMasterType = {
+export type TabularOutputDefinition = {
     name: string;
     id: string;
     outputFormat: string;
     outputName?: string;
+    requiresDownloadLink?: boolean;
 
-    tabs: outputTabType[]
+    tabs: TabDefinition[]
 }
 
-export type outputTabType = {
+export type TabDefinition = {
     tabName: string,
-    content: outputMasterField[]
+    content: ValueDefinition[]
+}
+
+export type XmlNodeDefinition = {
+    tag: string;
+    att?: { [key: string]: ValueDefinition };
+    text?: ValueDefinition;
+    children?: XmlNodeDefinition[];
+}
+
+export type XmlOutputDefinition = {
+    name: string;
+    id: string;
+    outputFormat: string;
+    outputName? : string;
+    requiresDownloadLink?: boolean;
+
+    namespaces: { [key: string]: string };
+    channel_tree: XmlNodeDefinition[];
+    item_tree: XmlNodeDefinition[];
 }
 
 export enum AvailsType {

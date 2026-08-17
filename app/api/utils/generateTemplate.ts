@@ -1,15 +1,18 @@
 
 import { VideoModel } from "../../models/VideoModel";
-import { outputMasterType, outputMasterField, transformType, validationType } from "./masters/types";
+import { XmlOutputDefinition, XmlNodeDefinition, ValueDefinition, transformType } from "./masters/types";
 import moment from "moment";
 import { genresMaster } from "./masters/genresMaster";
+import { create } from "xmlbuilder2";
+import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
+
 
 type validationOutputType = {
     success: boolean;
     errorMessage?: string;
 }
 
-export const generateTab = (masterField: outputMasterField[], videos: VideoModel[]) => {
+export const generateTab = (masterField: ValueDefinition[], videos: VideoModel[]) => {
 
     let header = masterField.map(field => field.skipOutput? null : field.header);
     let errors: any[][] = [];
@@ -18,7 +21,7 @@ export const generateTab = (masterField: outputMasterField[], videos: VideoModel
         let row: any[] = [];
 
         masterField.forEach(originalField => {
-            let field: outputMasterField = JSON.parse(JSON.stringify(originalField))
+            let field: ValueDefinition = JSON.parse(JSON.stringify(originalField))
             let value = field.defaultValue
             let data = video
             let subFieldsArray = field.key.split("_") 
@@ -112,6 +115,128 @@ export const generateTab = (masterField: outputMasterField[], videos: VideoModel
         content: [header, ...content], 
         errors: [...errors],
     }
+}
+
+export const generateXML = (master: XmlOutputDefinition, videos: VideoModel[]) => {
+
+    let root =  create({ version: "1.0", encoding: "UTF-8" })
+        .ele("rss", {
+            ...master.namespaces
+        });
+    let errors = [];
+
+    addNodes(root, master.channel_tree, videos[0] )
+
+    videos.forEach(video => {
+        let item = root.ele('item')
+        addNodes(item, master.item_tree, video)
+    })
+
+    return {
+        content: root.end({ prettyPrint: true }), 
+        errors: [...errors],
+    }
+}
+
+const addNodes = (parentNode: XMLBuilder, masterFields: XmlNodeDefinition[], video: VideoModel) => {
+    
+    masterFields.forEach(masterField => {
+        addSingleNode(parentNode, masterField, video)
+    });
+
+    return parentNode
+}
+
+const addSingleNode =  (parentNode: XMLBuilder, masterField: XmlNodeDefinition, video: VideoModel) => {
+    let nodeAttributes: Record<string, string> = {};
+
+    if (masterField.att) {
+        for (const [attributeName, attribute] of Object.entries(masterField.att)) {
+            nodeAttributes[attributeName] =  getValue(attribute, video) || ""
+        }
+    }
+
+    let newNode = parentNode.ele( 
+        masterField.tag,
+        nodeAttributes
+    )
+
+    if (masterField.text) newNode.txt( getValue(masterField.text, video) || "")
+    if (masterField.children){
+        addNodes(newNode, masterField.children, video)
+    }
+
+}
+
+const getValue =  (masterField: ValueDefinition, video: VideoModel) => {
+    let errors: any[][] = [];
+    let field: ValueDefinition = JSON.parse(JSON.stringify(masterField))
+    let value = field.defaultValue
+    let data = video
+
+    let subFieldsArray = field.key.split("_") 
+
+    while ( subFieldsArray.length > 1 && data){
+        data = data[subFieldsArray[0]]
+        subFieldsArray.shift()
+        field.key = subFieldsArray[0]
+    }
+
+    // Here the value gets assigned
+    if (field.key && data && data[field.key] && data[field.key] != '') {
+        if (field.transform) {
+            value = transform(data[field.key], field.transform.type, field.transform.from, field.transform.to, field.transform.using?.map(useField => video[useField]))
+        }
+        else {
+            value = data[field.key]
+        }
+    }
+
+    // Add validations
+    let isRequiredField = field.validation && field.validation.required
+    let isConditionallyRequiredField = field.validation && field.validation.requiredIfField && video[field.validation.requiredIfField] != ''
+
+    if ( isRequiredField || isConditionallyRequiredField ) {
+        let validationOutput: validationOutputType = isRequired( value )
+        if (!validationOutput.success) {
+            let errorMessage = isConditionallyRequiredField && field.validation ? (
+                validationOutput.errorMessage + `. This field is required because the field ${field.validation.requiredIfField} is not empty`
+            ) : (
+                validationOutput.errorMessage
+            )
+
+            errors.push([video.title, field.header, errorMessage, moment().format('YYYY-MM-DD')])
+        }
+    }
+
+    if (field.validation && field.validation.format) {
+        let validationOutput: validationOutputType = isFormated( value, field.validation.format )
+        if (!validationOutput.success) {
+            errors.push([video.title, field.header, validationOutput.errorMessage, moment().format('YYYY-MM-DD')])
+        }
+    }
+
+    if ( field.validation && field.validation.futureDate ) {
+        let isBeforeThanResult = isBeforeThan( value, moment().format('YYYY-MM-DD') )
+
+        if ( isBeforeThanResult.success ) {
+            errors.push([video.title, field.header, `"${field.key} (value: ${value}) should be in the future"`, moment().format('YYYY-MM-DD')])
+        }
+    }
+
+    if ( field.validation && field.validation.maxLength ) {
+        if ( !noLongerThan( value, field.validation.maxLength ) ) {
+            errors.push([video.title, field.header, `"${field.header} (value: ${value}) should be shorter than ${field.validation.maxLength}"`, moment().format('YYYY-MM-DD')])
+        }
+    }
+
+    if (field.validation && field.validation.allowedValues){
+        if (! field.validation.allowedValues.includes( value ) ) {
+            errors.push([video.title, field.header, `"${field.key} (value: ${value}) is not allowed"`, moment().format('YYYY-MM-DD')])
+        }
+    }
+
+    return value || undefined
 }
 
 const transform = (value: string, type: string, from: string, to: string, using: string[] = []) => {

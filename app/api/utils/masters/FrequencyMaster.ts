@@ -1,6 +1,6 @@
-import { outputMasterType } from "./types";
+import { TabularOutputDefinition } from "./types";
 
-export const FrequencyMasterXLSX: outputMasterType = {
+export const FrequencyMasterXLSX: TabularOutputDefinition = {
     name: 'Frequency Manifest (.xlsx)',
     id: 'frequencyManifestXlsx',
     outputName: 'Swerve-Metadata-Manifest',
