@@ -40,7 +40,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
         },
         {
         "tag": "language",
-        "text": { key: '', defaultValue: "En-US" }
+        "text": { key: '', defaultValue: "en-US" }
         },
         {
         "tag": "pubDate",
@@ -84,7 +84,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             "att": {
                 "swerve_id": { key: "series_id" },
                 "url": { key: '', defaultValue: "$seriesPosterArt$" },
-                "medium": { key: '', defaultValue: "image" }
+                "medium": { key: '', defaultValue: "poster" }
             },
             "children": [
                 {
@@ -124,7 +124,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             "children": [
                 {
                     "tag": "media:category",
-                    "text": { key: '', defaultValue: "box" }
+                    "text": { key: '', defaultValue: "hero" }
                 },
                 {
                     "tag": "itunes:seasonNumber",
@@ -157,7 +157,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
         {
             tag: "description",
             text: { 
-                key: "shortSynopsis"
+                key: "synopsis"
             }
         },
         {
@@ -166,7 +166,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                 key: "releaseDate",
                 transform: {
                     type: "date",
-                    from: "YYY-MM-DD",
+                    from: "YYYY-MM-DD",
                     to: "YYYY-MM-DD[T]HH:mm:ss[Z]"
                 }
             }, 
@@ -217,19 +217,34 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             tag: "media:category",
             text: {
                 key: "genre",
+                defaultValue:"",
+                transform: {
+                    type:"genre",
+                    from:"masterTracker", 
+                    to: "amazonPV"
+                }
+            }
+        },
+        {
+            tag: "media:category",
+            text: {
+                key: "tags",
                 defaultValue:""
+            }
+        },
+        {
+            tag: "media:contentlangauge",
+            text: {
+                key: "",
+                defaultValue:"en"
             }
         },
         {
             tag: "media:rating",
             att: {
                 scheme: {
-                    key: "rating",
-                    transform: {
-                        type: "rating",
-                        from: "rating",
-                        to: "AmazonPVRatingSource"
-                    }
+                    key: "",
+                    defaultValue: "amazon_maturity_rating"
                 }
             },
             text: {
@@ -304,7 +319,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             tag:"atom:updated",
             text:{
                 key:"",
-                defaultValue: moment().format('YYYY-MM-DDTHH:mm:ssZ')
+                defaultValue: moment().format('YYYY-MM-DDTHH:mm:ss') + "Z"
             }
         }
     ]

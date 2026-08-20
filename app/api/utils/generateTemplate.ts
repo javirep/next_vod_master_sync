@@ -525,7 +525,7 @@ const transformUUID = (value: string, from: string, to: string, using: string[])
 }
 
 const transformGenre = (value: string, from: string, to: string) => {
-    if (to === 'frequency') {
+    if (to === 'frequency' || to === "amazonPV") {
         value = value.split(',')[0].trim()
     }
 
