@@ -597,10 +597,17 @@ const isFormated = ( value: string, format: string ) => {
         }
     }
 
-    else if ( format === "ratingSource" && !['MPAA', 'USA_PR', 'BBFC', 'CHVRS', 'CPR', 'RTC' ].includes(value)) {
+    else if ( format === "ratingSource" && !['MPAA', 'USA_PR'].includes(value)) {
         return {
             success: false,
-            errorMessage: `"Invalid rating source ${value}. Expected values are MPAA, USA_PR, BBFC, CHVRS, CPR, RTC"`,
+            errorMessage: `"Invalid Rating Source: ${value}. Expected values are MPAA, USA_PR, BBFC, CHVRS, CPR, RTC"`,
+        }
+    }
+
+    else if ( format === "ratingValue" && !['TV-G', 'TV-PG', 'TV-14', 'G', 'PG', 'PG13' ].includes(value)) {
+        return {
+            success: false,
+            errorMessage: `"Invalid Rating Value: ${value}. Expected values are TV-G, TV-PG, TV-14, G, PG, PG13"`,
         }
     }
     else if ( format.includes("adBreaks") ) {

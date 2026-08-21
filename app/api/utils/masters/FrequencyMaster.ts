@@ -167,6 +167,7 @@ export const FrequencyMasterXLSX: TabularOutputDefinition = {
                     defaultValue: '',
                     validation: {
                         required: true,
+                        format: "ratingValue"
                     }
                 },
                 {
