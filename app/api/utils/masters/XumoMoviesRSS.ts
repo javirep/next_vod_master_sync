@@ -1,9 +1,9 @@
 import { XmlOutputDefinition } from "./types";
 
-export const XumoRSS: XmlOutputDefinition = {
-    name: "Xumo RSS",
-    id: "XumoRSS",
-    outputName: "XumoRSS",
+export const XumoMovies: XmlOutputDefinition = {
+    name: "Xumo Movies RSS",
+    id: "XumoMoviesRSS",
+    outputName: "XumoMoviesRSS",
     outputFormat: "xml",
     requiresDownloadLink: true,
 
@@ -40,13 +40,6 @@ export const XumoRSS: XmlOutputDefinition = {
             }
         },
         {
-            tag: "pubDate",
-            text: {
-                key: "",
-                defaultValue: ""
-            }
-        },
-        {
             tag: "description",
             text: {
                 key: "shortSynopsis",
@@ -65,12 +58,8 @@ export const XumoRSS: XmlOutputDefinition = {
                     defaultValue: "video"
                 },
                 url: {
-                    key: "videoFilename",
-                    transform: {
-                        type: "filename",
-                        from: "filename",
-                        to: "downloadLink"
-                    }
+                    key: "",
+                    defaultValue: "$titleVideo$"
                 }
             }
         },
@@ -86,12 +75,8 @@ export const XumoRSS: XmlOutputDefinition = {
                     defaultValue: "1020"
                 },
                 url: {
-                    key: "artFilename",
-                    transform: {
-                        type: "filename",
-                        from: "filename",
-                        to: "downloadLink"
-                    }
+                    key: "",
+                    defaultValue: "$titleArt$"
                 }
             }
         },
@@ -107,12 +92,8 @@ export const XumoRSS: XmlOutputDefinition = {
                     defaultValue: "en"
                 },
                 href: {
-                    key: "artFilename",
-                    transform: {
-                        type: "filename",
-                        from: "filename",
-                        to: "downloadLink"
-                    }
+                    key: "titleCaptions",
+                    
                 }
             }
         },
@@ -132,7 +113,7 @@ export const XumoRSS: XmlOutputDefinition = {
                 }
             },
             text: {
-                key: "Genre",
+                key: "genre",
                 defaultValue: ""
             }
         },
@@ -140,8 +121,13 @@ export const XumoRSS: XmlOutputDefinition = {
             tag: "media:rating",
             att: {
                 scheme: {
-                    key: "",
-                    defaultValue: "mpaa"
+                    key: "rating",
+                    defaultValue: "", 
+                    transform: {
+                        type: "ratingSource", 
+                        from: "ratingValue", 
+                        to: "xumoRatings"
+                    }
                 }
             },
             text: {
@@ -158,6 +144,9 @@ export const XumoRSS: XmlOutputDefinition = {
                     type: "adBreaks",
                     from: "HH:mm:ss;ff",
                     to: "seconds"
+                },
+                validation: {
+                    required: true
                 }
             }
         },

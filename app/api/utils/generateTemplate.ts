@@ -433,11 +433,17 @@ const transformTypeFn = (type: string, from: string, to: string, belongsToSeries
 }
 
 const transformRatingSource = (ratingValue: string, from: string, to: string) => {
+    let MPAARatings = [ 'G', 'PG', 'PG13', 'PG-13', 'R', 'NC-17', 'NC17'];
+    let USA_PRRatings = ['TV-Y','TVY','TV-Y7','TVY7','TV-G','TVG','TV-PG','TVPG','TV-14','TV14','TV-MA','TVMA','NR']
+
     if (to == "ratingSource") { 
-        let MPAARatings = [ 'G', 'PG', 'PG13', 'PG-13', 'R', 'NC-17', 'NC17'];
-        let USA_PRRatings = ['TV-Y','TVY','TV-Y7','TVY7','TV-G','TVG','TV-PG','TVPG','TV-14','TV14','TV-MA','TVMA','NR']
         if ( MPAARatings.includes(ratingValue)) return "MPAA"
         if (USA_PRRatings.includes(ratingValue)) return "USA_PR"
+    }
+
+    if (to == "xumoRatingSource"){
+        if ( MPAARatings.includes(ratingValue)) return "mpaa"
+        if (USA_PRRatings.includes(ratingValue)) return "v-chip"
     }
     
     return ratingValue;
@@ -693,4 +699,25 @@ const isUnique = ( value: string, key:string, index: number, videos: VideoModel[
         success: false,
         errorMessage: `"${value} should be unique. Repeated in row ${i + 1}"`,
     }
+}
+
+const adBreaksEvery = ( value, minTime: number, maxTime:number ) => {
+    let currentTime = 0;
+
+    let adbreaks = value.split(", ")
+
+    if (!adbreaks ) return false
+
+    let i = 0;
+
+
+    while (currentTime != adbreaks[adbreaks.length -1]){
+        if (currentTime + minTime > adbreaks[i]) return false
+        if (currentTime + maxTime < adbreaks[i]) return false
+
+        currentTime = adbreaks[i]
+        i++
+    }
+
+    return true
 }

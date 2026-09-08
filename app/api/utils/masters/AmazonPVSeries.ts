@@ -305,7 +305,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                 swerve_id: { key: "guid" },
                 href: {
                     key: "",
-                    defaultValue: "$titleArt$"
+                    defaultValue: "$titleCaptions$"
                 }
             }
         },

@@ -11,6 +11,9 @@ import { TubiAvailsMaster } from "./TubiAvails";
 import { TubiMDUMoviesMaster } from "./TubiMDUMovies";
 import { TubiMDUSeriesMaster } from "./TubiMDUSeries";
 import { TubiMDUEpisodesMaster } from "./TubiMDUEpisodes";
+import { XumoEpisodes } from "./XumoEpisodesRSS";
+import { XumoMovies } from "./XumoMoviesRSS";
+
 
 
 export default [
@@ -26,5 +29,7 @@ export default [
     TubiAvailsMaster,
     TubiMDUMoviesMaster,
     TubiMDUSeriesMaster,
-    TubiMDUEpisodesMaster
+    TubiMDUEpisodesMaster,
+    XumoEpisodes,
+    XumoMovies
 ]
