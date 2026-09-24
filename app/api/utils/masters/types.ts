@@ -19,7 +19,7 @@ export type validationType = {
     requiredIfField?: string;
     regex?: Regex;
     allowedValues?: string[];
-    adBreaksEvery?: number[]
+    adBreaksEvery?: number[];
 }
 
 export type transformType = {

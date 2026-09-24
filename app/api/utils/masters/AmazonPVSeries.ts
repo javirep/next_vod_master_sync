@@ -25,38 +25,38 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             }
         },
         {
-        "tag": "guid",
-        "att": {
-            "isPermaLink": {
-                key: '',
-                defaultValue: "false",
-            }
-        },
-        "text": { key: 'series_id' }
+            "tag": "guid",
+            "att": {
+                "isPermaLink": {
+                    key: '',
+                    defaultValue: "false",
+                }
+            },
+            "text": { key: 'series_id' }
         },
         {
             "tag": "description",
             "text": { key: 'series_seriesShortSynopsis' }
         },
         {
-        "tag": "language",
-        "text": { key: '', defaultValue: "en-US" }
+            "tag": "language",
+            "text": { key: '', defaultValue: "en-US" }
         },
         {
-        "tag": "pubDate",
-        "text": { key: 'series_seriesReleaseDate' }
+            "tag": "pubDate",
+            "text": { key: 'series_seriesReleaseDate' }
         },
         {
-        "tag": "image",
-        "children": [
-            {
-                "tag": "url",
-                "att": { 
-                    "swerve_id": { key: "series_id" },
-                 },
-                "text": { key: '', defaultValue: "$seriesBackgroundArt$" }
-            }
-        ]
+            "tag": "image",
+            "children": [
+                {
+                    "tag": "url",
+                    "att": { 
+                        "swerve_id": { key: "series_id" },
+                    },
+                    "text": { key: '', defaultValue: "$seriesBackgroundArt$" }
+                }
+            ]
         },
         {
         "tag": "media:group",
@@ -84,12 +84,12 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             "att": {
                 "swerve_id": { key: "series_id" },
                 "url": { key: '', defaultValue: "$seriesPosterArt$" },
-                "medium": { key: '', defaultValue: "poster" }
+                "medium": { key: '', defaultValue: "image" }
             },
             "children": [
                 {
                     "tag": "media:category",
-                    "text": { key: '', defaultValue: "image" }
+                    "text": { key: '', defaultValue: "poster" }
                 },
                 {
                     "tag": "itunes:seasonNumber",
@@ -107,7 +107,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             "children": [
                 {
                     "tag": "media:category",
-                    "text": { key: '', defaultValue: "box" }
+                    "text": { key: '', defaultValue: "boxart" }
                 },
                 {
                     "tag": "itunes:seasonNumber",
@@ -120,6 +120,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             "att": {
                 "swerve_id": { key: "series_id" },
                 "url": { key: '', defaultValue: "$seriesHeroArt$" },
+                "medium": { key: '', defaultValue: "image" }
             },
             "children": [
                 {
@@ -131,6 +132,10 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                     "text": { key: 'season', }
                 }
             ]
+            },
+            {
+                "tag": "itunes:season",
+                "text": { key: 'season'}
             }
         ]
         }
@@ -239,7 +244,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                 defaultValue:"en"
             }
         },
-        {
+        /* {
             tag: "media:rating",
             att: {
                 scheme: {
@@ -250,7 +255,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
             text: {
                 key: "rating"
             }
-        },
+        }, */
         {
             tag: "itunes:season",
             text: {
