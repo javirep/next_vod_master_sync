@@ -74,7 +74,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                     "text": { key: '', defaultValue: "cover" }
                 },
                 {
-                    "tag": "itunes:seasonNumber",
+                    "tag": "itunes:season",
                     "text": { key: "season" }
                 }
             ]
@@ -92,7 +92,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                     "text": { key: '', defaultValue: "poster" }
                 },
                 {
-                    "tag": "itunes:seasonNumber",
+                    "tag": "itunes:season",
                     "text": { key: "season" }
                 }
             ]
@@ -110,7 +110,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                     "text": { key: '', defaultValue: "boxart" }
                 },
                 {
-                    "tag": "itunes:seasonNumber",
+                    "tag": "itunes:season",
                     "text": { key: "season" }
                 }
             ]
@@ -128,7 +128,7 @@ export const AmazonPVSeries: XmlOutputDefinition = {
                     "text": { key: '', defaultValue: "hero" }
                 },
                 {
-                    "tag": "itunes:seasonNumber",
+                    "tag": "itunes:season",
                     "text": { key: 'season', }
                 }
             ]
