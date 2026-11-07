@@ -202,9 +202,15 @@ export const RokuAvailsMaster: TabularOutputDefinition = {
                     header: headers[18],
                     key: 'season',
                     defaultValue: '',
+                    transform: {
+                        type: "number", 
+                        from: "year",
+                        to: "season"
+                    },
                     validation: {
                         required: false,
                         format: 'wholeNumber',
+                        lowerThan: 100
                     }
                 },
                 {

@@ -102,6 +102,12 @@ export const generateTab = (masterField: ValueDefinition[], videos: VideoModel[]
                 }
             }
 
+            if (field.validation && field.validation.lowerThan){
+                if (value > field.validation.lowerThan) {
+                    errors.push([video.title, field.header, `"${field.key} (value: ${value}) should be lower than ${field.validation.lowerThan}`, moment().format('YYYY-MM-DD')])
+                }
+            }
+
             if (field.skipOutput) return
             
             row.push(value)
@@ -240,6 +246,9 @@ const getValue =  (masterField: ValueDefinition, video: VideoModel) => {
 }
 
 const transform = (value: string, type: string, from: string, to: string, using: string[] = []) => {
+    if (type === "number") {
+        return transformNumber(value, from, to)
+    }
     if (type === 'date') {
         return transformDate(value, from, to)
     }
@@ -276,6 +285,18 @@ const transform = (value: string, type: string, from: string, to: string, using:
     }
 
     return value;
+}
+
+const transformNumber = (value: string, from: string, to:string) => {
+    let num = Number (value)
+
+    if (!num) return value
+
+    if (from=== "year" && to === "season"){
+        if (num > 2000) return num - 2000
+    }
+
+    return value
 }
 
 const transformDate = (date: string, from: string, to: string) => {

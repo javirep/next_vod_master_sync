@@ -101,8 +101,17 @@ export const TubiMDUEpisodesMaster: TabularOutputDefinition = {
                 },
                 {
                     header: 'thumbnail filename',
-                    key: '',
+                    key: 'artFilename',
                     defaultValue: '',
+                    transform: {
+                        type: 'string',
+                        from: 'filePath',
+                        to: 'fileName',
+                    },
+                    validation: {
+                        required: true,
+                        format: 'fileName',
+                    }
                 },
                 {
                     header: 'release date',

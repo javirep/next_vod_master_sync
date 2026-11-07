@@ -20,6 +20,7 @@ export type validationType = {
     regex?: Regex;
     allowedValues?: string[];
     adBreaksEvery?: number[];
+    lowerThan?: number;
 }
 
 export type transformType = {

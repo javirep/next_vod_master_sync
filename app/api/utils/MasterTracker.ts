@@ -210,7 +210,7 @@ export const MasterTrackerSeries: MasterType = {
         key: 'Vertical Art Filename',
     },
     seriesTextlessArtFilename: {
-        key: 'Textless Art Filename',
+        key: 'Background Art Filename',
     },
     seriesTMSID:{
         key: 'TMS ID'

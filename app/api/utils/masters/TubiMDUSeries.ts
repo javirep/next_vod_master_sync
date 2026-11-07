@@ -48,7 +48,7 @@ export const TubiMDUSeriesMaster: TabularOutputDefinition = {
                 },
                 {
                     header: "background filename",
-                    key: "",
+                    key: "seriesTextlessArtFilename",
                     defaultValue: ""
                 },
                 {
