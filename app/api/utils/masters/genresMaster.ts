@@ -99,6 +99,9 @@ export const genresMaster: GenresMaster = {
         frequency: 'Dance',
         amazonPV: 'av_genre_sports',
     },
+    debate:{
+        frequency: 'News',
+    },
     diving: {
         frequency: 'Action Sports/Scuba Diving',
         amazonPV: 'av_genre_sports',
@@ -106,6 +109,9 @@ export const genresMaster: GenresMaster = {
     documentary: {
         frequency: 'Documentary',
         amazonPV: 'av_genre_documentary',
+    },
+    education:{
+        frequency: 'education',
     },
     field_hockey: {
         frequency: 'Sports/Hockey',
@@ -143,9 +149,18 @@ export const genresMaster: GenresMaster = {
         frequency: 'Action Sports/Mountain Biking',
         amazonPV: 'av_genre_sports',
     },
+    news: {
+        frequency: 'News',
+    },
     poker: {
         frequency: 'Sports/Poker',
         amazonPV: 'av_genre_sports',
+    },
+    politics: {
+        frequency: 'Politics/US',
+    },
+    public_affairs:{
+        frequency: 'News',
     },
     pro_wrestling: {
         frequency: 'Sports/Pro Wrestling',
@@ -174,5 +189,8 @@ export const genresMaster: GenresMaster = {
     volleyball: {
         frequency: 'Sports/Volleyball',
         amazonPV: 'av_genre_sports',
+    },
+    war:{
+        frequency: 'News',
     },
 }
