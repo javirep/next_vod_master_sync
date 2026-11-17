@@ -125,6 +125,9 @@ export const genresMaster: GenresMaster = {
         frequency: 'Sports/Golf',
         amazonPV: 'av_genre_sports',
     },
+    health: {
+        frequency: 'Health & Fitness'
+    },
     hockey: {
         frequency: 'Sports/Hockey',
         amazonPV: 'av_genre_sports',
